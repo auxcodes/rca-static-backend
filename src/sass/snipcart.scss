@@ -1,0 +1,113 @@
+@import '__variables';
+
+.snip-layout {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.7);
+
+    .snip-layout__main-container {
+        margin-top: 60px;
+        box-shadow: 0 7px 15px $box-shadow-high;
+    }
+    // cart header
+    .snip-header {
+        background-color: $accent-bg-color;
+        border-bottom: 1px solid $border-color;
+    }
+    // cart icons
+    .snip-ico--close {
+        &:before {
+            content: url('/assets/icons/navigation/close.svg');
+        }
+    }
+    // close cross
+    .snip-layout__close {
+        // control it's color here
+        color: $header-text-color;
+        font-size: 2em;
+    }
+    // cart title
+    .snip-header__title {
+        color: $title-text-color;
+    }
+
+    .snip-header__total {
+        color: $header-text-color;
+        background-color: $light-bg-color;
+        box-shadow: 0 1px 3px $box-shadow-low;
+        border-radius: unset;
+    }
+
+    .snip-header__total-label {
+        color: $link-text-color;
+    }
+
+    #snipcart-amount {
+        // font color and alignment comes from .snip-header
+        color: $header-text-color;
+    }
+    // --------------------------------- user bar
+    .snip-header__user {
+        //text-align: center
+        background-color: $light-bg-color;
+    }
+    // welcome text
+    .snip-header__user-text {
+        //color
+        // white-space: nowrap
+    }
+    // user email
+    .snip-header__user-mail {
+        color: $header-text-color;
+    }
+    // ---------------------------------- loader
+    .snip-loader--bar {
+        background-color: $border-color;
+        height: .25em;
+
+        &:before {
+            background-color: $highlight-btn-color;
+            height: .125em;
+        }
+    }
+    // --------------------------------------- content
+    .snip-product__empty {
+        text-transform: none;
+    }
+    // ---------------------------------------- buttons
+    .snip-btn {
+        background-color: $default-btn-color;
+        border-radius: unset;
+        box-shadow: 0 1px 3px $btn-box-shadow-low;
+        color: $highlight-btn-txt-color;
+        transition: box-shadow .15s;
+        font-size: 16px;
+        padding: 0 1em;
+
+        &:hover {
+            background: $default-btn-color;
+            text-decoration: underline;
+            box-shadow: 0 7px 15px $btn-box-shadow-high;
+        }
+
+        &:active {
+            box-shadow: 0 1px 3px $btn-box-shadow-low;
+        }
+    }
+    // previous button
+    .snip-btn--left {
+        background-color: $default-btn-color;
+    }
+    // yellow next button
+    .snip-btn--highlight {
+        background: $highlight-btn-color;
+
+        &:hover {
+            background: $highlight-btn-color;
+        }
+    }
+    // ---------------------------------------------- footer
+    .snip-footer {
+        background-color: $accent-bg-color;
+        border-top: 1px solid $border-color;
+    }
+}

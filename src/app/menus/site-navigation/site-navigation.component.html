@@ -1,0 +1,5 @@
+<span class="site-link" *ngFor="let link of routerLinks">
+    <button routerLink={{link.path}} attr.aria-label="Navigation button, {{link.text}}">
+        <span class="link-text">{{link.text}}</span>
+    </button>
+</span>

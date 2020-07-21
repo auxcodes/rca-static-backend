@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'sass/snipcart';
+@import 'sass/__variables';
+@import 'sass/quill';
+@import url(https://fonts.googleapis.com/css?family=Lato&display=swap);
+
+
+body {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 1.125rem;
+    color: $base-text-color;
+    margin: 0;
+}
+
+h1 {
+    color: $title-text-color;
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+a {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 1.125rem;
+    text-decoration: none;
+    color: $title-text-color;
+
+    &:hover {
+        text-decoration: underline solid;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.app-root {
+    display: flex;
+}
+
+
+
+

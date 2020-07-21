@@ -1,0 +1,72 @@
+@import 'src/sass/__variables';
+@import 'src/sass/detail';
+
+.container {
+    .content {
+        .post-image-collapsed {
+            width: 100%;
+            max-height: 200px;
+            min-height: 200px;
+            overflow-y: hidden;
+            border: solid 1px #f2f2f2;
+            cursor: zoom-in;
+            transition: max-height .5s ease-in-out;
+        }
+
+        .post-image-expanded {
+            width: 100%;
+            min-height: 200px;
+            max-height: 1000px;
+            overflow-y: hidden;
+            cursor: zoom-out;
+            border: solid 1px #f2f2f2;
+            transition: max-height .5s ease-in-out;
+        }
+
+        .post-header {
+            display: flex;
+            margin: 20px 10px 10px 10px;
+
+            .post-title {
+                font-size: 1.5rem;
+                text-decoration: none;
+                font-weight: bold;
+                color: $header-text-color;
+            }
+
+            .post-author {
+                font-size: 1rem;
+                margin: auto 0 auto auto;
+            }
+        }
+
+        .post-date {
+            display: flex;
+            font-size: 0.8rem;
+            margin: 5px 0 0 0;
+
+            .published {
+                margin-right: auto;
+            }
+
+            .updated {
+                margin-left: auto;
+            }
+        }
+
+        .post-content {
+        }
+
+        .divider {
+            display: block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 95%;
+            height: auto;
+            min-height: 10px;
+            background-image: url('/assets/artist-page/footer-underline.png');
+            background-position: center;
+            margin: auto;
+        }
+    }
+}

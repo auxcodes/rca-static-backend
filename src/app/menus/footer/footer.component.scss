@@ -1,0 +1,214 @@
+@import 'src/sass/__variables';
+
+
+.footer-bar {
+    top: 0;
+    margin: 0;
+    padding: 0;
+
+    .fb-hover {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: $max-width-medium) {
+    .footer-bar-content {
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .content-box {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (min-width: $max-width-medium) {
+    .footer-bar-content {
+        flex-wrap: nowrap;
+    }
+
+    .content-box {
+        flex-basis: 50%;
+    }
+}
+
+
+.footer-bar-content {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 16px 0;
+    overflow: hidden;
+    border-top: 1px solid $border-color;
+    width: 100%;
+    min-height: 2.5rem;
+
+    li, a {
+        font-family: "Lato", Helvetica, Arial, sans-serif;
+        text-decoration: none;
+    }
+
+    .link-header {
+        color: $link-text-color;
+        font-size: 1rem;
+        padding: 0 16px;
+        text-align: start;
+        margin: 0 auto;
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        font-size: 1rem;
+        text-align: start;
+        padding: 0;
+        margin: 0 0 8px 0;
+
+        li {
+            margin: 8px 0 0 0;
+        }
+
+        a {
+            padding: 0 16px 0 0;
+
+            &:link, &:visited {
+                color: $footer-links-color;
+            }
+        }
+    }
+
+    .copyright {
+        color: $link-text-color;
+        font-size: 1rem;
+        padding: 0 16px;
+        text-align: start;
+
+        .phone {
+            white-space: nowrap;
+        }
+
+        .abn {
+            white-space: nowrap;
+
+            .abn-label {
+                font-size: 0.75rem;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .newsletter {
+        color: $link-text-color;
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        padding: 0 16px;
+        text-align: right;
+
+        .newsletter-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            .header-text {
+                color: $nav-logo-text;
+                font-size: 1.25rem;
+                align-self: flex-end;
+                width: 25%;
+                min-width: 97px;
+            }
+
+            .news-bar {
+                background-image: url('/assets/footer/news-bar-orange.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-right: 10px;
+                width: 100%;
+                height: auto;
+            }
+
+            img {
+                padding: 5px 10px 0 0;
+                max-width: 100%;
+                width: 75%;
+                height: auto;
+            }
+        }
+
+        .info {
+            padding: 8px 0;
+        }
+
+        .invalid-form {
+            color: $error-text-color;
+            font-weight: 700;
+            text-align: start;
+        }
+
+        .form-success {
+            color: $success-text-color;
+            font-weight: 700;
+            text-align: start;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            width: 100%;
+
+            input {
+                padding: 12px 2px 12px 20px;
+                margin: 0;
+                border: 1px solid $border-color;
+                box-sizing: border-box;
+                transition: box-shadow .15s;
+                max-width: 350px;
+
+
+                &:focus {
+                    box-shadow: 0 4px 8px $btn-box-shadow-high;
+                }
+            }
+            .email {
+                width: 65%;
+            }
+
+            .name {
+                margin-right: 5px;
+                width: 25%;
+            }
+
+            button {
+                background: none;
+                background-color: $highlight-btn-color;
+                border: 0;
+                color: $highlight-btn-txt-color;
+                cursor: pointer;
+                font-weight: 700;
+                justify-content: flex-end;
+                margin: 0;
+                position: relative;
+                padding: 13px 20px;
+                text-align: center;
+                text-transform: uppercase;
+                text-decoration: none;
+                transition: box-shadow .15s;
+
+                &:hover {
+                    box-shadow: 0 7px 15px $btn-box-shadow-high;
+                    text-decoration: underline;
+                }
+
+                &:active {
+                    box-shadow: 0 1px 3px $btn-box-shadow-low;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<div class="card">
+    <span (click)="openBlogPost()" class="post-image" *ngIf="postData.thumbnail">
+        <img src={{postData.thumbnail}} alt="Thumbnail image for blog post: {{postData.title}}" />
+    </span>
+    <span class="spinner" *ngIf="!postData.thumbnail">
+        <app-artwork-spinner></app-artwork-spinner>
+    </span>
+    <div class="card-caption" (click)="openBlogPost()">
+        <div class="card-title">
+            <span class="blog-title" (click)="openBlogPost()">{{postData.title}}</span>
+            <span class="publish-date">{{postData.publishDate | date:'mediumDate'}}</span>
+        </div>
+        <div class="card-description" [innerHtml]="postData.description">
+        </div>
+        <div class="card-footer">
+            <span class="read-more"> Read More...</span>
+        </div>
+    </div>
+</div>

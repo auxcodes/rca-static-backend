@@ -1,0 +1,24 @@
+<section class="container">
+    <section class="content">
+        <div class="page-header">
+            <span class="header-image left-outer"></span>
+            <span class="header-image left-inner"></span>
+            <h1 class="page-title">{{artistsPage.title}}</h1>
+            <span class="header-image right-inner"></span>
+            <span class="header-image right-outer"></span>
+        </div>
+        <div class="artists">
+            <div class="artists-item" *ngFor="let artist of artists">
+                <app-artist-card class="artist-card" id="{{artist.id}}"
+                                 [artistData]="artist"
+                                 (openArtist)="onOpenArtist($event)"
+                                 (viewArtwork)="onViewArtwork($event)"></app-artist-card>
+            </div>
+            <app-artist-detail *ngIf="focusArtist"
+                               [artistData]="artistInFocus"
+                               (closeArtist)="onCloseArtist($event)"
+                               (viewArtwork)="onViewArtwork($event)"></app-artist-detail>
+        </div>
+    <app-facebook-share class=""></app-facebook-share>
+    </section>
+</section>

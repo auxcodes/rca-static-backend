@@ -1,0 +1,50 @@
+@import 'src/sass/page';
+
+.content {
+    .content-parent {
+        flex-direction: column;
+
+        .content-box {
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 250px;
+
+            .error-text {
+                margin: 25px 0 50px 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .error-img {
+                width: 250px;
+                border-radius: 50%;
+                box-shadow: 0 8px 24px #464646;
+                border: 20px solid $title-text-color;
+                min-height: 250px;
+                min-width: 250px;
+                display:flex;
+                margin: 0 auto;
+
+                img {
+                    display: block;
+                    width: 85%;
+                    height: 85%;
+                    padding: 24px;
+                }
+            }
+
+            .footerline {
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 100%;
+                height: auto;
+                min-height: 19px;
+                background-image: url('/assets/footer/news-bar-orange.png');
+                background-position: center;
+                margin: 16px auto;
+            }
+        }
+    }
+}

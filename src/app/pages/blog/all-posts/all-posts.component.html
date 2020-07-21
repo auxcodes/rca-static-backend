@@ -1,0 +1,35 @@
+<section class="container">
+    <section class="content">
+        <div class="page-header">
+            <span class="header-image left-outer"></span>
+            <span class="header-image left-inner"></span>
+            <h1 class="page-title">{{blogPage.title}}</h1>
+            <span class="header-image right-inner"></span>
+            <span class="header-image right-outer"></span>
+        </div>
+        <div *ngIf="!loading && !noPostsFound" class="sort-bar">
+            <select class="select-input" (change)="onSortPosts($event)">
+                <option *ngFor="let sortOption of sortOptions" [value]="sortOption.name">{{sortOption.text}}</option>
+            </select>
+        </div>
+        <div *ngIf="noPostsFound" class="no-posts">
+            <span class="pattern left-pattern"></span>
+            <div class="text-panel">
+                <h1>New Content Coming Soon!</h1>
+                <span class="footerline"></span>
+                <p>We are busily working away on fresh content. </p>
+                <p>Check back soon to catch the latest post.  </p>
+            </div>
+            <span class="pattern right-pattern"></span>
+        </div>
+        <div class="posts">
+            <div class="post-item" *ngFor="let post of posts">
+                <app-blog-post-card class="post-card"
+                                    id="{{post.id}}"
+                                    [postData]="post"></app-blog-post-card>
+            </div>
+        </div>
+        <app-load-more-button *ngIf="!noMore" (moreStuff)="onLoadMore()"></app-load-more-button>
+        <app-facebook-share class=""></app-facebook-share>
+    </section>
+</section>

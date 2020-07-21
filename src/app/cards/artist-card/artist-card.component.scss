@@ -1,0 +1,15 @@
+@import 'src/sass/card';
+
+.card-caption {
+    cursor: pointer;
+
+    .card-title {
+        margin: 0;
+    }
+
+    .card-description {
+        margin-top: 0;
+        max-height: 45px;
+        min-height: 55px;
+    }
+}

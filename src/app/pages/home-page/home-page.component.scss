@@ -1,0 +1,67 @@
+@import 'src/sass/page';
+@import 'src/sass/__variables';
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    .content-box {
+        margin: auto 20px;
+        max-width: 500px;
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 8px;
+        }
+    }
+}
+
+.underline {
+    background-image: url('/assets/underline/underline-orange.png');
+    background-position: left;
+    background-repeat: round;
+    background-size: contain;
+    width: 100%;
+    max-width: 360px;
+    height: 22px;
+    margin: 10px 0;
+
+    @media screen and (max-width: 350px) {
+        background-repeat: no-repeat;
+    }
+}
+
+.second-block {
+    display: flex;
+    margin: 5% auto;
+
+    .content-box {
+        margin: auto 20px;
+        max-width: 500px;
+    }
+}
+
+.artwork-feature {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    min-height: 250px;
+    max-width: 540px;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: $max-width-medium) {
+        width: 100%
+    }
+}
+// reverse second set of content boxes when small
+@media screen and (max-width: $max-width-medium) {
+    .second-block {
+        display: flex;
+        margin: 5% auto;
+        flex-wrap: wrap-reverse;
+    }
+}

@@ -1,0 +1,51 @@
+@import '__variables';
+
+.nav-bar {
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $accent-bg-color;
+    border-bottom: 1px solid $border-color;
+    top: 0;
+
+    .left-menu {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .right-menu {
+        display: flex;
+        align-items: stretch;
+    }
+
+    @media screen and (max-width: $max-menu-size) {
+        .site-nav {
+            display: none;
+            flex-wrap: wrap;
+            align-items: stretch;
+            visibility: collapse;
+            opacity: 0;
+        }
+    }
+
+    @media screen and (min-width: $min-menu-size) {
+        .site-nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

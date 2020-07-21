@@ -1,0 +1,39 @@
+<div class="card" *ngIf="artwork !== undefined">
+    <span (click)="viewArtworkDetail()" class="card-image" *ngIf="artwork.thumbnail">
+        <img src={{artwork?.thumbnail}} alt="Thumbnail image of artwork: {{artwork?.title}}, description: {{artwork?.description}}"/>
+    </span>
+    <span class="spinner" *ngIf="!artwork.thumbnail">
+        <app-artwork-spinner></app-artwork-spinner>
+    </span>
+    <div class="card-caption">
+        <h6 class="card-title">
+            <span (click)="viewArtworkDetail()">{{artwork?.title}}</span>
+        </h6>
+        <div class="card-description">
+            <span (click)="viewArtist()" class="artist">{{artwork?.artistName}}</span>
+            <br />
+            {{artwork?.description}}
+        </div>
+        <span class="more" (click)="viewArtworkDetail()">more...</span>
+        <div class="card-footer">
+            <span class="card-price">{{artwork?.price | currency}}</span>
+            <span *ngIf="!artwork.sold" class="card-button link snipcart-add-item"
+                  [attr.data-item-url]="artwork.url"
+                  [attr.data-item-id]="artwork.id"
+                  [attr.data-item-price]="artwork.price"
+                  [attr.data-item-description]="artwork.description"
+                  [attr.data-item-image]="artwork.thumbnail"
+                  [attr.data-item-name]="artwork.title"
+                  [attr.data-item-weight]="artwork.weight"
+                  [attr.data-item-width]="artwork.parcelWidth"
+                  [attr.data-item-height]="artwork.parcelHeight"
+                  [attr.data-item-length]="artwork.parcelLength">
+                Buy
+            </span>
+            <div *ngIf="artwork.sold" class="sold-box">
+                <span class="buy-btn">Buy</span>
+                <span class="sold">Sold</span>
+            </div>
+        </div>
+    </div>
+</div>

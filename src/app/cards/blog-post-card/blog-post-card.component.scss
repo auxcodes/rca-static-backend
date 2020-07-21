@@ -1,0 +1,88 @@
+@import 'src/sass/card';
+
+.card {
+
+    @media screen and (min-width: 401px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media screen and (min-width: 650px) {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .post-image {
+        cursor: pointer;
+        min-width: 200px;
+        min-height: 200px;
+        overflow: hidden;
+
+        img {
+            display: block;
+            max-height: 200px;
+            max-width: none;
+            margin: auto 0;
+        }
+    }
+
+    .card-caption {
+        cursor: pointer;
+        margin-top: auto;
+        padding: 20px 10px 10px 20px;
+
+        .card-title {
+            display: flex;
+            margin: 5px 0;
+
+            .blog-title {
+                font-size: 1.5rem;
+                text-transform: none;
+                color: $header-text-color;
+
+                &:hover {
+                    text-decoration: none;
+                    border-bottom: none;
+                }
+            }
+
+            .publish-date {
+                font-size: 0.8rem;
+                font-weight: normal;
+                color: $light-body-color;
+                margin: auto 12px auto auto;
+
+                &:hover {
+                    text-decoration: none;
+                    border-bottom: none;
+                }
+            }
+        }
+
+        .card-description {
+            margin-top: 0;
+            max-height: 79px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-footer {
+            box-shadow: 0px -26px 25px #fff;
+
+            .read-more {
+                justify-content: flex-end;
+                margin: 0 auto;
+                text-align: center;
+                text-decoration: none;
+                background: #fff;
+                padding: 10px 10px;
+                color: #c84c36;
+                position: relative;
+                font-weight: 700;
+                transition: box-shadow 0.15s;
+                cursor: pointer;
+                font-size: 16px;
+            }
+        }
+    }
+}

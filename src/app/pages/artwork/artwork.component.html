@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="content">
+        <span (click)="onBack()" class="back-btn"><span class="arrow"></span><span class="text-block">BACK</span></span>
+        <span (click)="onNextImage()" class="images" *ngIf="artwork.images">
+            <img src={{artwork?.images[imageIndex]?.url}} alt="{{artwork?.description}}" />
+        </span>
+        <app-artwork-spinner class="images" *ngIf="!artwork.images"></app-artwork-spinner>
+        <div class="thumbnails" *ngIf="artwork.images">
+            <img (click)="onZoomImage(image.id)" id="image.id" *ngFor="let image of artwork.images" src={{image.thumbnailUrl}}>
+        </div>
+        <div class="caption">
+            <h6 class="title">
+                <span>{{artwork?.title}}</span>
+            </h6>
+            <div class="description">
+                <span (click)="viewArtist()" class="artist">{{artwork?.artistName}}</span>
+                <br />
+                {{artwork?.description}}
+            </div>
+            <div class="details">
+                <span class="underline name-underline"></span>
+                <span class="label">Type:<span class="item">{{artwork?.type}}</span></span>
+                <span class="label">Medium:<span class="item">{{artwork?.medium}}</span></span>
+                <span class="label">Completed On:<span class="item">{{artwork?.completionDate}}</span></span>
+                <span class="label">Completion Time:<span class="item">{{artwork?.completionTime}}</span></span>
+                <span class="label">Dimensions: <span class="item">w: {{artwork?.dimensions?.width}}cm</span><span class="item"> h: {{artwork?.dimensions?.height}}cm</span><span class="item">d: {{artwork?.dimensions?.length}}cm</span></span>
+                <span class="label">Packaging: <span class="item">{{artwork?.packaging}}</span></span>
+                <span class="label">Copyright:<span class="copyright" [innerHtml]="artwork.copyright"></span></span>
+            </div>
+        </div>
+        <span class="underline footer-underline"></span>
+        <div class="footer">
+            <span class="price">{{artwork?.price | currency}}</span>
+            <span *ngIf="!artwork.sold || artwork === undefined" class="buy-button link snipcart-add-item"
+                  [attr.data-item-id]="artwork.id"
+                  [attr.data-item-name]="artwork.title"
+                  [attr.data-item-url]="artwork.url"
+                  [attr.data-item-price]="artwork.price"
+                  [attr.data-item-description]="artwork.description"
+                  [attr.data-item-image]="artwork.thumbnail"
+                  [attr.data-item-weight]="artwork.weight"
+                  [attr.data-item-width]="artwork.parcelWidth"
+                  [attr.data-item-height]="artwork.parcelHeight"
+                  [attr.data-item-length]="artwork.parcelLength">
+                Buy
+            </span>
+            <div *ngIf="artwork.sold" class="sold-box">
+                <span class="buy-btn">Buy</span>
+                <span class="sold">Sold</span>
+            </div>
+        </div>
+    </div>
+    <app-facebook-share class=""></app-facebook-share>
+</div>

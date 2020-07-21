@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="content" *ngIf="artist !== undefined">
+        <span (click)="onBack()" class="back-btn"><span class="arrow"></span><span class="text-block">BACK</span></span>
+        <div *ngIf="artist.photo" class="photo-panel">
+            <span class="pattern left-pattern"></span>
+            <div class="photo-box" [style.background-image]="backgroundImage()">
+                <span class="corner-image top-left"></span>
+                <span class="center-filler"></span>
+                <span class="corner-image bottom-right"></span>
+            </div>
+            <span class="pattern right-pattern"></span>
+        </div>
+        <app-artwork-spinner class="photo" *ngIf="!artist.photo"></app-artwork-spinner>
+        <div class="caption">
+            <h6 class="name">
+                <span>{{artist.name}}</span>
+            </h6>
+            <span class="underline name-underline"></span>
+            <div class="biography" [innerHtml]="artistBiography()">
+            </div>
+            <div class="footer">
+                <span class="underline footer-underline"></span>
+                <!--<span (click)="viewArtistsArtwork()" class="art-button link">Artwork</span>-->
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item" id="artwork{{art.id}}" *ngFor="let art of artworks">
+                <app-artwork-card class="artwork-card" [artworkData]="art"></app-artwork-card>
+            </div>
+        </div>
+    </div>
+    <app-facebook-share class=""></app-facebook-share>
+</div>

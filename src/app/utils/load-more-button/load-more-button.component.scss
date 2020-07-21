@@ -1,0 +1,38 @@
+@import 'src/sass/__variables';
+
+.load-more-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+
+    .load-more-btn {
+        background: $highlight-btn-color;
+        box-shadow: 0 1px 3px #464646;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 700;
+        justify-content: flex-end;
+        margin: 0 auto;
+        padding: 10px 10px;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: box-shadow .15s;
+
+        .link {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        &:hover {
+            text-decoration: underline;
+            box-shadow: 0 7px 15px #828282;
+        }
+
+        &:active {
+            box-shadow: 0 1px 3px #464646;
+        }
+    }
+}

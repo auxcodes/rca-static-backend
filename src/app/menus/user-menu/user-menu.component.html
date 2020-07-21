@@ -1,0 +1,20 @@
+<ul class="account-link">
+    <li>
+        <button [className]="userProfileClass" (click)="onToggleMenu()">
+            <img src="/assets/icons/account_circle/account_circle.svg" alt="Account profile button image"/>
+        </button>
+    </li>
+    <li [className]="dropMenuClass">
+        <ul class="logged-in" *ngIf="isLoggedIn">
+            <li class="snipcart-user-profile">
+                <button (click)="onToggleMenu()">Orders</button>
+            </li>
+            <li class="snipcart-edit-profile">
+                <button (click)="onToggleMenu()">Profile</button>
+            </li>
+            <li class="snipcart-user-logout">
+                <button (click)="onToggleMenu()">Logout</button>
+            </li>
+        </ul>
+    </li>
+</ul>

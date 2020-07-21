@@ -1,0 +1,58 @@
+@import 'src/sass/__variables';
+@import 'src/sass/page';
+
+.groups {
+    display: flex;
+    width: auto;
+    margin: 0 auto;
+    max-width: 750px;
+
+    .content-ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        list-style-type: none;
+        margin: auto;
+        padding: 16px;
+        min-height: 2.5rem;
+
+        li, a {
+            font-family: "Lato", Helvetica, Arial, sans-serif;
+            text-decoration: none;
+            height: min-content;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .link-header {
+            color: $link-text-color;
+            font-size: 1.125rem;
+            padding: 16px;
+            margin-bottom: 25px;
+            text-align: start;
+            border-left: 1px solid $border-color;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+            font-size: 1rem;
+            text-align: start;
+            padding: 16px 0 0 0;
+
+            li {
+                padding: 5px 16px;
+            }
+
+            a {
+
+                &:link, &:visited {
+                    color: $footer-links-color;
+                }
+            }
+        }
+    }
+}

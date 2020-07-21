@@ -1,0 +1,19 @@
+<div class="card">
+    <span (click)="viewArtistDetail()" class="card-image" *ngIf="artist.thumbnail">
+        <img src={{artist.thumbnail}} alt="Thumbnail image of artist: {{artist.name}}"/>
+    </span>
+    <span class="spinner" *ngIf="!artist.thumbnail">
+        <app-artwork-spinner></app-artwork-spinner>
+    </span>
+    <div class="card-caption" (click)="viewArtistDetail()">
+        <h6 class="card-title">
+            <span (click)="viewArtistDetail()">{{artist.name}}</span>
+        </h6>
+        <div class="card-description" [innerHtml]="artistBiography()">
+        </div>
+        <span class="more">more...</span>
+        <div class="card-footer">
+            <span (click)="viewArtistsArtwork()" class="card-button link">Artwork</span>
+        </div>
+    </div>
+</div>

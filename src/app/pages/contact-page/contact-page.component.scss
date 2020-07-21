@@ -1,0 +1,184 @@
+@import 'src/sass/__variables';
+@import 'src/sass/page';
+
+
+.content {
+    .contact-intro {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+            margin: 50px auto 0 auto;
+            width: 90%;
+            max-width: 567px;
+
+            span {
+                line-height: 1.5;
+                white-space: pre-wrap;
+                text-align: center;
+            }
+
+            .footerline {
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 100%;
+                height: auto;
+                min-height: 19px;
+                background-image: url('/assets/footer/news-bar-orange.png');
+                background-position: center;
+                margin: 16px auto;
+            }
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .content-parent {
+        margin-bottom: 0;
+
+        .content-box {
+            .contact-details {
+                max-width: 500px;
+                width: 90%;
+                line-height: 1.5;
+                margin: 0 auto;
+
+
+                .row {
+                    display: flex;
+                    flex-direction: row;
+                    border-bottom: 1px solid $border-color;
+                    padding: 7px 5px;
+
+                    .label {
+                        color: $title-text-color;
+                        text-align: left;
+                        width: 30%;
+                    }
+
+                    .detail {
+                        text-align: right;
+                        width: 70%;
+                    }
+
+                    .socials {
+                        display: flex;
+                        flex-direction: column;
+                        width: 70%;
+
+                        a {
+                            text-align: right;
+                            color: $base-text-color;
+                        }
+                    }
+
+                    &:last-of-type {
+                        border-bottom: 1px solid transparent;
+                    }
+                }
+            }
+
+            .footerline {
+                display: block;
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 80%;
+                height: auto;
+                min-height: 24px;
+                background-image: url('/assets/artist-page/footer-underline.png');
+                background-position: center;
+                margin: 24px auto 16px auto;
+            }
+
+            .form-content {
+                display: flex;
+                justify-content: center;
+
+                form {
+                    max-width: 500px;
+                    width: 90%;
+                }
+
+                .invalid-form {
+                    color: $error-text-color;
+                    font-weight: 700;
+                    text-align: start;
+                }
+
+                .form-success {
+                    color: $success-text-color;
+                    font-weight: 700;
+                    text-align: start;
+                }
+
+                .row {
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        color: $title-text-color;
+                    }
+
+                    input, textarea {
+                        width: 100%;
+                        max-width: 500px;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid $border-color;
+                        box-sizing: border-box;
+                        transition: box-shadow .15s;
+
+                        &:focus {
+                            box-shadow: 0 4px 8px $btn-box-shadow-high;
+                        }
+                    }
+
+                    button {
+                        max-width: 80px;
+                        background-color: #c84c36;
+                        color: white;
+                        padding: 10px 10px;
+                        margin: 10px 0 0 0;
+                        border: none;
+                        cursor: pointer;
+                        font-size: 1.25em;
+                        box-shadow: 0 1px 3px #464646;
+                        transition: box-shadow .15s;
+
+                        &:hover {
+                            text-decoration: underline;
+                            box-shadow: 0 7px 15px $btn-box-shadow-high;
+                        }
+
+                        &:active {
+                            box-shadow: 0 1px 3px $btn-box-shadow-low;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.map-container {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+
+    iframe {
+        display: block;
+        width: 90%;
+        max-width: 1000px;
+        height: auto;
+        min-height: 300px;
+        border: 0;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,41 @@
+<footer class="footer-bar">
+    <div class="footer-bar-content">
+        <div class="copyright content-box">
+            &copy;{{date}} {{name}} |
+            <span class="address">&#9751; {{address}} | </span>
+            <span class="phone">&#9742; {{phone}} | </span>
+            <span class="abn"><span class="abn-label">ABN: </span>{{abn}}</span>
+            <ul class="links">
+                <li *ngFor="let link of footer.links">
+                    <a href="{{link.path ? link.path : link.url}}">{{link.name}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="newsletter content-box">
+            <div class="newsletter-header">
+                <span class="news-bar"></span>
+                <span class="header-text">{{footer.title}}</span>
+            </div>
+            <span class="info">
+                {{footer.text}}
+            </span>
+            <div *ngIf="submitted && subForm.email.errors" class="invalid-form">
+                <div *ngIf="subForm.email.errors.required">Email is required</div>
+                <div *ngIf="subForm.email.errors.email">Email must be a valid email address</div>
+            </div>
+            <div *ngIf="subscribed" class="form-success">Subscription successful!</div>
+            <form [formGroup]="subscribeForm" (ngSubmit)="onSubscribe(subscribeForm.value)">
+                <input id="name" class="name" formControlName="name"
+                       type="text" placeholder="name"
+                       onfocus="this.placeholder=''" onblur="this.placeholder='name'"
+                       required aria-label="name input field for newsletter subscription">
+                <input id="newsEmail" class="email" formControlName="email"
+                       type="email" placeholder="youremail@example.com"
+                       onfocus="this.placeholder=''" onblur="this.placeholder='youremail@example.com'"
+                       required aria-label="email input field for newsletter subscription">
+                <button type="submit" aria-label="Submit email address button">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</footer>
+

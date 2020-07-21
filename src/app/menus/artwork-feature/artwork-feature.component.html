@@ -1,0 +1,25 @@
+
+<section class="carousel-wrapper" #carouselOuter>
+    <ul class="carousel-inner" #carousel [ngStyle]="carouselSliderStyle">
+        <li *ngFor="let item of items;" class="carousel-item" [ngStyle]="carouselItemStyle">
+            <a [href]="item?.url" class="item" [ngStyle]="itemStyle" [style.background-image]="backgroundImage(item?.thumbnail)">
+                <span class="item-img"></span>
+                <span class="item-text">
+                    <span class="item-title">{{item?.title}}</span>
+                    <span class="item-subtext">{{item?.artistName}}</span>
+                </span>
+            </a> 
+        </li>
+    </ul>
+    <div class="carousel-buttons" *ngIf="options.showControls && items?.length > 1">
+        <button class="arrow prev-button" (click)="prev()"> </button>
+        <button class="arrow next-button" (click)="next()"> </button>
+    </div>
+    <div class="scroll-position" *ngIf="items.length > 1">
+        <span class="" [id]="i"
+              *ngFor="let item of items, let isFirst = first; let i = index"
+              [class.active-dot]="isFirst"
+              [ngClass]="{'dot': items && items.length > 1}">
+        </span>
+    </div>
+</section>

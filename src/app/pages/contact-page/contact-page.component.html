@@ -1,0 +1,75 @@
+<section class="container">
+    <section class="content">
+        <div class="page-header">
+            <span class="header-image left-outer"></span>
+            <span class="header-image left-inner"></span>
+            <h1 class="page-title">{{contactPage.title}}</h1>
+            <span class="header-image right-inner"></span>
+            <span class="header-image right-outer"></span>
+        </div>
+        <div class="contact-intro">
+            <section class="contact-text">
+                <span>{{contactPage.contactText}}</span>
+                <span class="footerline"></span>
+            </section>
+            <img src="{{logo?.url}}" alt="{{logo?.altText}}" />
+        </div>
+        <div class="content-parent">
+            <div class="content-box">
+                <section class="contact-details">
+                    <div class="row"><span class="label">Phone:</span> <span class="detail">{{contactPage.phone}}</span></div>
+                    <div class="row"><span class="label">Email:</span>  <span class="detail">{{contactPage.email}}</span></div>
+                    <div class="row"><span class="label">Address:</span><span class="detail">{{contactPage.address}}</span></div>
+                    <div class="row"><span class="label">Business Name:</span> <span class="detail">{{contactPage.businessName}}</span></div>
+                    <div class="row"><span class="label">ABN: </span> <span class="detail">{{contactPage.abn}}</span></div>
+                    <div class="row">
+                        <span class="label">Social Media: </span>
+                        <span class="socials">
+                            <a *ngFor="let social of contactPage.socialMedia" href="{{social.url}}">{{social.name}}</a>
+                        </span>
+                    </div>
+                </section>
+                <span class="footerline"></span>
+            </div>
+            <div class="content-box">
+                <section class="form-content">
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+                        <div class="row">
+                            <label title="This field is required" for="name" class="required">
+                                Name:
+                            </label>
+                            <div *ngIf="submitted && conForm.name.errors" class="invalid-form">
+                                <div *ngIf="conForm.name.errors.required">Name is required</div>
+                            </div>
+                            <input id="name" formControlName="name" type="text" placeholder="Your Name" onfocus="this.placeholder=''" onblur="this.placeholder='Your Name'" required>
+                        </div>
+                        <div class="row">
+                            <label title="This field is required" class="required" for="email">
+                                E-mail:
+                            </label>
+                            <div *ngIf="submitted && conForm.email.errors" class="invalid-form">
+                                <div *ngIf="conForm.email.errors.required">Email is required</div>
+                                <div *ngIf="conForm.email.errors.email">Email must be a valid email address</div>
+                            </div>
+                            <input id="email" formControlName="email" type="email" placeholder="you@example.com" onfocus="this.placeholder=''" onblur="this.placeholder='you@example.com'" required>
+                        </div>
+                        <div class="row">
+                            <label title="This field is required" class="required" for="message">Message:</label>
+                            <div *ngIf="submitted && conForm.message.errors" class="invalid-form">
+                                <div *ngIf="conForm.message.errors.required">Message is required</div>
+                                <div *ngIf="conForm.message.errors.minlength">Message must be longer than that!</div>
+                            </div>
+                            <textarea id="message" formControlName="message" rows="5" cols="20" placeholder="Hi …" onfocus="this.placeholder=''" onblur="this.placeholder='Hi …'" required></textarea>
+                        </div>
+                        <div class="row">
+                            <div *ngIf="contacted" class="form-success">Sent successfully!</div>
+                            <button type="submit" aria-label="Submit button for sending contact form">Send</button>
+                        </div>
+                    </form>
+                </section>
+                <span class="footerline"></span>
+            </div>
+        </div>
+    <app-facebook-share class=""></app-facebook-share>
+    </section>
+</section>

@@ -1,0 +1,62 @@
+<section class="container">
+    <section class="content">
+        <div class="page-header">
+            <span class="header-image left-outer"></span>
+            <span class="header-image left-inner"></span>
+            <h1 class="page-title">{{title}}</h1>
+            <span class="header-image right-inner"></span>
+            <span class="header-image right-outer"></span>
+        </div>
+        <section *ngIf="!loggedIn" class="form-content">
+            <form (ngSubmit)="signIn()" #loginForm="ngForm">
+                <div class="row">
+                    <label>Email:</label>
+                    <input type="email"
+                           placeholder="youremail@example.com"
+                           [(ngModel)]="email"
+                           name="email" maxlength="254"
+                           onfocus="this.placeholder=''" onblur="this.placeholder='youremail@example.com'" required />
+                </div>
+                <div class="row">
+                    <label>Password:</label>
+                    <input placeholder="Password"
+                           [(ngModel)]="password"
+                           name="password" maxlength="70" type="password"
+                           onfocus="this.placeholder=''" onblur="this.placeholder='password'" required />
+                </div>
+                <div class="row">
+                    <button [disabled]="!loginForm.form.valid" type="submit">
+                        Sign In
+                    </button>
+                    <p *ngIf="errorMsg" class="text-danger">{{errorMsg}}</p>
+                </div>
+            </form>
+        </section>
+        <section *ngIf="loggedIn" class="manager-links">
+            <div class="user">
+                <div class="user-details">
+                    <div class="row">
+                        <span class="label">Name:</span><span class="text">{{user.name}}</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Email:</span><span class="text">{{user.email}}</span>
+                    </div>
+                </div>
+                <button class="open-btn" (click)="signOut()">Logout</button>
+            </div>
+            <ul class="links">
+                <li *ngFor="let link of manageLinks">
+                    <div class="text-block">
+                        <a href="{{link.relativePath ? link.relativePath : link.url}}" target="_blank">{{link.text}}</a>
+                        <span>{{link.description}}</span>
+                    </div>
+                    <button class="open-btn"
+                            (click)="link.relativePath ? openPath( link.relativePath) : openUrl(link.url)"
+                            attr.aria-label="Navigation button, {{link.text}}">
+                        Open
+                    </button>
+                </li>
+            </ul>
+        </section>
+    </section>
+</section>

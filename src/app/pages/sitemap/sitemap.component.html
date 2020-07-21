@@ -1,0 +1,23 @@
+<section class="container">
+    <section class="content">
+        <div class="page-header">
+            <span class="header-image left-outer"></span>
+            <span class="header-image left-inner"></span>
+            <h1 class="page-title">{{content.title}}</h1>
+            <span class="header-image right-inner"></span>
+            <span class="header-image right-outer"></span>
+        </div>
+        <div class="groups">
+            <ul class="content-ul">
+                <li class="link-header" *ngFor="let group of linkGroups">
+                    {{group.text}}
+                    <ul class="links">
+                        <li *ngFor="let link of group.links">
+                            <a href="{{link.path ? link.path : link.url}}">{{link.name}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>

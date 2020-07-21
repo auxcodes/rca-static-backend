@@ -1,0 +1,148 @@
+@import 'src/sass/navbar';
+@import 'src/sass/__variables';
+
+.logo {
+    display: flex;
+    border-bottom: 1px solid transparent;
+    transition: all .3s;
+
+
+    button {
+        background: none;
+        border: 0;
+        border-bottom: 1px solid transparent;
+        color: $nav-logo-text;
+        cursor: pointer;
+        font-family: "Lato", Helvetica, Arial, sans-serif;
+        margin: 0 10px;
+        //background-image: radial-gradient(white, transparent) /* Appears Grey in xcode sim */
+    }
+
+    @media screen and (max-width: $max-menu-size) {
+        button {
+            margin: 0;
+        }
+    }
+
+    .site-name {
+        display: none;
+    }
+
+    img {
+        padding: 0;
+        vertical-align: middle;
+        margin: 2px 0 0 0;
+        max-height: 57px;
+    }
+
+
+    &:hover {
+        background-color: $nav-hover-bg-color;
+        border-bottom-color: $nav-hover-border-color;
+    }
+}
+
+@media screen and (min-width: $min-menu-size) {
+    .burger-site-link {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: $max-menu-size) {
+    .burger-site-link {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        .burger-open {
+
+            button {
+                background-color: $nav-hover-bg-color;
+                background-image: url('/assets/icons/navigation/menu_close.svg');
+            }
+        }
+
+        .burger-btn {
+            background: none;
+            background-image: url('/assets/icons/navigation/menu.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 62px;
+            width: 62px;
+            border: 0;
+            border-bottom: 1px solid transparent;
+            cursor: pointer;
+            display: flex;
+            padding: 19px 16px 18px 16px;
+            transition: all .3s;
+
+            &:hover {
+                background-color: $nav-hover-bg-color;
+                border-bottom-color: $nav-hover-border-color;
+            }
+
+            img {
+                color: $link-text-color;
+                margin: auto;
+                padding: 0;
+            }
+        }
+
+        .drop-open {
+            background-color: $nav-hover-bg-color;
+
+            ul {
+                display: flex;
+                opacity: 1;
+                visibility: visible;
+                z-index: 1;
+            }
+        }
+
+        ul {
+            border-left: 1px solid $border-color;
+            border-right: 1px solid $border-color;
+            display: none;
+            flex-direction: column;
+            list-style-type: none;
+            margin-left: 0px;
+            opacity: 0;
+            padding: 0px;
+            position: fixed;
+            transition: all 0.5s ease;
+            visibility: hidden;
+            width: 100%;
+            max-width: 130px;
+
+            li {
+                background-color: $accent-bg-color;
+                border-bottom: 1px solid $border-color;
+                cursor: pointer;
+                display: flex;
+
+                &:hover {
+                    border-bottom-color: $nav-hover-border-color;
+                    background-color: $nav-hover-bg-color;
+                }
+
+                button {
+                    border: 0;
+                    padding: 0;
+                    background: none;
+                    color: $link-text-color;
+                    font-family: "Lato", Helvetica, Arial, sans-serif;
+                    font-size: 1.125rem;
+                    text-align: center;
+                    text-decoration: none;
+                    border-bottom: 1px solid transparent;
+                    transition: all .3s;
+                    cursor: pointer;
+                    padding: 16px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@import 'src/sass/card';
+@import url(//fonts.googleapis.com/css?family=Candal&display=swap);
+
+.card-price {
+    justify-content: flex-start;
+    color: $light-body-color;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0 10px 0 0;
+}
+
+.sold-box {
+    display: inline-flex;
+    justify-content: flex-end;
+    position: relative;
+
+    .buy-btn {
+        background: #c84c36;
+        box-shadow: 0 1px 3px $btn-box-shadow-low;
+        color: #fff;
+        font-weight: 700;
+        margin: 0 0 0 auto;
+        padding: 10px 10px;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .sold {
+        background: $sold-art-color;
+        box-shadow: 0 1px 3px $btn-box-shadow-low;
+        border: 4px solid #fff;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.75rem;
+        font-family: 'Candal', sans-serif;
+        justify-content: flex-end;
+        margin: 0 0 0 auto;
+        padding: 0px 11px 5px 11px;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        transform: rotate(-25deg) translate(20px, 6px);
+        right: 0px;
+        bottom: -10px;
+        z-index: 1;
+    }
+}

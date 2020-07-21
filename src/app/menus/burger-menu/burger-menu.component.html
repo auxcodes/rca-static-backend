@@ -1,0 +1,23 @@
+<ul class="burger-site-link">
+    <li [className]="burgerMenuClass">
+        <button class="burger-btn" (click)="onToggleMenu()" aria-label="Navigation menu button">
+        </button>
+    </li>
+    <li [className]="dropMenuClass">
+        <ul>
+            <li class="site-link" *ngFor="let link of routerLinks">
+                <button routerLink={{link.path}} attr.aria-label="Navigation button, {{link.text}}" (click)="onToggleMenu()">
+                    <span class="link-text">{{link.text}}</span>
+                </button>
+            </li>
+        </ul>
+    </li>
+</ul>
+<div class="logo">
+    <button routerLink={{logoLink}} aria-label="Company Logo button to home page">
+        <img src="{{logoImage?.thumbnailUrl}}" alt="{{logoImage?.altText}}"/>
+        <span class="site-name">
+            <span class="first">{{firstLetter}}</span>{{siteName}}
+        </span>
+    </button>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="content" *ngIf="postData !== undefined">
+        <span (click)="onBack()" class="back-btn"><span class="arrow"></span><span class="text-block">BACK</span></span>
+        <div #postImage class="post-image-collapsed" (click)="onToggleExpand()">
+            <img src={{postData.thumbnail}} alt="Thumbnail image for blog post: {{postData.title}}" />
+        </div>
+        <div class="post-header">
+            <span class="post-title"> {{postData.title}}</span>
+            <span *ngIf="postData.author" class="post-author">Author: {{postData.author}}</span>
+        </div>
+        <span class="divider"></span>
+        <app-inner-html [htmlContent]="postData.content"></app-inner-html>
+        <span class="divider"></span>
+        <div class="post-date">
+            <span class="published">Published On: {{postData.publishDate | date:'mediumDate'}}</span>
+            <span class="updated">Last Updated: {{postData.updatedOn | date:'mediumDate'}}</span>
+        </div>
+    </div>
+    <app-facebook-share class=""></app-facebook-share>
+</div>

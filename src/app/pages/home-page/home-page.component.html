@@ -1,0 +1,25 @@
+<section class="container">
+    <section class="content">
+        <div class="content-parent">
+            <div class="content-box">
+                <h1>{{homePage?.title}}</h1>
+                <span class="underline"></span>
+                <span [innerHtml]="homePageContent('textBlockOne')"></span>
+            </div>
+            <artwork-carousel class="artwork-feature" *ngIf="homePage?.carouselOne && homePage?.carouselOne?.artworks.length > 0"
+                              [items]="homePage?.carouselOne?.artworks"
+                              [options]="homePage?.carouselOne?.options">
+            </artwork-carousel>
+        </div>
+        <div class="second-block">
+            <artwork-carousel class="artwork-feature" *ngIf="homePage?.carouselTwo && homePage?.carouselTwo?.artworks.length > 0"
+                              [items]="homePage?.carouselTwo?.artworks"
+                              [options]="homePage?.carouselTwo?.options">
+            </artwork-carousel>
+            <div class="content-box">
+                <span [innerHtml]="homePageContent('textBlockTwo')"></span>
+            </div>
+        </div>
+    </section>
+    <app-facebook-share class=""></app-facebook-share>
+</section>

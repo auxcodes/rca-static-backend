@@ -1,0 +1,114 @@
+@import 'src/sass/__variables';
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $border-color;
+    margin: 35px 0 35px 0;
+
+    .header-image {
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: auto;
+        max-height: 35px;
+        justify-self: center;
+    }
+
+    .left-outer {
+        background-image: url('/assets/page-header/left-outer.png');
+        background-position: right;
+    }
+
+    .left-inner {
+        background-image: url('/assets/page-header/left-inner.png');
+        background-position: left;
+    }
+
+    .page-title {
+        text-align: center;
+        padding: 0 10px 16px 10px;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .right-inner {
+        background-image: url('/assets/page-header/right-inner.png');
+        background-position: right;
+    }
+
+    .right-outer {
+        background-image: url('/assets/page-header/right-outer.png');
+        background-position: left;
+    }
+}
+
+.content {
+    width: 100%;
+
+    .content-parent {
+        display: flex;
+        margin: 5% auto;
+    }
+
+    .policy-content {
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 800px;
+        text-align: justify;
+    }
+
+    .content-box {
+        margin: 0 20px;
+        flex-basis: 50%;
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        p {
+            line-height: 1.5;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        span {
+            line-height: 1.5;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .pre-wrap {
+            line-height: 1.5;
+            display: inline-block;
+            vertical-align: middle;
+            white-space: pre-wrap;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    @media screen and (max-width: $max-width-medium) {
+        .content-parent {
+            flex-wrap: wrap;
+        }
+
+        .content-box {
+            flex-basis: 100%;
+            align-content: center;
+            margin: 20px 0;
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+        }
+    }
+}

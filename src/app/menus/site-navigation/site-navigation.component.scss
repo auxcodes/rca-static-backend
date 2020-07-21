@@ -1,0 +1,29 @@
+@import 'src/sass/navbar';
+
+.site-link {
+    display: flex;
+    padding: 0;
+    border-bottom: 1px solid transparent;
+    transition: all .3s;
+
+    &:hover {
+        background-color: $nav-hover-bg-color;
+        border-bottom-color: $nav-hover-border-color;
+    }
+
+    button {
+        background: none;
+        border: 0;
+        border-bottom: 1px solid transparent;
+        color: $link-text-color;
+        cursor: pointer;
+        padding: 16px 16px 10px 16px;
+    }
+
+    .link-text {
+        font-family: "Lato", Helvetica, Arial, sans-serif;
+        text-align: left;
+        vertical-align: middle;
+        font-size: 1.125rem;
+    }
+}

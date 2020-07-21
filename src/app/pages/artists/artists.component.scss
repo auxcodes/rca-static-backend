@@ -1,0 +1,64 @@
+@import 'src/sass/page';
+
+.content {
+    width: 100%;
+
+    .artists {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 20px auto;
+    }
+
+    .artists.is-loading {
+        visibility: hidden;
+    }
+
+    .artists-item {
+        margin: 20px 10px 30px 10px;
+        min-width: 200px;
+        max-width: 250px;
+    }
+
+    @media screen and (max-width: 2000px) {
+        .artists {
+            margin: 0 auto;
+        }
+    }
+
+    @media screen and (min-width: 401px) {
+        .artists {
+            margin: 0 auto;
+        }
+
+        .artists-item {
+            width: (100%);
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        .artists {
+            margin: 20px;
+        }
+
+        .artists-item {
+            width: (100% / 3);
+        }
+    }
+
+    @media screen and (min-width: 1100px) {
+        .artists-item {
+            width: (100% / 5);
+        }
+    }
+
+    @media screen and (min-width: 1400px) {
+        .artists-item {
+            width: (100% / 6);
+        }
+    }
+
+}

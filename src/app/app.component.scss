@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+
+    .nav-header {
+        top: 0;
+        width: 100%;
+    }
+
+    .content {
+        flex: 1 0 auto;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer {
+        flex-shrink: 0;
+        position: relative;
+        bottom: 0;
+        width: 90%;
+        margin: 0 auto;
+    }
+}

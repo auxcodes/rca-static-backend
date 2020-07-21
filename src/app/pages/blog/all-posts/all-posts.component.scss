@@ -1,0 +1,120 @@
+@import 'src/sass/page';
+
+.content {
+    width: 100%;
+
+    .page-header {
+        margin-bottom: 10px;
+    }
+
+    .sort-bar {
+        display: flex;
+        margin: 0;
+
+        .select-input {
+            margin: 0 20px 0 auto;
+            transition: all 0.5s linear;
+            background-color: transparent;
+            border: 1px solid $border-color;
+            box-sizing: border-box;
+            padding: 8px 20px;
+            padding-right: 10px;
+            cursor: pointer;
+            color: #c84c36;
+            font: 700 1.125rem "Lato";
+
+            option {
+                padding: 12px 20px;
+            }
+
+            &:focus {
+                box-shadow: 0 4px 8px $btn-box-shadow-high;
+            }
+        }
+    }
+
+    .posts {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 0 auto;
+
+        .post-item {
+            margin: 20px 10px 20px 10px;
+            min-width: 200px;
+        }
+    }
+
+    .no-posts {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        min-height: 300px;
+
+        .pattern {
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: auto;
+            max-height: 340px;
+            background-position: center;
+            margin: 40px 0;
+
+            @media screen and (max-width: 665px) {
+                width: 0;
+            }
+        }
+
+        @media screen and (min-width: 665px) {
+            .left-pattern {
+                background-image: url('/assets/artist-page/left-pattern.png');
+                margin-right: 5px;
+            }
+
+            .right-pattern {
+                background-image: url('/assets/artist-page/right-pattern.png');
+                margin-left: 5px;
+            }
+        }
+
+        .text-panel {
+            display: flex;
+            flex-direction: column;
+            margin: 2em auto;
+            border: 1px solid #e1e1e1;
+            padding: 20px;
+            max-width: 500px;
+            min-width: 60%;
+
+            h1 {
+                color: #943c3e;
+                margin: 1rem auto 0.5rem auto;
+                text-align: center;
+            }
+
+            p {
+                margin: 0.5rem auto;
+                text-align: center;
+            }
+
+            .footerline {
+                display: block;
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 100%;
+                min-height: 16px;
+                background-image: url('/assets/footer/news-bar-red.png');
+                background-position: center;
+                margin: 10px auto 16px auto;
+            }
+        }
+    }
+
+    .posts.is-loading {
+        visibility: hidden;
+    }
+}

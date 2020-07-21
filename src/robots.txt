@@ -1,0 +1,3 @@
+user-agent: *
+disallow:
+sitemap: https://rca.aux.codes/sitemap.xml

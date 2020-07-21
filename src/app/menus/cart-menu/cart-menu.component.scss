@@ -1,0 +1,22 @@
+@import 'src/sass/navbar';
+
+.cart-link {
+    background: none;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    padding: 19px 16px 18px 16px;
+    transition: all .3s;
+
+    &:hover {
+        background-color: $nav-hover-bg-color;
+        border-bottom-color: $nav-hover-border-color;
+    }
+
+    img {
+        color: $link-text-color;
+        margin: auto;
+        padding: 0;
+    }
+}

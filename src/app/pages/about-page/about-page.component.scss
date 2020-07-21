@@ -1,0 +1,17 @@
+@import 'src/sass/page';
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.footerline {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 80%;
+    height: auto;
+    min-height: 24px;
+    background-image: url('/assets/artist-page/footer-underline.png');
+    background-position: center;
+    margin: 24px auto 16px auto;
+}
+
