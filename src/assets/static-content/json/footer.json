@@ -1,0 +1,40 @@
+{
+    "data":
+    {
+        "signup_title": "Newsletter",
+        "signup_text": "Sign up for news about new artwork and sales.",
+        "links": [
+            {
+                "name": "Contact Us",
+                "url": "",
+                "path": "contact",
+                "group": ""
+            },
+            {
+                "name": "Privacy",
+                "url": "",
+                "path": "privacy",
+                "group": ""
+            },
+            {
+                "name": "Terms & Conditions",
+                "url": "",
+                "path": "terms",
+                "group": ""
+            },
+            {
+                "name": "Delivery & Returns",
+                "url": "",
+                "path": "returns",
+                "group": ""
+            },
+            {
+                "name": "Site Map",
+                "url": "",
+                "path": "sitemap",
+                "group": ""
+            }
+        ],
+        "groups": []
+    }
+}

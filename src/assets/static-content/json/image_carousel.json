@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "auto_scroll": true,
+            "auto_scroll_time": 1000,
+            "image_spacing": 10,
+            "scroll_speed": 1000,
+            "show_controls": true,
+            "artworks": [9, 23, 11, 29]
+        },
+        {
+            "id": 2,
+            "auto_scroll": false,
+            "auto_scroll_time": 1000,
+            "image_spacing": 10,
+            "scroll_speed": 1000,
+            "show_controls": false,
+            "artworks": [5]
+        }
+    ]
+}

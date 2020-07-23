@@ -1,0 +1,77 @@
+{
+    "data": [
+        {
+            "description": "Rise Community Art Store is a not for profit organisation providing a space for Aboriginal artists to display and sell their work to the public.",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 1,
+            "title": "Home Page"
+        },
+        {
+            "description": "Rise Community Art Store is a not for profit organisation providing a space for Aboriginal artists to display and sell their work to the public.",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 2,
+            "title": "Rise Community Art"
+        },
+        {
+            "description": "Rise Community is a not for profit organisation providing a space for Aboriginal artists to display and sell their work to the public.",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 3,
+            "title": "About Page"
+        },
+        {
+            "description": "Artists in the local community creating artwork that helps support their community...",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 4,
+            "title": "Artists"
+        },
+        {
+            "description": "All artwork is created by local artists in the community that helps support their community...",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 5,
+            "title": "Artwork"
+        },
+        {
+            "description": "We would love to here from you...",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 6,
+            "title": "Contact Us"
+        },
+        {
+            "description": "We take your privacy seriously as if it were our own...",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 7,
+            "title": "Privacy Policy"
+        },
+        {
+            "description": "The terms and conditions listed below are for...",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 8,
+            "title": "Terms and Conditions"
+        },
+        {
+            "description": "To return artwork that has been purchased...",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 9,
+            "title": "Return Policy"
+        },
+        {
+            "description": "All artwork is created by local artists in the community that helps support their community...",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store",
+            "id": 10,
+            "title": "Gallery"
+        },
+        {
+            "description": "Find your way around RISE Community Art website",
+            "keywords": "Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 11,
+            "title": "Site Map"
+        },
+        {
+            "description": "Catch up on the latest news on new artists and new artwork that has been add to RISE Community Art",
+            "keywords": "Blog, Posts, Art News, Art Gallery, Traditional Art, Aboriginal Art, Art Store, RISE, Community",
+            "id": 12,
+            "title": "Blog Posts"
+        }
+    ],
+    "public": true
+}

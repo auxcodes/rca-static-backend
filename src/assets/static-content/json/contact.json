@@ -1,0 +1,18 @@
+{
+    "data": {
+        "phone": "1300 360 562",
+        "address": "Level 5, 10 Bridge St, Sydney NSW 2000",
+        "seo_settings": 6,
+        "abn": "58 636 745 983",
+        "business_name": "Rise Community Art",
+        "title": "Say Hello",
+        "id": 1,
+        "contact_text": "Whether you are an aspiring Artist, Government partner or a customer looking to commission some work we’d love to hear from you!",
+        "email": "info@risecommunityart.com.au",
+        "location": {
+            "lat": -33.86344909000653,
+            "lng": 151.20819211006167
+        }
+    },
+    "public": true
+}

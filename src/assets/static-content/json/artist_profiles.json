@@ -1,0 +1,158 @@
+{
+    "data": [
+        {
+            "photo": 16,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 1,
+            "display_name": "Vivienne Nabangardi Napiljarri Brown",
+            "biography": "<p>Vivienne is an Aboriginal woman from Karnturlpa region in Northern Territory, Australia. She now lives in Tennant Creek and speaks Warlpiri and Warnumpa.<span style=\"background-color: var(--white); letter-spacing: 0.01em;\">Vivienne has sold paintings to Ex-Prime Minister Malcolm Turnbull and to Royal Family<br><\/span><p><span style=\"background-color: var(--white); letter-spacing: 0.01em;\">Vivienne was brought up by her Aunt Gwen Brown who is her mother, after the death of her birth mother Rita Limbiari at a young age. Her father is Mark Jungarri Brown from Karntuplpa, west of Tennant Creek.<\/span><\/p><\/p><p>Vivienne has two sisters and one brother:<\/p><p>•\tFabian Brown (Jabangardi Japiljarri)<\/p><p>•\tKristen Brown (Nabangardi Napiljarri)<br><p><span style=\"background-color: var(--white); letter-spacing: 0.01em;\">•\tAlexandra Brown (Jabangardi)<\/span><\/p><\/p><p>Vivienne’s passion is Dot Painting which she started doing because of her aunts, mother and sisters all did paintings of Blue Berry Hill (west side of town). <br>Vivienne started painting at the age of five (5) and continues today.<\/p>"
+        },
+        {
+            "photo": 42,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 4,
+            "display_name": "Michael Murimal",
+            "biography": "<p>Michael was born in Katherine and is currently living in Binjari.<br>Michael's is from the Waterman (Mother's Side) and Wadeye (Father's side) tribes.<br>Michael has been painting for around 35 years and was taught by his Uncle.<br>He is the baby of a family of four, which includes two older sisters and an older brother. <br><\/p>"
+        },
+        {
+            "photo": 42,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 5,
+            "display_name": "Rachel Camphoo",
+            "biography": "<p>Rachel was born in Katherine and currently lives in Tennant Creek.<br>Rachel is from the Kayetye tribe and her skin name is Ampetyane.<br>Rachel has been creating art since the age of 15 and is currently working out of the Karguru art centre.<br><\/p>"
+        },
+        {
+            "photo": 42,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 6,
+            "display_name": "Ranita Ross \/ Napanangka",
+            "biography": "<p>Ranita was born in Alice Springs, Northern Territory, and is currently living in Tennant Creek Karguru Camp. <\/p><p>Ranita is an Alyawarr woman who has been painting for over twenty years, starting at the age of eighteen. <\/p><p>She enjoys sharing family stories through her art.<\/p><p>Ranita’s skin name is Napanangka<\/p>"
+        },
+        {
+            "photo": 41,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 7,
+            "display_name": "Gabrielle Barney",
+            "biography": "<p> Gabrielle was born in Carnarvon and she has been living in Carnarvon all her life. <br>She belongs to Ingarda Aboriginal clan (people from Carnarvon to South of Geraldton Western Australia) Gabrielle is a beautiful daughter of Edna Barney and Wilfred Hart, she has four   step sisters and one step brother. <br> Gabrielle gets along well with her family and they have been supporting her to achieve her  dreams and  goals.<\/p><p>Through engaging CDP Creative arts programme, Gabriella has developed her skills and has now become a good   artist. <br>Gabrielle has been painting for four years now. She has displayed her art work for exhibition   in Geraldton and has sold a number of her   paintings locally and through art exhibitions.<\/p>"
+        },
+        {
+            "photo": 43,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 8,
+            "display_name": "Patricia Curtis Forbes",
+            "biography": "<p>Patricia was born in Tenant Creek and is currently living in the Beswick Community.<br>Patricia's father is from the Warramunga and Walpirri people, her mother is from the Luritja and Western Arrernte people.<br>Patricia has been painting for over thirty years.<br><\/p><p><br><\/p>"
+        },
+        {
+            "photo": 42,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 9,
+            "display_name": "Suzie Pope",
+            "biography": "<p>Suzie was born on Stirling Station near Wilora in Northern Territory and now lives in Tennant Creek, Northern Territory.<\/p><p>Suzie’s skin name is “Ngamparti”<\/p><p>Suzie is an Alywawarr woman – Alywararr are an Australian Aboriginal people or language group from the Northern Territory with traditional lands extending over some 17800 square miles.<\/p><p>Suzie started painting and doing other forms of art at the age of fifteen.<\/p>"
+        },
+        {
+            "photo": 102,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 10,
+            "display_name": "Phyllis Walden",
+            "biography": "<p>Phyllis is currently living on a station near Cairns.<br>She started painting at the age of thirty.<br><\/p>"
+        },
+        {
+            "photo": 42,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 11,
+            "display_name": "Roslin Dick",
+            "biography": "<p>Roslin lives in Charleville Queensland and is from the Waanyi people.<br>She started painting at the age of forty.<\/p>"
+        },
+        {
+            "photo": 63,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 12,
+            "display_name": "Robert Tilmouth",
+            "biography": "<p>Robert was born in Aileron station N.T. He was born in Aileron station N.T, he currently lives in Docker River and hes from Anmatjere people.&nbsp;<br><\/p>"
+        },
+        {
+            "photo": 42,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 13,
+            "display_name": "Michelle Pope",
+            "biography": "<p>Michelle was born on Meryvale Station and currently lives in Tennant Creek. <\/p><p> <\/p><p>Michelle is Anmatyerr and started painting at the age of thirteen. <\/p><p> <\/p><p>The Anmatyerre are Aboriginal Australian people of the Northern Territory, who speak one of the Upper Arrernte languages.&nbsp;<\/p>"
+        },
+        {
+            "photo": 42,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 15,
+            "display_name": "Ena Mangaraka",
+            "biography": null
+        },
+        {
+            "photo": 42,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 16,
+            "display_name": "Jasmine Brown (Napaljarri)",
+            "biography": "<p>Jasmine’s skin name is “Napaljarri”<\/p><p>Jasmine was born in Alice Springs and now lives in Tennant Creek.<\/p><p>Jasmine is Warlpiri and Warlmanpa woman&nbsp;<span style=\"background-color: var(--white); letter-spacing: 0.01em;\">&nbsp;<br><\/span><p>Jasmine started painting at 16 years of age.&nbsp;<span style=\"background-color: var(--white); letter-spacing: 0.01em;\"><br><\/span><\/p><\/p>"
+        },
+        {
+            "photo": 103,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 17,
+            "display_name": "Jeanette Walden",
+            "biography": "<p>Jeanette was born in Mount Isa in Queensland, she now lives in Tennant creek, Northen Territory&nbsp;<br>Jeanette is Gangalidda women - whos land is the gulf of Carpentaria,&nbsp;Jeanette started painting over 10 years ago.&nbsp;Jeanette&nbsp; has sold and has artwork at the Kagura Art Center&nbsp;<br><\/p>"
+        },
+        {
+            "photo": 104,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 18,
+            "display_name": "Felicity Edwards",
+            "biography": "<p>Felicity was born in Ampliatwatja and currently lives in Tennant Creek, Northern Territory.<\/p><p>Felicity is an Alyawarra woman - The Alyawarra people are also known as the Iliaura. They are an Aboriginal Australian people, or language group, from the Northern Territory.<\/p><p>Felicity has been painting from the age of twenty-four.&nbsp;<\/p>"
+        },
+        {
+            "photo": 109,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 19,
+            "display_name": "Paula Nelson",
+            "biography": "<p>Paula’s skin name is “Napangardi”<\/p><p>Paula was born in Ali Curung, Northern Territory. She now lives in Tennant Creek, Northern Territory.<\/p><p>Paula is a Warlpiri woman. The Warlpiri, sometimes referred to as Yapa, are a group of Indigenous Australians, many of whom speak the Warlpiri language.<\/p><p>Paula has been an artist for some time now and enjoys painting locations and stories to share with others.<\/p>"
+        },
+        {
+            "photo": 42,
+            "visible": true,
+            "created_on": null,
+            "updated_on": null,
+            "id": 20,
+            "display_name": "Trisha Jones",
+            "biography": "<p>Trisha was born in Alice Springs, and now lives in Tennant Creek <\/p><p>Trisha is a Alyawarra oman<\/p><p>Trisha has been painting for a number of years now and has art work at the Kargura art centre.<\/p>"
+        }
+    ],
+    "public": true
+}

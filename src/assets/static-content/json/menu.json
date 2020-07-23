@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "position": "1",
+            "name": "home",
+            "path": "home",
+            "text": "Home"
+        },
+        {
+            "id": 2,
+            "position": "2",
+            "name": "gallery",
+            "path": "gallery",
+            "text": "Gallery"
+        },
+        {
+            "id": 3,
+            "position": "3",
+            "name": "artists",
+            "path": "artists",
+            "text": "Artists"
+        },
+        {
+            "id": 4,
+            "position": "4",
+            "name": "news",
+            "path": "news",
+            "text": "News"
+        },
+        {
+            "id": 5,
+            "position": "5",
+            "name": "about",
+            "path": "about",
+            "text": "About Us"
+        }
+    ]
+}
