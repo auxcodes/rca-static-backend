@@ -28,7 +28,6 @@ export class HomePageService {
         private cmsItems: CmsItemsService,
         private cmsImage: CmsImageService,
         private carouselService: ArtworkCarouselService) {
-
     }
 
     getContent() {
@@ -42,14 +41,14 @@ export class HomePageService {
 
     private async homePageItems() {
         await this.cmsItems.getItem('home', 1)
-            .then((home) => {
+            .then(home => {
                 const page: HomePage = {
-                    title: home.data.title,
-                    textBlockOne: home.data.text_area_one,
-                    textBlockTwo: home.data.text_area_two,
+                    title: home.title,
+                    textBlockOne: home.text_area_one,
+                    textBlockTwo: home.text_area_two,
                     carouselOne: undefined,
                     carouselTwo: undefined,
-                    seoIndex: home.data.seo_settings,
+                    seoIndex: home.seo_settings,
                     seo: undefined
                 };
                 this.carouselService.carouselId('home_artwork_carousel')

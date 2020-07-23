@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CmsClientService } from './cms-client.service';
 
+
+
 @Injectable({
     providedIn: 'root'
 })
@@ -20,7 +22,7 @@ export class CmsItemsService {
 
     async getItem(collection: string, primaryKey: number, params?: object) {
         try {
-            return this.cmsClient.client.getItem(collection, primaryKey, params);
+            return this.cmsClient.getItem(collection, primaryKey, params);
         }
         catch (e) {
             console.log('Error getting item: ', e);

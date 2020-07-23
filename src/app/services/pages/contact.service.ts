@@ -46,15 +46,15 @@ export class ContactService {
         await this.cmsItems.getItem('contact', 1)
             .then((contact) => {
                 let page: Contact = {
-                    title: contact.data.title,
-                    contactText: contact.data.contact_text,
-                    email: contact.data.email,
-                    phone: contact.data.phone,
-                    address: contact.data.address,
-                    abn: contact.data.abn,
-                    businessName: contact.data.business_name,
-                    socialMedia: contact.data.social_media,
-                    seoIndex: contact.data.seo_settings,
+                    title: contact.title,
+                    contactText: contact.contact_text,
+                    email: contact.email,
+                    phone: contact.phone,
+                    address: contact.address,
+                    abn: contact.abn,
+                    businessName: contact.business_name,
+                    socialMedia: contact.social_media,
+                    seoIndex: contact.seo_settings,
                     seo: undefined
                 };
                 this.getLinkIds().then(data => {
