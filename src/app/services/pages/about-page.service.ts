@@ -37,13 +37,13 @@ export class AboutPageService {
 
     async aboutPageItems() {
         await this.cmsItems.getItem('about', 1)
-            .then((about) => {
-                let page: AboutPage = {
-                    title: about.data.title,
-                    text: about.data.text_area,
-                    imageIndex: about.data.image,
+            .then(about => {
+                const page: AboutPage = {
+                    title: about.title,
+                    text: about.text_area,
+                    imageIndex: about.image,
                     image: undefined,
-                    seoIndex: about.data.seo_settings,
+                    seoIndex: about.seo_settings,
                     seo: undefined
                 };
                 this.aboutPageImages(page.imageIndex).then(image => page.image = image);

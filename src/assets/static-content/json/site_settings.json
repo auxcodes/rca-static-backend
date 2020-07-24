@@ -6,7 +6,8 @@
         "website_name": "Rise Community Art",
         "global_seo_settings": 2,
         "site_logo": 64,
-        "url": "https:\/\/risecommunityart.com.au"
+        "url": "https:\/\/rca.aux.codes",
+        "menu_ids": [1,2,3,4,5]
     },
     "public": true
 }

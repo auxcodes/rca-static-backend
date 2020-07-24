@@ -45,7 +45,6 @@ export class ContactService {
     async contactPageItems() {
         await this.cmsItems.getItem('contact', 1)
             .then(contact => {
-                console.log("Contact content: ", contact);
                 const page: Contact = {
                     title: contact.title,
                     contactText: contact.contact_text,

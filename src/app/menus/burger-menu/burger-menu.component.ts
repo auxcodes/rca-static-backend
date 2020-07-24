@@ -25,15 +25,19 @@ export class BurgerMenuComponent implements OnInit{
         private pagesService: PagesService,
         private siteService: SiteSettingsService) {
         pagesService.getNavbarLinks().subscribe(navbar => {
-            this.routerLinks = navbar.menuItems;
-            this.logoImage = navbar.logo;
+            if (navbar) {
+                this.routerLinks = navbar.menuItems;
+                this.logoImage = navbar.logo;
+            }
         });
     }
 
     ngOnInit() {
         this.siteService.content.subscribe(content => {
-            this.firstLetter = content.siteName.charAt(0);
-            this.siteName = content.siteName.substr(1);
+            if (content.siteName) {
+                this.firstLetter = content.siteName.charAt(0);
+                this.siteName = content.siteName.substr(1);
+            }
         });    
     }
 

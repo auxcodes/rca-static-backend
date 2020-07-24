@@ -24,8 +24,8 @@ export class CmsImageService {
 
     async getImage(index: number): Promise<CMSImage> {
         let image: any;
-        await this.cmsClient.client.get(`/files/${index}`)
-            .then(item => image = item.data)
+        await this.cmsClient.getImage(index)
+            .then(item => image = item)
             .catch(error => console.log('Error getting image: ', error));
 
         if (image === undefined) {
@@ -37,8 +37,8 @@ export class CmsImageService {
 
     async getImages(artworId: number): Promise<CMSImage[]> {
         let images: any[];
-        await this.cmsClient.client.getItems('artwork_directus_files', { filter: { artwork_id: { eq: artworId } } })
-            .then(items => images = items.data)
+        await this.cmsClient.getItems('artwork_directus_files', { filter: { artwork_id: { eq: artworId } } })
+            .then(items => images = items)
             .catch(error => console.log('Error getting images: ', error));
 
         if (images.length === 0) {
@@ -49,20 +49,20 @@ export class CmsImageService {
     }
 
     resizeImageUrl(imageFileName: string, size: number, quality: string) {
-        return environment.rootDir + '/thumbnail/_/' + size + '/' + size + '/contain/' + quality + '/' + imageFileName;
+        return environment.rootDir + imageFileName;
     }
 
     mapImage(index: number, item: any): CMSImage {
         try {
-            const image: CMSImage = item.data !== undefined ? {
+            const image: CMSImage = item !== undefined ? {
                 id: index,
                 filename: item.filename,
                 height: item.height,
                 width: item.width,
-                relativeUrl: item.data.url,
-                url: environment.rootDir + item.data.url,
-                thumbnailRelativeUrl: '/thumbnail/_/250/250/crop/okay/' + item.filename,
-                thumbnailUrl: environment.rootDir + '/thumbnail/_/250/250/crop/okay/' + item.filename,
+                relativeUrl: item.url,
+                url: item.url,
+                thumbnailRelativeUrl: item.url,
+                thumbnailUrl: item.url,
                 altText: item.title
             } : this.brokenImage;
             return image;

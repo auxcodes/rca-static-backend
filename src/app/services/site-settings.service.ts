@@ -53,11 +53,11 @@ export class SiteSettingsService {
                 };
                 this.content.next(info);
                 this.seoSettings(info.global_seo_settings).then(seo => site.seo = seo);
-                //this.siteInfoImages(info.data.site_logo)
-                //    .then(image => {
-                //        site.siteLogo = image;
-                //        this.content.next(site);
-                //    });
+                this.siteInfoImages(info.site_logo)
+                    .then(image => {
+                        site.siteLogo = image;
+                        this.content.next(site);
+                    });
             })
             .catch(error => {
                 console.log('Error getting site info contents: ', error)

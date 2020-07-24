@@ -1,39 +1,25 @@
 {
-    "sample": {
-        "id": 0,
-        "filename": "",
-        "height": "",
-        "width": "",
-        "relativeUrl": "/assets/static-content/images/",
-        "url": "/assets/static-content/images/",
-        "thumbnailRelativeUrl": "/assets/static-content/images/",
-        "thumbnailUrl": "/assets/static-content/images/",
-        "altText": ""      
-    },
     "data": [
-        {
-            "id": [3,4,10]
-        },
         {
             "id": 16,
             "filename": "viviennetenant-profilephoto.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/viviennetenant-profilephoto.jpg",
-            "url": "/assets/static-content/images/viviennetenant-profilephoto.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/viviennetenant-profilephoto.jpg",
-            "thumbnailUrl": "/assets/static-content/images/viviennetenant-profilephoto.jpg",
-            "altText": ""      
+            "relativeUrl": "assets/static-content/images/viviennetenant-profilephoto.jpg",
+            "url": "assets/static-content/images/viviennetenant-profilephoto.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/viviennetenant-profilephoto.jpg",
+            "thumbnailUrl": "assets/static-content/images/viviennetenant-profilephoto.jpg",
+            "altText": ""  
         },
         {
             "id": 42,
             "filename": "artist-profile-icon.png",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/artist-profile-icon.png",
-            "url": "/assets/static-content/images/artist-profile-icon.png",
-            "thumbnailRelativeUrl": "/assets/static-content/images/artist-profile-icon.png",
-            "thumbnailUrl": "/assets/static-content/images/artist-profile-icon.png",
+            "relativeUrl": "assets/static-content/images/artist-profile-icon.png",
+            "url": "assets/static-content/images/artist-profile-icon.png",
+            "thumbnailRelativeUrl": "assets/static-content/images/artist-profile-icon.png",
+            "thumbnailUrl": "assets/static-content/images/artist-profile-icon.png",
             "altText": ""      
         },
         {
@@ -41,10 +27,10 @@
             "filename": "bush-tucker-phyliss-walder-medium.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/bush-tucker-phyliss-walder-medium.jpg",
-            "url": "/assets/static-content/images/bush-tucker-phyliss-walder-medium.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/bush-tucker-phyliss-walder-medium.jpg",
-            "thumbnailUrl": "/assets/static-content/images/bush-tucker-phyliss-walder-medium.jpg",
+            "relativeUrl": "assets/static-content/images/bush-tucker-phyliss-walder-medium.jpg",
+            "url": "assets/static-content/images/bush-tucker-phyliss-walder-medium.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/bush-tucker-phyliss-walder-medium.jpg",
+            "thumbnailUrl": "assets/static-content/images/bush-tucker-phyliss-walder-medium.jpg",
             "altText": ""      
         },
         {
@@ -52,10 +38,10 @@
             "filename": "dsc04004.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/dsc04004.jpg",
-            "url": "/assets/static-content/images/dsc04004.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/dsc04004.jpg",
-            "thumbnailUrl": "/assets/static-content/images/dsc04004.jpg",
+            "relativeUrl": "assets/static-content/images/dsc04004.jpg",
+            "url": "assets/static-content/images/dsc04004.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/dsc04004.jpg",
+            "thumbnailUrl": "assets/static-content/images/dsc04004.jpg",
             "altText": ""      
         },
         {
@@ -63,10 +49,10 @@
             "filename": "felicity-edwards-photo.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/felicity-edwards-photo.jpg",
-            "url": "/assets/static-content/images/felicity-edwards-photo.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/felicity-edwards-photo.jpg",
-            "thumbnailUrl": "/assets/static-content/images/felicity-edwards-photo.jpg",
+            "relativeUrl": "assets/static-content/images/felicity-edwards-photo.jpg",
+            "url": "assets/static-content/images/felicity-edwards-photo.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/felicity-edwards-photo.jpg",
+            "thumbnailUrl": "assets/static-content/images/felicity-edwards-photo.jpg",
             "altText": ""      
         },
         {
@@ -74,10 +60,10 @@
             "filename": "jeanette-walden-photo.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/jeanette-walden-photo.jpg",
-            "url": "/assets/static-content/images/jeanette-walden-photo.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/jeanette-walden-photo.jpg",
-            "thumbnailUrl": "/assets/static-content/images/jeanette-walden-photo.jpg",
+            "relativeUrl": "assets/static-content/images/jeanette-walden-photo.jpg",
+            "url": "assets/static-content/images/jeanette-walden-photo.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/jeanette-walden-photo.jpg",
+            "thumbnailUrl": "assets/static-content/images/jeanette-walden-photo.jpg",
             "altText": ""      
         },
         {
@@ -85,10 +71,10 @@
             "filename": "paula-nelson-photo.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/paula-nelson-photo.jpg",
-            "url": "/assets/static-content/images/paula-nelson-photo.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/paula-nelson-photo.jpg",
-            "thumbnailUrl": "/assets/static-content/images/paula-nelson-photo.jpg",
+            "relativeUrl": "assets/static-content/images/paula-nelson-photo.jpg",
+            "url": "assets/static-content/images/paula-nelson-photo.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/paula-nelson-photo.jpg",
+            "thumbnailUrl": "assets/static-content/images/paula-nelson-photo.jpg",
             "altText": ""      
         },
         {
@@ -96,10 +82,10 @@
             "filename": "phyliss-walden-photo.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/phyliss-walden-photo.jpg",
-            "url": "/assets/static-content/images/phyliss-walden-photo.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/phyliss-walden-photo.jpg",
-            "thumbnailUrl": "/assets/static-content/images/phyliss-walden-photo.jpg",
+            "relativeUrl": "assets/static-content/images/phyliss-walden-photo.jpg",
+            "url": "assets/static-content/images/phyliss-walden-photo.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/phyliss-walden-photo.jpg",
+            "thumbnailUrl": "assets/static-content/images/phyliss-walden-photo.jpg",
             "altText": ""      
         },
         {
@@ -107,10 +93,10 @@
             "filename": "profile-photo-gabriellle-barney.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/profile-photo-gabriellle-barney.jpg",
-            "url": "/assets/static-content/images/profile-photo-gabriellle-barney.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/profile-photo-gabriellle-barney.jpg",
-            "thumbnailUrl": "/assets/static-content/images/profile-photo-gabriellle-barney.jpg",
+            "relativeUrl": "assets/static-content/images/profile-photo-gabriellle-barney.jpg",
+            "url": "assets/static-content/images/profile-photo-gabriellle-barney.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/profile-photo-gabriellle-barney.jpg",
+            "thumbnailUrl": "assets/static-content/images/profile-photo-gabriellle-barney.jpg",
             "altText": ""      
         },
         {
@@ -118,10 +104,10 @@
             "filename": "profile-photo-patrica-curtis-cropped.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/profile-photo-patrica-curtis-cropped.jpg",
-            "url": "/assets/static-content/images/profile-photo-patrica-curtis-cropped.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/profile-photo-patrica-curtis-cropped.jpg",
-            "thumbnailUrl": "/assets/static-content/images/profile-photo-patrica-curtis-cropped.jpg",
+            "relativeUrl": "assets/static-content/images/profile-photo-patrica-curtis-cropped.jpg",
+            "url": "assets/static-content/images/profile-photo-patrica-curtis-cropped.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/profile-photo-patrica-curtis-cropped.jpg",
+            "thumbnailUrl": "assets/static-content/images/profile-photo-patrica-curtis-cropped.jpg",
             "altText": ""      
         },
         {
@@ -129,10 +115,10 @@
             "filename": "untitled-design-8-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-8-.jpg",
-            "url": "/assets/static-content/images/untitled-design-8-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-8-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-8-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-8-.jpg",
+            "url": "assets/static-content/images/untitled-design-8-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-8-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-8-.jpg",
             "altText": ""      
         },
         {
@@ -140,10 +126,10 @@
             "filename": "honey-ants-rachel-camphoo-closeup-1500px.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/honey-ants-rachel-camphoo-closeup-1500px.jpg",
-            "url": "/assets/static-content/images/honey-ants-rachel-camphoo-closeup-1500px.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/honey-ants-rachel-camphoo-closeup-1500px.jpg",
-            "thumbnailUrl": "/assets/static-content/images/honey-ants-rachel-camphoo-closeup-1500px.jpg",
+            "relativeUrl": "assets/static-content/images/honey-ants-rachel-camphoo-closeup-1500px.jpg",
+            "url": "assets/static-content/images/honey-ants-rachel-camphoo-closeup-1500px.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/honey-ants-rachel-camphoo-closeup-1500px.jpg",
+            "thumbnailUrl": "assets/static-content/images/honey-ants-rachel-camphoo-closeup-1500px.jpg",
             "altText": ""      
         },
         {
@@ -151,10 +137,10 @@
             "filename": "untitled-design-2-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-2-.jpg",
-            "url": "/assets/static-content/images/untitled-design-2-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-2-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-2-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-2-.jpg",
+            "url": "assets/static-content/images/untitled-design-2-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-2-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-2-.jpg",
             "altText": ""      
         },
         {
@@ -162,10 +148,10 @@
             "filename": "rainbow-serpent-with-artist-gabriellle-barney-cropped.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/rainbow-serpent-with-artist-gabriellle-barney-cropped.jpg",
-            "url": "/assets/static-content/images/rainbow-serpent-with-artist-gabriellle-barney-cropped.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/rainbow-serpent-with-artist-gabriellle-barney-cropped.jpg",
-            "thumbnailUrl": "/assets/static-content/images/rainbow-serpent-with-artist-gabriellle-barney-cropped.jpg",
+            "relativeUrl": "assets/static-content/images/rainbow-serpent-with-artist-gabriellle-barney-cropped.jpg",
+            "url": "assets/static-content/images/rainbow-serpent-with-artist-gabriellle-barney-cropped.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/rainbow-serpent-with-artist-gabriellle-barney-cropped.jpg",
+            "thumbnailUrl": "assets/static-content/images/rainbow-serpent-with-artist-gabriellle-barney-cropped.jpg",
             "altText": ""      
         },
         {
@@ -173,10 +159,10 @@
             "filename": "untitled-design-1.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-1.jpg",
-            "url": "/assets/static-content/images/untitled-design-1.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-1.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-1.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-1.jpg",
+            "url": "assets/static-content/images/untitled-design-1.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-1.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-1.jpg",
             "altText": ""      
         },
         {
@@ -184,10 +170,10 @@
             "filename": "witchety-grubs-patrica-curtis-full.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/witchety-grubs-patrica-curtis-full.jpg",
-            "url": "/assets/static-content/images/witchety-grubs-patrica-curtis-full.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/witchety-grubs-patrica-curtis-full.jpg",
-            "thumbnailUrl": "/assets/static-content/images/witchety-grubs-patrica-curtis-full.jpg",
+            "relativeUrl": "assets/static-content/images/witchety-grubs-patrica-curtis-full.jpg",
+            "url": "assets/static-content/images/witchety-grubs-patrica-curtis-full.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/witchety-grubs-patrica-curtis-full.jpg",
+            "thumbnailUrl": "assets/static-content/images/witchety-grubs-patrica-curtis-full.jpg",
             "altText": ""      
         },
         {
@@ -195,10 +181,10 @@
             "filename": "untitled-design-13-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-13-.jpg",
-            "url": "/assets/static-content/images/untitled-design-13-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-13-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-13-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-13-.jpg",
+            "url": "assets/static-content/images/untitled-design-13-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-13-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-13-.jpg",
             "altText": ""      
         },
         {
@@ -206,10 +192,10 @@
             "filename": "untitled-design-4-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-4-.jpg",
-            "url": "/assets/static-content/images/untitled-design-4-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-4-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-4-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-4-.jpg",
+            "url": "assets/static-content/images/untitled-design-4-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-4-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-4-.jpg",
             "altText": ""      
         },
         {
@@ -217,10 +203,10 @@
             "filename": "bush-plums-roslin-dick-original-1500px.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/bush-plums-roslin-dick-original-1500px.jpg",
-            "url": "/assets/static-content/images/bush-plums-roslin-dick-original-1500px.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/bush-plums-roslin-dick-original-1500px.jpg",
-            "thumbnailUrl": "/assets/static-content/images/bush-plums-roslin-dick-original-1500px.jpg",
+            "relativeUrl": "assets/static-content/images/bush-plums-roslin-dick-original-1500px.jpg",
+            "url": "assets/static-content/images/bush-plums-roslin-dick-original-1500px.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/bush-plums-roslin-dick-original-1500px.jpg",
+            "thumbnailUrl": "assets/static-content/images/bush-plums-roslin-dick-original-1500px.jpg",
             "altText": ""      
         },
         {
@@ -228,10 +214,10 @@
             "filename": "untitled-design-3-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-3-.jpg",
-            "url": "/assets/static-content/images/untitled-design-3-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-3-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-3-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-3-.jpg",
+            "url": "assets/static-content/images/untitled-design-3-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-3-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-3-.jpg",
             "altText": ""      
         },
         {
@@ -239,24 +225,21 @@
             "filename": "untitled-design-11-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-11-.jpg",
-            "url": "/assets/static-content/images/untitled-design-11-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-11-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-11-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-11-.jpg",
+            "url": "assets/static-content/images/untitled-design-11-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-11-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-11-.jpg",
             "altText": ""      
-        },
-        {
-            "id": 16"
         },
         {
             "id": 17,
             "filename": "untitled-design-6-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-6-.jpg",
-            "url": "/assets/static-content/images/untitled-design-6-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-6-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-6-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-6-.jpg",
+            "url": "assets/static-content/images/untitled-design-6-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-6-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-6-.jpg",
             "altText": ""      
         },
         {
@@ -264,10 +247,10 @@
             "filename": "untitled-design-7-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-7-.jpg",
-            "url": "/assets/static-content/images/untitled-design-7-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-7-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-7-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-7-.jpg",
+            "url": "assets/static-content/images/untitled-design-7-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-7-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-7-.jpg",
             "altText": ""      
         },
         {
@@ -275,10 +258,10 @@
             "filename": "logo-medium-784w.png",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/logo-medium-784w.png",
-            "url": "/assets/static-content/images/logo-medium-784w.png",
-            "thumbnailRelativeUrl": "/assets/static-content/images/logo-medium-784w.png",
-            "thumbnailUrl": "/assets/static-content/images/logo-medium-784w.png",
+            "relativeUrl": "assets/static-content/images/logo-medium-784w.png",
+            "url": "assets/static-content/images/logo-medium-784w.png",
+            "thumbnailRelativeUrl": "assets/static-content/images/logo-medium-784w.png",
+            "thumbnailUrl": "assets/static-content/images/logo-medium-784w.png",
             "altText": ""      
         },
         {
@@ -286,10 +269,10 @@
             "filename": "untitled-design-17-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-17-.jpg",
-            "url": "/assets/static-content/images/untitled-design-17-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-17-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-17-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-17-.jpg",
+            "url": "assets/static-content/images/untitled-design-17-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-17-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-17-.jpg",
             "altText": ""      
         },
         {
@@ -297,10 +280,10 @@
             "filename": "untitled-design-18-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-18-.jpg",
-            "url": "/assets/static-content/images/untitled-design-18-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-18-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-18-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-18-.jpg",
+            "url": "assets/static-content/images/untitled-design-18-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-18-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-18-.jpg",
             "altText": ""      
         },
         {
@@ -308,10 +291,10 @@
             "filename": "untitled-design-19-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-19-.jpg",
-            "url": "/assets/static-content/images/untitled-design-19-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-19-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-19-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-19-.jpg",
+            "url": "assets/static-content/images/untitled-design-19-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-19-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-19-.jpg",
             "altText": ""      
         },
         {
@@ -319,10 +302,10 @@
             "filename": "untitled-design-21-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-21-.jpg",
-            "url": "/assets/static-content/images/untitled-design-21-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-21-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-21-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-21-.jpg",
+            "url": "assets/static-content/images/untitled-design-21-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-21-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-21-.jpg",
             "altText": ""      
         },
         {
@@ -330,10 +313,10 @@
             "filename": "untitled-design-23-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-23-.jpg",
-            "url": "/assets/static-content/images/untitled-design-23-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-23-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-23-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-23-.jpg",
+            "url": "assets/static-content/images/untitled-design-23-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-23-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-23-.jpg",
             "altText": ""      
         },
         {
@@ -341,10 +324,10 @@
             "filename": "untitled-design-24-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-24-.jpg",
-            "url": "/assets/static-content/images/untitled-design-24-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-24-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-24-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-24-.jpg",
+            "url": "assets/static-content/images/untitled-design-24-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-24-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-24-.jpg",
             "altText": ""      
         },
         {
@@ -352,10 +335,10 @@
             "filename": "untitled-design-25-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-25-.jpg",
-            "url": "/assets/static-content/images/untitled-design-25-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-25-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-25-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-25-.jpg",
+            "url": "assets/static-content/images/untitled-design-25-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-25-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-25-.jpg",
             "altText": ""      
         },
         {
@@ -363,10 +346,10 @@
             "filename": "untitled-design-27-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-27-.jpg",
-            "url": "/assets/static-content/images/untitled-design-27-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-27-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-27-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-27-.jpg",
+            "url": "assets/static-content/images/untitled-design-27-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-27-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-27-.jpg",
             "altText": ""      
         },
         {
@@ -374,10 +357,10 @@
             "filename": "snake-with-logo-1.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/snake-with-logo-1.jpg",
-            "url": "/assets/static-content/images/snake-with-logo-1.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/snake-with-logo-1.jpg",
-            "thumbnailUrl": "/assets/static-content/images/snake-with-logo-1.jpg",
+            "relativeUrl": "assets/static-content/images/snake-with-logo-1.jpg",
+            "url": "assets/static-content/images/snake-with-logo-1.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/snake-with-logo-1.jpg",
+            "thumbnailUrl": "assets/static-content/images/snake-with-logo-1.jpg",
             "altText": ""      
         },
         {
@@ -385,10 +368,10 @@
             "filename": "untitled-design-38-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-38-.jpg",
-            "url": "/assets/static-content/images/untitled-design-38-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-38-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-38-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-38-.jpg",
+            "url": "assets/static-content/images/untitled-design-38-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-38-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-38-.jpg",
             "altText": ""      
         },
         {
@@ -396,10 +379,10 @@
             "filename": "untitled-design-39-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-39-.jpg",
-            "url": "/assets/static-content/images/untitled-design-39-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-39-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-39-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-39-.jpg",
+            "url": "assets/static-content/images/untitled-design-39-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-39-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-39-.jpg",
             "altText": ""      
         },
         {
@@ -407,10 +390,10 @@
             "filename": "untitled-design-42-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-42-.jpg",
-            "url": "/assets/static-content/images/untitled-design-42-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-42-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-42-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-42-.jpg",
+            "url": "assets/static-content/images/untitled-design-42-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-42-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-42-.jpg",
             "altText": ""      
         },
         {
@@ -418,10 +401,10 @@
             "filename": "untitled-design-46-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-46-.jpg",
-            "url": "/assets/static-content/images/untitled-design-46-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-46-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-46-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-46-.jpg",
+            "url": "assets/static-content/images/untitled-design-46-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-46-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-46-.jpg",
             "altText": ""      
         },
         {
@@ -429,10 +412,10 @@
             "filename": "20200303-132746-2-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/20200303-132746-2-.jpg",
-            "url": "/assets/static-content/images/20200303-132746-2-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/20200303-132746-2-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/20200303-132746-2-.jpg",
+            "relativeUrl": "assets/static-content/images/20200303-132746-2-.jpg",
+            "url": "assets/static-content/images/20200303-132746-2-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/20200303-132746-2-.jpg",
+            "thumbnailUrl": "assets/static-content/images/20200303-132746-2-.jpg",
             "altText": ""      
         },
         {
@@ -440,10 +423,10 @@
             "filename": "20200303-132904.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/20200303-132904.jpg",
-            "url": "/assets/static-content/images/20200303-132904.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/20200303-132904.jpg",
-            "thumbnailUrl": "/assets/static-content/images/20200303-132904.jpg",
+            "relativeUrl": "assets/static-content/images/20200303-132904.jpg",
+            "url": "assets/static-content/images/20200303-132904.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/20200303-132904.jpg",
+            "thumbnailUrl": "assets/static-content/images/20200303-132904.jpg",
             "altText": ""      
         },
         {
@@ -451,10 +434,10 @@
             "filename": "new-one.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/new-one.jpg",
-            "url": "/assets/static-content/images/new-one.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/new-one.jpg",
-            "thumbnailUrl": "/assets/static-content/images/new-one.jpg",
+            "relativeUrl": "assets/static-content/images/new-one.jpg",
+            "url": "assets/static-content/images/new-one.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/new-one.jpg",
+            "thumbnailUrl": "assets/static-content/images/new-one.jpg",
             "altText": ""      
         },
         {
@@ -462,10 +445,10 @@
             "filename": "untitled-design-52-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-52-.jpg",
-            "url": "/assets/static-content/images/untitled-design-52-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-52-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-52-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-52-.jpg",
+            "url": "assets/static-content/images/untitled-design-52-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-52-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-52-.jpg",
             "altText": ""      
         },
         {
@@ -473,10 +456,10 @@
             "filename": "untitled-design-53-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-53-.jpg",
-            "url": "/assets/static-content/images/untitled-design-53-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-53-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-53-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-53-.jpg",
+            "url": "assets/static-content/images/untitled-design-53-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-53-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-53-.jpg",
             "altText": ""      
         },
         {
@@ -484,10 +467,10 @@
             "filename": "untitled-design-55-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-55-.jpg",
-            "url": "/assets/static-content/images/untitled-design-55-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-55-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-55-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-55-.jpg",
+            "url": "assets/static-content/images/untitled-design-55-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-55-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-55-.jpg",
             "altText": ""      
         },
         {
@@ -495,10 +478,10 @@
             "filename": "untitled-design-54-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-54-.jpg",
-            "url": "/assets/static-content/images/untitled-design-54-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-54-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-54-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-54-.jpg",
+            "url": "assets/static-content/images/untitled-design-54-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-54-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-54-.jpg",
             "altText": ""      
         },
         {
@@ -506,10 +489,10 @@
             "filename": "untitled-design-56-.jpg",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/untitled-design-56-.jpg",
-            "url": "/assets/static-content/images/untitled-design-56-.jpg",
-            "thumbnailRelativeUrl": "/assets/static-content/images/untitled-design-56-.jpg",
-            "thumbnailUrl": "/assets/static-content/images/untitled-design-56-.jpg",
+            "relativeUrl": "assets/static-content/images/untitled-design-56-.jpg",
+            "url": "assets/static-content/images/untitled-design-56-.jpg",
+            "thumbnailRelativeUrl": "assets/static-content/images/untitled-design-56-.jpg",
+            "thumbnailUrl": "assets/static-content/images/untitled-design-56-.jpg",
             "altText": ""      
         },
         {
@@ -517,11 +500,23 @@
             "filename": "logo-for-top-corner-cropped.png",
             "height": "",
             "width": "",
-            "relativeUrl": "/assets/static-content/images/logo-for-top-corner-cropped.png",
-            "url": "/assets/static-content/images/logo-for-top-corner-cropped.png",
-            "thumbnailRelativeUrl": "/assets/static-content/images/logo-for-top-corner-cropped.png",
-            "thumbnailUrl": "/assets/static-content/images/logo-for-top-corner-cropped.png",
+            "relativeUrl": "assets/static-content/images/logo-for-top-corner-cropped.png",
+            "url": "assets/static-content/images/logo-for-top-corner-cropped.png",
+            "thumbnailRelativeUrl": "assets/static-content/images/logo-for-top-corner-cropped.png",
+            "thumbnailUrl": "assets/static-content/images/logo-for-top-corner-cropped.png",
             "altText": ""      
         }
-    ]
+    ],
+    "sample": {
+        "id": 0,
+        "filename": "",
+        "height": "",
+        "width": "",
+        "relativeUrl": "assets/static-content/images/",
+        "url": "assets/static-content/images/",
+        "thumbnailRelativeUrl": "assets/static-content/images/",
+        "thumbnailUrl": "assets/static-content/images/",
+        "altText": "",      
+        "UnusedIds": [3, 4, 10, 16]
+    }
 }

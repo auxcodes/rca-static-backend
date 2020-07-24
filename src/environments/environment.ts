@@ -4,9 +4,9 @@
 
 export const environment = {
     production: false,
-    rootDir: 'https://api.risecommunityart.com.au',
+    rootDir: 'assets/static-content/images/',
     cmsProject: '_',
-    cmsUrl: 'https://api.risecommunityart.com.au',
+    cmsUrl: 'assets/static-content/images/',
     cartApiKey: 'OWE4ZWQ5NjUtMGZmNi00NjM0LWEwYjUtZjIwMjVkY2RjOGNmNjM2OTk2NTQ0NzMzMjE1ODc0',
     cartApiUrl: 'https://cdn.snipcart.com/scripts/2.0/snipcart.js',
     cartDebug: true
