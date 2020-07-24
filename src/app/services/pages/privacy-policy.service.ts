@@ -34,10 +34,10 @@ export class PrivacyPolicyService {
     async privacyPageItems() {
         await this.cmsItems.getItem('privacy', 1)
             .then((privacy) => {
-                let page: PrivacyPage = {
-                    title: privacy.data.title,
-                    content: privacy.data.content,
-                    seoIndex: privacy.data.seo_settings,
+                const page: PrivacyPage = {
+                    title: privacy.title,
+                    content: privacy.content,
+                    seoIndex: privacy.seo_settings,
                     seo: undefined
                 };
                 this.privacyPage.next(page);

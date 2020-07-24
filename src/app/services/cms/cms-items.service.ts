@@ -12,7 +12,7 @@ export class CmsItemsService {
 
     async getItems(collection: string, params?: object) {
         try {
-            return this.cmsClient.client.getItems(collection, params);
+            return this.cmsClient.getItems(collection, params);
         }
         catch (e) {
             console.log('Error getting items: ', e);
@@ -32,7 +32,7 @@ export class CmsItemsService {
 
     async updateItem(collection: string, primaryKey: number, body: object) {
         try {
-            return this.cmsClient.client.updateItem(collection, primaryKey, body);
+            return null;
         }
         catch (error) {
             console.log('Error updating item: ', error);
@@ -42,7 +42,7 @@ export class CmsItemsService {
 
     async createItem(collection: string, body: object) {
         try {
-            return this.cmsClient.client.createItem(collection, body);
+            return null;
         }
         catch (error) {
             console.log('Error creating item: ', error);

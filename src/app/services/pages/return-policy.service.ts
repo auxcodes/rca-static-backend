@@ -35,10 +35,10 @@ export class ReturnPolicyService {
     async returnsPageItems() {
         await this.cmsItems.getItem('return_policy', 1)
             .then((returns) => {
-                let page: ReturnsPage = {
-                    title: returns.data.title,
-                    content: returns.data.content,
-                    seoIndex: returns.data.seo_settings,
+                const page: ReturnsPage = {
+                    title: returns.title,
+                    content: returns.content,
+                    seoIndex: returns.seo_settings,
                     seo: undefined
                 };
                 this.returnsPage.next(page);

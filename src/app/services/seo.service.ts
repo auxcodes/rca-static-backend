@@ -27,8 +27,8 @@ export class SeoService {
     async seoItems() {
         await this.cmsItems.getItems('seo_settings')
             .then((results) => {
-                let seos: Seo[] = results.data.map(item => {
-                    let seo: Seo = {
+                const seos: Seo[] = results.data.map(item => {
+                    const seo: Seo = {
                         id: item.id,
                         title: item.title,
                         description: item.description,
@@ -52,10 +52,10 @@ export class SeoService {
                 await this.cmsItems.getItem('seo_settings', seoIndex)
                     .then((item) => {
                         seo = {
-                            id: item.data.id,
-                            title: item.data.title,
-                            description: item.data.description,
-                            keywords: item.data.keywords ? item.data.keywords : ''
+                            id: item.id,
+                            title: item.title,
+                            description: item.description,
+                            keywords: item.keywords ? item.keywords : ''
                         }
                     })
                     .catch(error => console.log('Error getting SEO item: ', error))

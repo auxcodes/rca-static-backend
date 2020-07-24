@@ -44,8 +44,9 @@ export class ContactService {
 
     async contactPageItems() {
         await this.cmsItems.getItem('contact', 1)
-            .then((contact) => {
-                let page: Contact = {
+            .then(contact => {
+                console.log("Contact content: ", contact);
+                const page: Contact = {
                     title: contact.title,
                     contactText: contact.contact_text,
                     email: contact.email,
@@ -74,10 +75,10 @@ export class ContactService {
     }
 
     private async getLinkIds() {
-        let ids: string = '';
+        let ids = '';
         await this.cmsItems.getItems('contact_site_map_link', { fields: 'site_map_link_id' })
             .then(result => {
-                result.data.forEach(id => {
+                result.forEach(id => {
                     ids = ids.concat(id.site_map_link_id + ', ');
                 });
             })
@@ -89,8 +90,8 @@ export class ContactService {
         let allLinks: SiteMapLink[] = [];
         await this.cmsItems.getItems('site_map_link', { filter: { id: { in: ids } } })
             .then(results => {
-                let links: SiteMapLink[] = results.data.map(item => {
-                    let link: SiteMapLink = {
+                const links: SiteMapLink[] = results.map(item => {
+                    const link: SiteMapLink = {
                         id: item.id,
                         name: item.link_text,
                         url: item.url,

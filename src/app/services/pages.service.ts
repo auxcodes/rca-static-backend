@@ -65,7 +65,6 @@ export class PagesService {
     private async footerItems() {
         await this.cmsItems.getItem('site_footer', 1)
             .then(site => {
-                console.log("Site_Footer: ", site);
                 const page: Footer = {
                     title: site.signup_title,
                     text: site.signup_text,

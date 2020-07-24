@@ -35,16 +35,16 @@ export class FacebookSdkService {
 
     async getSdkSettings(): Promise<boolean> {
         let result = false;
-        await this.cmsItemService.getItem('facebook_settings', 1, { fields: 'app_id, status, xfbml' })
-            .then(settings => {
-                this.sdkSettings.next({
-                    appId: settings.data.app_id,
-                    status: settings.data.status,
-                    xfbml: settings.data.xfbml
-                });
-                result = true;
-            })
-            .catch(error => console.error('Error getting FB SDK settings: ', error));
+        //await this.cmsItemService.getItem('facebook_settings', 1, { fields: 'app_id, status, xfbml' })
+        //    .then(settings => {
+        //        this.sdkSettings.next({
+        //            appId: settings.data.app_id,
+        //            status: settings.data.status,
+        //            xfbml: settings.data.xfbml
+        //        });
+        //        result = true;
+        //    })
+        //    .catch(error => console.error('Error getting FB SDK settings: ', error));
         return result;
     }
 

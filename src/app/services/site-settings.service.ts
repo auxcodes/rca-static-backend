@@ -44,7 +44,6 @@ export class SiteSettingsService {
     async siteInfoItems() {
         await this.cmsItems.getItem('site_settings', 1)
             .then(info => {
-                console.log("Site Info: ", info);
                 const site: SiteInfo = {
                     siteName: info.website_name,
                     siteLogo: undefined,
@@ -53,9 +52,7 @@ export class SiteSettingsService {
                     seo: undefined
                 };
                 this.content.next(info);
-                console.log("Site Info Content: ", this.content.value);
-
-                //this.seoSettings(info.data.global_seo_settings).then(seo => site.seo = seo);
+                this.seoSettings(info.global_seo_settings).then(seo => site.seo = seo);
                 //this.siteInfoImages(info.data.site_logo)
                 //    .then(image => {
                 //        site.siteLogo = image;

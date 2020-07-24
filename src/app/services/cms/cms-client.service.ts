@@ -9,7 +9,11 @@ import * as siteSettingsData from 'src/assets/static-content/json/site_settings.
 import * as contactData from 'src/assets/static-content/json/contact.json';
 import * as menuData from 'src/assets/static-content/json/menu.json';
 import * as footerData from 'src/assets/static-content/json/footer.json';
-
+import * as seoData from 'src/assets/static-content/json/seo_settings.json';
+import * as privacyData from 'src/assets/static-content/json/privacy.json';
+import * as returnsPolicyData from 'src/assets/static-content/json/return_policy.json';
+import * as contactLinksData from 'src/assets/static-content/json/contact_site_map_link.json';
+import * as siteMapLinksData from 'src/assets/static-content/json/site_map_links.json';
 
 
 export declare type RequestPromise = Promise<any>;
@@ -53,27 +57,35 @@ export class CmsClientService {
         let result = null;
         switch (collection) {
             case "home": {
-                result = this.getHomeData();
+                result = Promise.resolve(homeData.data);
                 break;
             }
             case "site_settings": {
-                result = this.getSiteSettingsData();
+                result = Promise.resolve(siteSettingsData.data);
                 break;
             }
             case "contact": {
-                result = this.getContactData();
+                result = Promise.resolve(contactData.data);
                 break;
             }
             case "site_menu": {
-                result = this.getSiteMenuData();
+                result = Promise.resolve(menuData.data);
                 break;
             }
             case "site_footer": {
-                result = this.getSiteFooterData();
+                result = Promise.resolve(footerData.data);
                 break;
             }
-            case "": {
-
+            case "seo_settings": {
+                result = Promise.resolve(seoData.data);
+                break;
+            }
+            case "privacy": {
+                result = Promise.resolve(privacyData.data);
+                break;
+            }
+            case "return_policy": {
+                result = Promise.resolve(returnsPolicyData.data);
                 break;
             }
             default: {
@@ -83,29 +95,39 @@ export class CmsClientService {
         return result;
     }
 
-    async getHomeData() {
-        console.log("HomeData: ", homeData.data);
-        return homeData.data;
+    getItems(collection: string, params?: object): RequestPromise {
+        let result = null;
+        switch (collection) {
+            case "seo_settings": {
+                result = Promise.resolve(seoData.data);;
+                break;
+            }
+            case "contact_site_map_link": {
+                result = Promise.resolve(contactLinksData.data);
+                break;
+            }
+            case "site_map_link": {
+                result = this.getLinks(params);
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+        return result;
     }
 
-    async getSiteSettingsData() {
-        console.log("SiteSettingsData: ", siteSettingsData.data);
-        return siteSettingsData.data;
+    async getSeoItem(id: number) {
+        const seoItem = seoData.data.find(item => item.id === id);
+        //console.log("SeoItem: ", seoItem);
+        return seoItem;
     }
 
-    async getContactData() {
-        console.log("ContactData: ", contactData.data);
-        return contactData.data;
+    async getLinks(params) {
+        //console.log("filter: ", params.filter);
+        const ids: number[] = params.filter.id.in;
+        const links = ids.length === 0 ? siteMapLinksData.data : siteMapLinksData.data.filter(item => ids.includes(item.id));
+        //console.log("LinkItems: ", links);
+        return links;
     }
-
-    async getSiteMenuData() {
-        console.log("MenuData: ", menuData.data);
-        return menuData.data;
-    }
-
-    async getSiteFooterData() {
-        console.log("FooterData: ", footerData.data);
-        return footerData.data;
-    }
-
 }

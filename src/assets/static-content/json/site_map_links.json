@@ -1,0 +1,95 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "link_text": "Instagram",
+            "url": "https://www.instagram.com/risecommunityart/",
+            "path": null,
+            "link_group": "Social"
+        },
+        {
+            "id": 2,
+            "link_text": "LinkedIn",
+            "url": "https://linkedin.com",
+            "path": null,
+            "link_group": "Social"
+        },
+        {
+            "id": 3,
+            "link_text": "Facebook",
+            "url": "https://www.facebook.com/Risecommunityart/",
+            "path": null,
+            "link_group": "Social"
+        },
+        {
+            "id": 4,
+            "link_text": "About Us",
+            "url": null,
+            "path": "about",
+            "link_group": "Pages"
+        },
+        {
+            "id": 5,
+            "link_text": "Home",
+            "url": null,
+            "path": "home",
+            "link_group": "Pages"
+        },
+        {
+            "id": 6,
+            "link_text": "Gallery",
+            "url": null,
+            "path": "gallery",
+            "link_group": "Pages"
+        },
+        {
+            "id": 7,
+            "link_text": "Artists",
+            "url": null,
+            "path": "artists",
+            "link_group": "Pages"
+        },
+        {
+            "id": 8,
+            "link_text": "Contact Us",
+            "url": null,
+            "path": "contact",
+            "link_group": "Pages"
+        },
+        {
+            "id": 9,
+            "link_text": "Privacy",
+            "url": null,
+            "path": "privacy",
+            "link_group": "Information"
+        },
+        {
+            "id": 10,
+            "link_text": "Terms & Conditions",
+            "url": null,
+            "path": "terms",
+            "link_group": "Information"
+        },
+        {
+            "id": 11,
+            "link_text": "Delivery & Returns",
+            "url": null,
+            "path": "returns",
+            "link_group": "Information"
+        },
+        {
+            "id": 12,
+            "link_text": "Site Map",
+            "url": null,
+            "path": "sitemap",
+            "link_group": "Information"
+        }
+    ],
+    "sample": {
+        "id": 0,
+        "link_text": "",
+        "url": "",
+        "path": null,
+        "link_group": ""
+    }
+}
