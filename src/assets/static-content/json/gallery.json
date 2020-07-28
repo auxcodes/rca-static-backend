@@ -1,1 +1,10 @@
-{"data":[{"id":1,"title":"Gallery","seo_settings":10,"products_endpoint":"https:\/\/api.risecommunityart.com.au\/_\/custom\/products","load_amount":10}],"public":true}
+{
+    "data": {
+        "id": 1,
+        "title": "Gallery",
+        "seo_settings": 10,
+        "products_endpoint": "https:\/\/rca.aux.codes\/_\/custom\/products",
+        "load_amount": 10
+    },
+    "public": true
+}

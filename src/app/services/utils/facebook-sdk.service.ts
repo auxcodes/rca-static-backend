@@ -106,7 +106,7 @@ export class FacebookSdkService {
             ogType: 'website',
             ogTitle: 'RISE Community Art',
             ogDescription: 'RISE Community Art Store is a not for profit organisation providing a space for Aboriginal artists to display and sell their work to the public.',
-            ogImage: 'https://api.risecommunityart.com.au/uploads/_/originals/logo-medium-784w.png',
+            ogImage: 'assets/static-content/images/logo-medium-784w.png',
             ogImageAlt: 'RISE Community Art Logo',
         });
     }

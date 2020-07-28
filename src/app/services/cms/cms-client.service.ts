@@ -16,6 +16,12 @@ import * as returnsPolicyData from 'src/assets/static-content/json/return_policy
 import * as contactLinksData from 'src/assets/static-content/json/contact_site_map_link.json';
 import * as siteMapLinksData from 'src/assets/static-content/json/site_map_links.json';
 import * as imagesData from 'src/assets/static-content/json/images.json';
+import * as artistPageData from 'src/assets/static-content/json/artists_page.json';
+import * as artistProfileData from 'src/assets/static-content/json/artist_profiles.json';
+import * as galleryPageData from 'src/assets/static-content/json/gallery.json';
+import * as artworkData from 'src/assets/static-content/json/artwork.json';
+
+
 
 
 
@@ -95,6 +101,14 @@ export class CmsClientService {
                 result = Promise.resolve(returnsPolicyData.data);
                 break;
             }
+            case "artists_page": {
+                result = Promise.resolve(artistPageData.data);
+                break;
+            }
+            case "gallery": {
+                result = Promise.resolve(galleryPageData.data);
+                break;
+            }
             case "image_file": {
                 result = this.getImage(primaryKey);
                 break;
@@ -129,11 +143,69 @@ export class CmsClientService {
                 result = this.getImages(params);
                 break;
             }
+            case "artists_page_artist_profiles": {
+                result = this.getArtistIds();
+                break;
+            }
+            case "artist_profiles": {
+                result = this.getArtistProfiles(params);
+                break;
+            }
+            case "gallery_artwork": {
+                result = this.getArtworkIds();
+                break;
+            }
+            case "artwork": {
+                result = this.getArtwork(params);
+                break;
+            }
             default: {
                 break;
             }
         }
         return result;
+    }
+
+    async getArtworkIds() {
+        const ids: number[] = artworkData.data.map(item => {
+            return item.id
+        });
+        console.log("Artwork Ids: ", ids);
+        return ids;
+    }
+
+    async getArtwork(params) {
+        console.log("Artwork Params:", params);
+        const artwork: object[] = [];
+        artworkData.data.forEach(item => {
+            //console.log(item);
+            if (item.visible === params.filter.visible.neq) {
+                artwork.push(item);
+            }
+        });
+        console.log("Artwork items: ", artwork);
+        return artwork;
+    }
+
+    async getArtistIds() {
+        const ids: number[] = artistProfileData.data.map(item => {
+            return item.id
+        });
+        //console.log("Artist Ids: ", ids);
+        return ids;
+    }
+
+    async getArtistProfiles(params) {
+        //console.log("Artist Params:", params);
+        const profiles: object[] = [];
+        artistProfileData.data.forEach(item => {
+            //console.log(item);
+            if (item.visible === params.filter.visible.neq) {
+                profiles.push(item);
+            }
+        });
+        //console.log("Artist Profiles: ", profiles);
+        return profiles;
     }
 
     async getMenuItems(params) {

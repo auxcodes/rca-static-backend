@@ -27,9 +27,9 @@ export class GalleryService {
 
     private allArtwork: Artwork[] = [];
     private lastParams: object = {};
-    private artistSearched: boolean = false;
-    private moreCount: number = 0;
-    private baseMoreCount: number = 10;
+    private artistSearched = false;
+    private moreCount = 0;
+    private baseMoreCount = 10;
     private galleryFilter: object = {
         visible: { neq: true }
     };
@@ -50,13 +50,13 @@ export class GalleryService {
     }
 
     async endpoint() {
-        let result: string = '';
+        let result = '';
         if (this.content.value.endpoint !== '') {
             result = this.content.value.endpoint;
         }
         else {
             await this.cmsItems.getItem('gallery', 1, { fields: 'products_endpoint' })
-                .then(url => result = url.data.products_endpoint )
+                .then(url => result = url.products_endpoint )
                 .catch(error => console.log('Error getting gallery endpoint: ', error));
         }
         return result;
@@ -66,11 +66,11 @@ export class GalleryService {
         await this.cmsItems.getItem('gallery', 1)
             .then((gallery) => {
                 const page: GalleryPage = {
-                    title: gallery.data.title,
-                    endpoint: gallery.data.products_endpoint,
+                    title: gallery.title,
+                    endpoint: gallery.products_endpoint,
                     artworkIds: '',
-                    loadAmount: gallery.data.load_amount,
-                    seoIndex: gallery.data.seo_settings,
+                    loadAmount: gallery.load_amount,
+                    seoIndex: gallery.seo_settings,
                     seo: undefined
                 };
                 this.getArtworkIds().then(ids => {
@@ -84,17 +84,17 @@ export class GalleryService {
                         this.getAllArtworkItems();
                     }
                 });
-                this.baseMoreCount = gallery.data.load_amount;
+                this.baseMoreCount = gallery.load_amount;
                 this.content.next(page);
             })
             .catch(error => console.log('Error getting gallery page items: ', error));
     }
 
     private async getArtworkIds() {
-        let ids: string = '';
+        let ids = '';
         await this.cmsItems.getItems('gallery_artwork', { fields: 'artwork_id' })
             .then(result => {
-                result.data.forEach(id => {
+                result.forEach(id => {
                     ids = ids.concat(id.artwork_id + ', ');
                 });
             })
@@ -214,7 +214,7 @@ export class GalleryService {
         let tempArtworks: Artwork[] = [];
         await this.cmsItems.getItems('artwork', param)
             .then((artwork) => {
-                const artworkResult: any[] = artwork.data;
+                const artworkResult: any[] = artwork;
                 tempArtworks = artworkResult.reduce((result, item) => {
                         const artCard: Artwork = {
                             id: item.id,

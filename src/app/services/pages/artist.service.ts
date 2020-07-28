@@ -47,10 +47,10 @@ export class ArtistService {
     private async artistsPageItems() {
         await this.cmsItems.getItem('artists_page', 1)
             .then((artists) => {
-                let page: ArtistsPage = {
-                    title: artists.data.title,
+                const page: ArtistsPage = {
+                    title: artists.title,
                     artistIds: '',
-                    seoIndex: artists.data.seo_settings,
+                    seoIndex: artists.seo_settings,
                     seo: undefined
                 };
                 this.getArtworkIds().then(ids => {
@@ -58,8 +58,7 @@ export class ArtistService {
                     if (ids !== '') {
                         this.artistItems({
                             filter: {
-                                visible: { neq: true },
-                                id: { in: this.content.value.artistIds }
+                                visible: { neq: true }
                             }
                         });
                     }
@@ -70,10 +69,10 @@ export class ArtistService {
     }
 
     private async getArtworkIds() {
-        let ids: string = '';
+        let ids = '';
         await this.cmsItems.getItems('artists_page_artist_profiles', { fields: 'artist_profiles_id' })
             .then(result => {
-                result.data.forEach(id => {
+                result.forEach(id => {
                     ids = ids.concat(id.artist_profiles_id + ', ');
                 });
             })
@@ -83,10 +82,10 @@ export class ArtistService {
 
     async artistName(artistId: number) {
         try {
-            let name: string = "";
+            let name = "";
             await this.cmsClient.client.getItem('artist_profiles', artistId)
                 .then(item => {
-                    name = item.data.display_name;
+                    name = item.display_name;
                 })
                 .catch(e => console.log('Could not get name: ', e));
             return name;
@@ -113,10 +112,10 @@ export class ArtistService {
         await this.cmsItems.getItem('artist_profiles', artistsId)
             .then(result => {
                 artistCard = {
-                    id: result.data.id,
-                    name: result.data.display_name,
-                    biography: result.data.biography,
-                    photoId: result.data.photo,
+                    id: result.id,
+                    name: result.display_name,
+                    biography: result.biography,
+                    photoId: result.photo,
                     photo: undefined,
                     artworks: []
                 };
@@ -126,15 +125,15 @@ export class ArtistService {
                         artistCard.thumbnail = artistCard.photo.thumbnailUrl;
                     })
             })
-            .catch(error => console.log('Error getting Artist items: ', error));
+            .catch(error => console.log('Error getting Artist item: ', error));
         return artistCard;
     }
 
     async artistItems(param: object) {
         await this.cmsItems.getItems('artist_profiles', param)
             .then(results => {
-                let artist: Artist[] = results.data.map(item => {
-                    let artistCard: Artist = {
+                const artist: Artist[] = results.map(item => {
+                    const artistCard: Artist = {
                         id: item.id,
                         name: item.display_name,
                         biography: item.biography,
