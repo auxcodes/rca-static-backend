@@ -176,13 +176,18 @@ export class CmsClientService {
 
     async getArtwork(params) {
         console.log("Artwork Params:", params);
-        const artwork: object[] = [];
+        const offset = params.offset ? params.offset : 0;
+        const limit = params.limit ? params.limit + offset : 100;
+        const sort = params.sort ? params.sort : null;
+        let artwork: any[] = [];
         artworkData.data.forEach(item => {
             //console.log(item);
             if (item.visible === params.filter.visible.neq) {
                 artwork.push(item);
             }
         });
+        artwork = sort ? artwork.sort((a, b) => { return a.sold - b.sold }) : artwork;
+        artwork = artwork.slice(offset, limit);
         console.log("Artwork items: ", artwork);
         return artwork;
     }

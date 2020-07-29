@@ -16,6 +16,7 @@ export class SiteSettingsService {
     content: BehaviorSubject<SiteInfo> = new BehaviorSubject<SiteInfo>({
         siteName: '',
         siteLogo: undefined,
+        navLogo: undefined,
         url: '',
         seoIndex: 0,
         seo: undefined,
