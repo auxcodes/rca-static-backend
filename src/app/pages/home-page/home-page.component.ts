@@ -72,7 +72,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
                     ogType: 'website',
                     ogTitle: seo.title,
                     ogDescription: seo.description,
-                    ogImage: 'https://api.risecommunityart.com.au/uploads/_/originals/logo-medium-784w.png',
+                    ogImage: 'assets/static-content/images/logo-medium-784w.png',
                     ogImageAlt: 'RISE Community Art Logo',
                 });
             }

@@ -61,7 +61,7 @@ export class ArtistPageComponent implements OnInit, OnDestroy {
                     ogType: 'website',
                     ogTitle: this.artist.name,
                     ogDescription: this.artist.name,
-                    ogImage: this.artist.photo ? this.artist.photo.url : 'https://api.risecommunityart.com.au/uploads/_/originals/logo-medium-784w.png',
+                    ogImage: this.artist.photo ? this.artist.photo.url : 'assets/static-content/images/logo-medium-784w.png',
                     ogImageAlt: this.artist.photo ? this.artist.photo.altText : 'RISE Community Art Logo',
                 });
             }

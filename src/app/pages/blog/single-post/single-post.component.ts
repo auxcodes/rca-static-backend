@@ -74,7 +74,7 @@ export class SinglePostComponent implements OnInit, OnDestroy {
                     ogType: 'website',
                     ogTitle: this.postData.title,
                     ogDescription: this.postData.description,
-                    ogImage: this.postData.thumbnail ? this.postData.thumbnail : 'https://api.risecommunityart.com.au/uploads/_/originals/logo-medium-784w.png',
+                    ogImage: this.postData.thumbnail ? this.postData.thumbnail : 'assets/static-content/images/logo-medium-784w.png',
                     ogImageAlt: this.postData.thumbnail ? 'Title image for blog post ' + this.postData.thumbnail : 'RISE Community Art Logo',
                 });
             }

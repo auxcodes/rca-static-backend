@@ -66,7 +66,7 @@ export class ArtworkComponent implements OnInit {
                     ogType: 'website',
                     ogTitle: this.artwork.title,
                     ogDescription: this.artwork.description,
-                    ogImage: this.artwork.images ? this.artwork.images[0].url : 'https://api.risecommunityart.com.au/uploads/_/originals/logo-medium-784w.png',
+                    ogImage: this.artwork.images ? this.artwork.images[0].url : 'assets/static-content/images/logo-medium-784w.png',
                     ogImageAlt: this.artwork.images ? this.artwork.images[0].altText : 'RISE Community Art Logo',
                 });
             }
