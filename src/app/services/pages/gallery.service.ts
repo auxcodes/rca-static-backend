@@ -18,7 +18,7 @@ export class GalleryService {
         title: '',
         endpoint: '',
         loadAmount: 10,
-        artworkIds: '',
+        artworkIds: null,
         seoIndex: 0,
         seo: undefined
     });
@@ -68,7 +68,7 @@ export class GalleryService {
                 const page: GalleryPage = {
                     title: gallery.title,
                     endpoint: gallery.products_endpoint,
-                    artworkIds: '',
+                    artworkIds: null,
                     loadAmount: gallery.load_amount,
                     seoIndex: gallery.seo_settings,
                     seo: undefined
@@ -79,7 +79,7 @@ export class GalleryService {
                         visible: { neq: true },
                         id: { in: this.content.value.artworkIds }
                     };
-                    if (ids !== '') {
+                    if (ids !== null) {
                         this.content.next(page);
                         this.getAllArtworkItems();
                     }
@@ -91,13 +91,9 @@ export class GalleryService {
     }
 
     private async getArtworkIds() {
-        let ids = '';
+        let ids: number[] = [];
         await this.cmsItems.getItems('gallery_artwork', { fields: 'artwork_id' })
-            .then(result => {
-                result.forEach(id => {
-                    ids = ids.concat(id.artwork_id + ', ');
-                });
-            })
+            .then(result => ids = result)
             .catch(error => console.log('Error getting artwork ids: ', error));
         return ids;
     }
@@ -107,7 +103,7 @@ export class GalleryService {
             if (this.artistSearched || this.allArtwork.length === 0) {
                 this.moreCount = 0;
                 this.artistSearched = false;
-                if (this.content.value.artworkIds === '') {
+                if (this.content.value.artworkIds === null || this.content.value.artworkIds.length === 0) {
                     this.galleryPageItems();
                 }
                 else {
@@ -213,7 +209,7 @@ export class GalleryService {
         this.lastParams = param;
         let tempArtworks: Artwork[] = [];
         await this.cmsItems.getItems('artwork', param)
-            .then((artwork) => {
+            .then(artwork => {
                 const artworkResult: any[] = artwork;
                 tempArtworks = artworkResult.reduce((result, item) => {
                         const artCard: Artwork = {
@@ -240,7 +236,7 @@ export class GalleryService {
                             parcelHeight: item.height ? item.height : 0,
                             parcelLength: item.length ? item.length : 0
                         };
-                        this.artistService.artistName(artCard.artistId).then(name => artCard.artistName = name);
+                        //this.artistService.artistName(artCard.artistId).then(name => artCard.artistName = name);
                         this.cmsImages.getImages(artCard.id)
                             .then(art => {
                                 artCard.images = art;

@@ -47,6 +47,7 @@ export class SiteSettingsService {
                 const site: SiteInfo = {
                     siteName: info.website_name,
                     siteLogo: undefined,
+                    navLogo: undefined,
                     url: info.url,
                     seoIndex: info.global_seo_settings,
                     seo: undefined

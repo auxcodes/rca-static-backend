@@ -4,7 +4,7 @@ export interface GalleryPage {
     title: string;
     endpoint: string;
     loadAmount: number;
-    artworkIds: string;
+    artworkIds: number[];
     seoIndex: number;
     seo: Seo;
 }

@@ -232,15 +232,15 @@ export class CmsClientService {
 
     async getImages(params) {
         //console.log("Image filter: ", params.filter);
-        const ids: number[] = params.filter.artwork_id.eq;
-        const images = ids.length === 0 ? imagesData.data : imagesData.data.filter(item => ids.includes(item.id));
-        //console.log("Images: ", images);
+        const id = params.filter.artwork_id.eq;
+        const images = id ? imagesData.data.filter(item => item.id === id) : imagesData.data;
+        console.log("Images: ", images);
         return images;
     }
 
     async getImage(id: number) {
         const image = imagesData.data.find(item => item.id === id);
-        //console.log("Image File: ", id, image);
+        console.log("Image File: ", id, image);
         return image;
     }
 }

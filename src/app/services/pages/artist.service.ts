@@ -83,7 +83,7 @@ export class ArtistService {
     async artistName(artistId: number) {
         try {
             let name = "";
-            await this.cmsClient.client.getItem('artist_profiles', artistId)
+            await this.cmsClient.getItem('artist_profiles', artistId)
                 .then(item => {
                     name = item.display_name;
                 })

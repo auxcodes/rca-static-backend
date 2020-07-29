@@ -29,6 +29,7 @@ export class CmsImageService {
             .catch(error => console.log('Error getting image: ', error));
 
         if (image === undefined) {
+            console.log("get image", index);
             image = this.brokenImage;
         }
 

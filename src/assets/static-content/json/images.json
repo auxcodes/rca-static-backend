@@ -505,6 +505,17 @@
             "thumbnailRelativeUrl": "assets/static-content/images/logo-for-top-corner-cropped.png",
             "thumbnailUrl": "assets/static-content/images/logo-for-top-corner-cropped.png",
             "altText": ""      
+        },
+        {
+            "id": 65,
+            "filename": "logo-for-top-corner-cropped_002.png",
+            "height": "",
+            "width": "",
+            "relativeUrl": "assets/static-content/images/logo-for-top-corner-cropped_002.png",
+            "url": "assets/static-content/images/logo-for-top-corner-cropped_002.png",
+            "thumbnailRelativeUrl": "assets/static-content/images/logo-for-top-corner-cropped_002.png",
+            "thumbnailUrl": "assets/static-content/images/logo-for-top-corner-cropped_002.png",
+            "altText": ""      
         }
     ],
     "sample": {
@@ -517,6 +528,6 @@
         "thumbnailRelativeUrl": "assets/static-content/images/",
         "thumbnailUrl": "assets/static-content/images/",
         "altText": "",      
-        "UnusedIds": [3, 4, 10, 16]
+        "UnusedIds": [3, 4, 10]
     }
 }

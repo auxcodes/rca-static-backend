@@ -60,7 +60,7 @@ export class PagesService {
                         this.navbar.next(navbar);
                     }
                 });
-                this.siteSettings.siteInfoImages(site.site_logo)
+                this.siteSettings.siteInfoImages(site.nav_logo)
                     .then(image => {
                         if (image) {
                             navbar.logo = image;

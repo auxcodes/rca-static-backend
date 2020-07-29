@@ -7,7 +7,8 @@
         "global_seo_settings": 2,
         "site_logo": 64,
         "url": "https:\/\/rca.aux.codes",
-        "menu_ids": [1,2,3,4,5]
+        "menu_ids": [1,2,3,4,5],
+        "nav_logo": 65
     },
     "public": true
 }
