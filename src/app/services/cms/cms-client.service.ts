@@ -105,6 +105,10 @@ export class CmsClientService {
                 result = Promise.resolve(artistPageData.data);
                 break;
             }
+            case "artist_profiles": {
+                result = this.getArtist(primaryKey);
+                break;
+            }
             case "gallery": {
                 result = Promise.resolve(galleryPageData.data);
                 break;
@@ -170,12 +174,12 @@ export class CmsClientService {
         const ids: number[] = artworkData.data.map(item => {
             return item.id
         });
-        console.log("Artwork Ids: ", ids);
+        //console.log("CS Artwork Ids: ", ids);
         return ids;
     }
 
     async getArtwork(params) {
-        console.log("Artwork Params:", params);
+        //console.log("CS Artwork Params:", params);
         const offset = params.offset ? params.offset : 0;
         const limit = params.limit ? params.limit + offset : 100;
         const sort = params.sort ? params.sort : null;
@@ -188,7 +192,7 @@ export class CmsClientService {
         });
         artwork = sort ? artwork.sort((a, b) => { return a.sold - b.sold }) : artwork;
         artwork = artwork.slice(offset, limit);
-        console.log("Artwork items: ", artwork);
+        //console.log("CS Artwork items: ", artwork);
         return artwork;
     }
 
@@ -239,13 +243,19 @@ export class CmsClientService {
         //console.log("Image filter: ", params.filter);
         const id = params.filter.artwork_id.eq;
         const images = id ? imagesData.data.filter(item => item.id === id) : imagesData.data;
-        console.log("Images: ", images);
+        //console.log("CS Get Images: ", images);
         return images;
     }
 
     async getImage(id: number) {
         const image = imagesData.data.find(item => item.id === id);
-        console.log("Image File: ", id, image);
+        //console.log("CS Get Image: ", id, image);
         return image;
+    }
+
+    async getArtist(id: number) {
+        const artist = artistProfileData.data.find(item => item.id === id);
+        //console.log("CS Get Artist: ", id, artist);
+        return artist;
     }
 }

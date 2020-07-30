@@ -165,6 +165,7 @@ export class GalleryService {
         this.artworkItems(filter).then(results => {
             this.allArtwork = results;
             this.artworks.next(this.allArtwork);
+            //console.log("GS Get Artist Artwork");
         });
     }
 
@@ -179,6 +180,7 @@ export class GalleryService {
 
         await this.artworkItems(filter).then(results => {
             artwork = results;
+            //console.log("GS Artist Artwork");
         });
 
         return artwork;
@@ -212,47 +214,47 @@ export class GalleryService {
             .then(artwork => {
                 const artworkResult: any[] = artwork;
                 tempArtworks = artworkResult.reduce((result, item) => {
-                        const artCard: Artwork = {
-                            id: item.id,
-                            sold: item.sold,
-                            title: item.title,
-                            description: item.description,
-                            price: item.price,
-                            artistId: item.artist_profile,
-                            url: this.content.getValue().endpoint,
-                            type: item.type ? item.type : '-',
-                            medium: item.medium ? item.medium : '-',
-                            completionDate: item.completion_date ? item.completion_date : '-',
-                            completionTime: item.completion_time ? item.completion_time : '-',
-                            copyright: item.copyright ? item.copyright : '-',
-                            dimensions: {
-                                width: item.width ? item.width : 0,
-                                height: item.height ? item.height : 0,
-                                length: item.length ? item.length : 0
-                            },
-                            weight: item.weight ? item.weight : 0,
-                            packaging: item.packaging ? item.packaging : '-',
-                            parcelWidth: item.width ? item.width : 0,
-                            parcelHeight: item.height ? item.height : 0,
-                            parcelLength: item.length ? item.length : 0
-                        };
-                        //this.artistService.artistName(artCard.artistId).then(name => artCard.artistName = name);
-                        this.cmsImages.getImages(artCard.id)
-                            .then(art => {
-                                artCard.images = art;
-                                if (artCard.images) {
-                                    artCard.thumbnail = artCard.images[0].thumbnailUrl;
-                                }
-                                else {
-                                    artCard.thumbnail = 'assets/icons/broken_image/image.svg';
-                                }
-                            })
-                            .catch(error => {
-                                console.log('Error getting images for artwork ', artCard.title, ': ', error )
-                            });
-                        result.push(artCard);
+                    const artCard: Artwork = {
+                        id: item.id,
+                        sold: item.sold,
+                        title: item.title,
+                        description: item.description,
+                        price: item.price,
+                        artistId: item.artist_profile,
+                        url: this.content.getValue().endpoint,
+                        type: item.type ? item.type : '-',
+                        medium: item.medium ? item.medium : '-',
+                        completionDate: item.completion_date ? item.completion_date : '-',
+                        completionTime: item.completion_time ? item.completion_time : '-',
+                        copyright: item.copyright ? item.copyright : '-',
+                        dimensions: {
+                            width: item.width ? item.width : 0,
+                            height: item.height ? item.height : 0,
+                            length: item.length ? item.length : 0
+                        },
+                        weight: item.weight ? item.weight : 0,
+                        packaging: item.packaging ? item.packaging : '-',
+                        parcelWidth: item.width ? item.width : 0,
+                        parcelHeight: item.height ? item.height : 0,
+                        parcelLength: item.length ? item.length : 0
+                    };
+                    this.artistService.artistName(artCard.artistId).then(name => artCard.artistName = name);
+                    this.cmsImages.getImages(artCard.id)
+                        .then(art => {
+                            artCard.images = art;
+                            if (artCard.images) {
+                                artCard.thumbnail = artCard.images[0].thumbnailUrl;
+                            }
+                            else {
+                                artCard.thumbnail = 'assets/icons/broken_image/image.svg';
+                            }
+                        })
+                        .catch(error => {
+                            console.log('Error getting images for artwork ', artCard.title, ': ', error)
+                        });
+                    result.push(artCard);
                     return result;
-                }, [])
+                }, []);
             })
             .catch(error => console.log('Error getting gallery artwork items: ', error.message));
         return tempArtworks;

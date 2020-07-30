@@ -24,12 +24,13 @@ export class CmsImageService {
 
     async getImage(index: number): Promise<CMSImage> {
         let image: any;
+        //console.log("IS Get Image");
         await this.cmsClient.getImage(index)
             .then(item => image = item)
             .catch(error => console.log('Error getting image: ', error));
 
         if (image === undefined) {
-            console.log("get image", index);
+            //console.log("IS Get Image Broken", index);
             image = this.brokenImage;
         }
 
@@ -39,14 +40,17 @@ export class CmsImageService {
     async getImages(artworId: number): Promise<CMSImage[]> {
         let images: any[];
         await this.cmsClient.getItems('artwork_directus_files', { filter: { artwork_id: { eq: artworId } } })
-            .then(items => images = items)
+            .then(items => {
+                images = items;
+                //console.log("IS Get Images:", items);
+            })
             .catch(error => console.log('Error getting images: ', error));
 
         if (images.length === 0) {
             images = [this.brokenImage];
         }
 
-        return await Promise.all(images.map(data => this.getImage(data.directus_files_id)));
+        return images;//await Promise.all(images.map(data => this.getImage(data.directus_files_id)));
     }
 
     resizeImageUrl(imageFileName: string, size: number, quality: string) {
