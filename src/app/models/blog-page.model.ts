@@ -3,7 +3,7 @@ import { Seo } from './seo.model';
 export interface BlogPage {
     title: string;
     loadAmount?: number;
-    blogPostIds?: string;
+    blogPostIds?: number[];
     seoIndex?: number;
     seo?: Seo;
 }

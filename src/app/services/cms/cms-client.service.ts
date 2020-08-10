@@ -20,10 +20,8 @@ import * as artistPageData from 'src/assets/static-content/json/artists_page.jso
 import * as artistProfileData from 'src/assets/static-content/json/artist_profiles.json';
 import * as galleryPageData from 'src/assets/static-content/json/gallery.json';
 import * as artworkData from 'src/assets/static-content/json/artwork.json';
-
-
-
-
+import * as blogPageData from 'src/assets/static-content/json/blog_page.json';
+import * as blogPostsData from 'src/assets/static-content/json/blog_posts.json';
 
 export declare type RequestPromise = Promise<any>;
 
@@ -117,6 +115,10 @@ export class CmsClientService {
                 result = this.getImage(primaryKey);
                 break;
             }
+            case "blog_page": {
+                result = Promise.resolve(blogPageData.data);
+                break;
+            }
             default: {
                 break;
             }
@@ -163,6 +165,14 @@ export class CmsClientService {
                 result = this.getArtwork(params);
                 break;
             }
+            case "blog_page_blog_posts": {
+                result = this.getBlogIds();
+                break;
+            }
+            case "blog_posts": {
+                result = Promise.resolve(blogPostsData.data);
+                break;
+            }
             default: {
                 break;
             }
@@ -194,6 +204,33 @@ export class CmsClientService {
         artwork = artwork.slice(offset, limit);
         //console.log("CS Artwork items: ", artwork);
         return artwork;
+    }
+
+    async getBlogIds() {
+        const ids: number[] = blogPostsData.data.map(item => {
+            return item.id
+        });
+        console.log("CS Blog Post Ids: ", ids);
+        return ids;
+    }
+
+    async getBlogPost(params) {
+        console.log("CS Blog Post Params:", params);
+        const offset = params.offset ? params.offset : 0;
+        const limit = params.limit ? params.limit + offset : 100;
+        const sort = params.sort ? params.sort : null;
+
+        let posts: any[] = [];
+        blogPostsData.data.forEach(item => {
+            console.log(item);
+            if (item.status === params.filter.status.eq) {
+                posts.push(item);
+            }
+        });
+        posts = sort ? posts.sort((a, b) => { return a.sold - b.sold }) : posts;
+        posts = posts.slice(offset, limit);
+        console.log("CS Post items: ", posts);
+        return posts;
     }
 
     async getArtistIds() {

@@ -15,7 +15,7 @@ export class BlogService {
     hasPosts: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     content: BehaviorSubject<BlogPage> = new BehaviorSubject<BlogPage>({
         title: '',
-        blogPostIds: '',
+        blogPostIds: null,
         seoIndex: 0,
         seo: undefined
     });
@@ -39,7 +39,7 @@ export class BlogService {
         try {
             if (this.cachedBlogPosts.length === 0) {
                 this.moreCount = 0;
-                if (this.content.value.blogPostIds === '') {
+                if (this.content.value.blogPostIds === null) {
                     this.blogPageItems();
                 }
                 else {
@@ -57,10 +57,10 @@ export class BlogService {
         await this.cmsItems.getItem('blog_page', 1)
             .then(result => {
                 const page: BlogPage = {
-                    title: result.data.title,
-                    loadAmount: result.data.load_amount,
-                    blogPostIds: '',
-                    seoIndex: result.data.seo_settings,
+                    title: result.title,
+                    loadAmount: result.load_amount,
+                    blogPostIds: null,
+                    seoIndex: result.seo_settings,
                     seo: undefined
                 };
                 this.getBlogPostIds().then(ids => {
@@ -69,7 +69,7 @@ export class BlogService {
                         status: { eq: 'published' },
                         id: { in: this.content.value.blogPostIds }
                     }
-                    if (ids !== '') {
+                    if (ids !== null) {
                         this.content.next(page);
                         this.getBlogPosts();
                     }
@@ -78,6 +78,14 @@ export class BlogService {
                 this.content.next(page);
             })
             .catch(error => console.log('Error getting blog page items: ', error));
+    }
+
+    private async getBlogPostIds() {
+        let ids: number[] = [];
+        await this.cmsItems.getItems('blog_page_blog_posts', { fields: 'blog_posts_id' })
+            .then(result => ids = result)
+            .catch(error => console.log('Error getting blog post ids: ', error));
+        return ids;
     }
 
     private getBlogPosts() {
@@ -92,18 +100,6 @@ export class BlogService {
             this.moreCount++;
             this.noMore.next(this.cachedBlogPosts.length < ((this.moreCount) * this.baseMoreCount));
         });
-    }
-
-    private async getBlogPostIds() {
-        let ids = '';
-        await this.cmsItems.getItems('blog_page_blog_posts', { fields: 'blog_posts_id' })
-            .then(result => {
-                result.data.forEach(id => {
-                    ids = ids.concat(id.blog_posts_id + ', ');
-                });
-            })
-            .catch(error => console.log('Error getting blog post ids: ', error));
-        return ids;
     }
 
     sortPosts(sortBy: string) {
@@ -125,7 +121,7 @@ export class BlogService {
         let postResults: BlogPost[] = [];
         await this.cmsItems.getItems('blog_posts', param)
             .then(results => {
-                postResults = results.data.map(item => {
+                postResults = results.map(item => {
                     let post: BlogPost;
                     post = {
                         id: item.id,
@@ -176,15 +172,15 @@ export class BlogService {
         await this.cmsItems.getItem('blog_posts', postId)
             .then(result => {
                 blogPost = {
-                    id: result.data.id,
-                    title: result.data.title,
-                    author: result.data.author,
-                    content: result.data.content,
-                    description: result.data.description,
-                    thumbnailId: result.data.thumbnail_image,
+                    id: result.id,
+                    title: result.title,
+                    author: result.author,
+                    content: result.content,
+                    description: result.description,
+                    thumbnailId: result.thumbnail_image,
                     thumbnail: 'assets/icons/broken_image/image.svg',
-                    createdOn: result.data.created_on,
-                    publishDate: result.data.published_on ? result.data.published_on : result.data.created_on,
+                    createdOn: result.created_on,
+                    publishDate: result.published_on ? result.published_on : result.data.created_on,
                     updatedOn: result.data.published_on,
                     keywords: result.data.tags ? result.data.tags : ['']
                 };
