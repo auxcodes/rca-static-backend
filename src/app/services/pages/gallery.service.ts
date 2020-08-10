@@ -64,7 +64,7 @@ export class GalleryService {
 
     private async galleryPageItems() {
         await this.cmsItems.getItem('gallery', 1)
-            .then((gallery) => {
+            .then(gallery => {
                 const page: GalleryPage = {
                     title: gallery.title,
                     endpoint: gallery.products_endpoint,
@@ -169,8 +169,8 @@ export class GalleryService {
         });
     }
 
-    async artistArtwork(artistId: string): Promise<Artwork[]> {
-        const filter = {
+    async artistArtwork(artistId: number): Promise<Artwork[]> {
+        const params = {
             sort: 'sold',
             filter: {
                 artist_profile: { eq: artistId }
@@ -178,9 +178,9 @@ export class GalleryService {
         }
         let artwork: Artwork[] = [];
 
-        await this.artworkItems(filter).then(results => {
+        await this.artworkItems(params).then(results => {
             artwork = results;
-            //console.log("GS Artist Artwork");
+            console.log("GS Artist Artwork: ", artistId, results);
         });
 
         return artwork;

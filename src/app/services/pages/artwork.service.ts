@@ -44,31 +44,31 @@ export class ArtworkService {
     private async artworkbyId(artworkId: number, size: number): Promise<Artwork> {
         let artCard: Artwork = { id: 0 };
         await this.cmsItems.getItem('artwork', artworkId)
-            .then((artwork) => {
-                if (artwork.data.visible) {
+            .then(artwork => {
+                if (artwork.visible) {
                     artCard = {
-                        id: artwork.data.id,
-                        sold: artwork.data.sold,
-                        title: artwork.data.title,
-                        description: artwork.data.description,
-                        price: artwork.data.price,
-                        artistId: artwork.data.artist_profile,
+                        id: artwork.id,
+                        sold: artwork.sold,
+                        title: artwork.title,
+                        description: artwork.description,
+                        price: artwork.price,
+                        artistId: artwork.artist_profile,
                         url: '',
-                        type: artwork.data.type ? artwork.data.type : '-',
-                        medium: artwork.data.medium ? artwork.data.medium : '-',
-                        completionDate: artwork.data.completion_date ? artwork.data.completion_date : '-',
-                        completionTime: artwork.data.completion_time ? artwork.data.completion_time : '-',
-                        copyright: artwork.data.copyright ? artwork.data.copyright : '-',
+                        type: artwork.type ? artwork.type : '-',
+                        medium: artwork.medium ? artwork.medium : '-',
+                        completionDate: artwork.completion_date ? artwork.completion_date : '-',
+                        completionTime: artwork.completion_time ? artwork.completion_time : '-',
+                        copyright: artwork.copyright ? artwork.copyright : '-',
                         dimensions: {
-                            width: artwork.data.width ? artwork.data.width : 0,
-                            height: artwork.data.height ? artwork.data.height : 0,
-                            length: artwork.data.length ? artwork.data.length : 0
+                            width: artwork.width ? artwork.width : 0,
+                            height: artwork.height ? artwork.height : 0,
+                            length: artwork.length ? artwork.length : 0
                         },
-                        weight: artwork.data.weight ? artwork.data.weight : 0,
-                        packaging: artwork.data.packaging ? artwork.data.packaging : '-',
-                        parcelWidth: artwork.data.width ? artwork.data.width : 0,
-                        parcelHeight: artwork.data.height ? artwork.data.height : 0,
-                        parcelLength: artwork.data.length ? artwork.data.length : 0
+                        weight: artwork.weight ? artwork.weight : 0,
+                        packaging: artwork.packaging ? artwork.packaging : '-',
+                        parcelWidth: artwork.width ? artwork.width : 0,
+                        parcelHeight: artwork.height ? artwork.height : 0,
+                        parcelLength: artwork.length ? artwork.length : 0
                     };
                     this.artistService.artistName(artCard.artistId).then(name => artCard.artistName = name);
                     this.galleryService.endpoint().then(endpoint => {

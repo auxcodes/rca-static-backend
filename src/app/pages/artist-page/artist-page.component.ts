@@ -38,7 +38,7 @@ export class ArtistPageComponent implements OnInit, OnDestroy {
             })
             .catch(error => console.log('Error getting artist from artist service: ', error));
         // get artworks
-        this.galleryService.artistArtwork(id.toString())
+        this.galleryService.artistArtwork(id)
             .then(result => this.artworks = result)
             .catch(error => console.log('Error getting Artwork for Artist: ', this.artist.name, 'error: ', error));
     }

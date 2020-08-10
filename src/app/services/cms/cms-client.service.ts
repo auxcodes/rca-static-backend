@@ -170,7 +170,7 @@ export class CmsClientService {
                 break;
             }
             case "artwork": {
-                result = this.getArtwork(params);
+                result = this.getArtworks(params);
                 break;
             }
             case "blog_page_blog_posts": {
@@ -196,15 +196,24 @@ export class CmsClientService {
         return ids;
     }
 
-    async getArtwork(params) {
-        //console.log("CS Artwork Params:", params);
+    async getArtwork(id: number) {
+        const artwork = artworkData.data.find(item => item.id === id);
+        //console.log("CS Get Artwork: ", id, artwork);
+        return artwork;
+    }
+
+    async getArtworks(params) {
+        //console.log("CS getArtwork Params:", params);
         const offset = params.offset ? params.offset : 0;
         const limit = params.limit ? params.limit + offset : 100;
         const sort = params.sort ? params.sort : null;
+        const filter = params.filter ? params.filter : null;
         let artwork: any[] = [];
         artworkData.data.forEach(item => {
-            //console.log(item);
-            if (item.visible === params.filter.visible.neq) {
+            if (filter.visible && item.visible === filter.visible.neq) {
+                artwork.push(item);
+            }
+            if (filter.artist_profile && item.artist_profile === filter.artist_profile.eq) {
                 artwork.push(item);
             }
         });
@@ -253,6 +262,12 @@ export class CmsClientService {
         });
         //console.log("Artist Ids: ", ids);
         return ids;
+    }
+
+    async getArtist(id: number) {
+        const artist = artistProfileData.data.find(item => item.id === id);
+        //console.log("CS Get Artist: ", id, artist);
+        return artist;
     }
 
     async getArtistProfiles(params) {
@@ -304,9 +319,4 @@ export class CmsClientService {
         return image;
     }
 
-    async getArtist(id: number) {
-        const artist = artistProfileData.data.find(item => item.id === id);
-        //console.log("CS Get Artist: ", id, artist);
-        return artist;
-    }
 }
