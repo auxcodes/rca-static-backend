@@ -104,16 +104,12 @@ export class BlogService {
 
     sortPosts(sortBy: string) {
         this.sortBy.next(sortBy);
-        const currentCount = this.moreCount * this.baseMoreCount;
-        const params = {
-            offset: 0, limit: currentCount,
-            sort: this.sortBy.value,
-            filter: this.postsFilter
-        };
-        this.blogPostItems(params).then(results => {
-            this.cachedBlogPosts = results;
+
+        if (this.cachedBlogPosts.length > 0) {
+            const sorted = this.cachedBlogPosts.reverse();
+            this.cachedBlogPosts = sorted;
             this.blogPosts.next(this.cachedBlogPosts);
-        });
+        }
     }
 
     async blogPostItems(param: object): Promise<BlogPost[]> {
@@ -180,11 +176,11 @@ export class BlogService {
                     thumbnailId: result.thumbnail_image,
                     thumbnail: 'assets/icons/broken_image/image.svg',
                     createdOn: result.created_on,
-                    publishDate: result.published_on ? result.published_on : result.data.created_on,
-                    updatedOn: result.data.published_on,
-                    keywords: result.data.tags ? result.data.tags : ['']
+                    publishDate: result.published_on ? result.published_on : result.created_on,
+                    updatedOn: result.published_on,
+                    keywords: result.tags ? result.tags : ['']
                 };
-                blogPost.updatedOn = result.data.updated_on ? result.data.updated_on : blogPost.publishDate;
+                blogPost.updatedOn = result.updated_on ? result.updated_on : blogPost.publishDate;
                 this.cmsImages.getImage(blogPost.thumbnailId)
                     .then(image => {
                         blogPost.thumbnail = this.cmsImages.resizeImageUrl(image.filename, this.imageSize, this.imageQuality);

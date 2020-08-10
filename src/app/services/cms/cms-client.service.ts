@@ -115,8 +115,16 @@ export class CmsClientService {
                 result = this.getImage(primaryKey);
                 break;
             }
+            case "artwork": {
+                result = this.getArtwork(primaryKey);
+                break;
+            }
             case "blog_page": {
                 result = Promise.resolve(blogPageData.data);
+                break;
+            }
+            case "blog_posts": {
+                result = this.getBlogPost(primaryKey);
                 break;
             }
             default: {
@@ -210,26 +218,32 @@ export class CmsClientService {
         const ids: number[] = blogPostsData.data.map(item => {
             return item.id
         });
-        console.log("CS Blog Post Ids: ", ids);
+        //console.log("CS Blog Post Ids: ", ids);
         return ids;
     }
 
-    async getBlogPost(params) {
-        console.log("CS Blog Post Params:", params);
+    async getBlogPost(id: number) {
+        const post = blogPostsData.data.find(item => item.id === id);
+        //console.log("CS Get Blog Post: ", id, post);
+        return post;
+    }
+
+    async getBlogPosts(params) {
+        //console.log("CS Blog Post Params:", params);
         const offset = params.offset ? params.offset : 0;
         const limit = params.limit ? params.limit + offset : 100;
         const sort = params.sort ? params.sort : null;
 
         let posts: any[] = [];
         blogPostsData.data.forEach(item => {
-            console.log(item);
+            //console.log(item);
             if (item.status === params.filter.status.eq) {
                 posts.push(item);
             }
         });
         posts = sort ? posts.sort((a, b) => { return a.sold - b.sold }) : posts;
         posts = posts.slice(offset, limit);
-        console.log("CS Post items: ", posts);
+        //console.log("CS Post items: ", posts);
         return posts;
     }
 

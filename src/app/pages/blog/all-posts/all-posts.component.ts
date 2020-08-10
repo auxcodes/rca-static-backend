@@ -20,7 +20,7 @@ export class AllPostsComponent implements OnInit, OnDestroy {
     blogPage: BlogPage = {
         title: 'Blog Posts',
         loadAmount: 10,
-        blogPostIds: '',
+        blogPostIds: null,
         seoIndex: 0,
         seo: undefined
     }
