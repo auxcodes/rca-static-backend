@@ -66,7 +66,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
             this.galleryService.getArtworks();
         }
         if (path === 'artist/:id') {
-            this.galleryService.getArtistArtwork(this.route.snapshot.params['id']);
+            this.galleryService.getArtistArtwork(this.route.snapshot.params['id'] * 1);
         }
     }
 

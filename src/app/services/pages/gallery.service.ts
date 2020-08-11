@@ -150,7 +150,7 @@ export class GalleryService {
         });
     }
 
-    getArtistArtwork(artistId: string) {
+    getArtistArtwork(artistId: number) {
         this.artistSearched = true;
         const filter = {
             sort: 'sold',
@@ -165,7 +165,7 @@ export class GalleryService {
         this.artworkItems(filter).then(results => {
             this.allArtwork = results;
             this.artworks.next(this.allArtwork);
-            //console.log("GS Get Artist Artwork");
+            //console.log("GS Get Artist Artwork: ", results);
         });
     }
 
@@ -180,7 +180,7 @@ export class GalleryService {
 
         await this.artworkItems(params).then(results => {
             artwork = results;
-            console.log("GS Artist Artwork: ", artistId, results);
+            //console.log("GS Artist Artwork: ", artistId, results);
         });
 
         return artwork;
