@@ -81,7 +81,7 @@ export class ArtistPageComponent implements OnInit, OnDestroy {
     }
 
     viewArtistsArtwork() {
-        this.galleryService.getArtistArtwork(this.artist.id.toString());
+        this.galleryService.getArtistArtwork(this.artist.id);
     }
 
     backgroundImage() {

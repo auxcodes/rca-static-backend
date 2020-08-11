@@ -20,7 +20,7 @@ export class SiteLinksService {
         return ids;
     }
 
-    async siteLinks(ids: string) {
+    async siteLinks(ids: any[]) {
         let allLinks: SiteMapLink[] = [];
         await this.cmsItems.getItems('site_map_link', { filter: { id: { in: ids } } })
             .then(results => {
