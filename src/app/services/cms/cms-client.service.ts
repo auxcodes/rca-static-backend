@@ -24,6 +24,8 @@ import * as galleryPageData from 'src/assets/static-content/json/gallery.json';
 import * as artworkData from 'src/assets/static-content/json/artwork.json';
 import * as blogPageData from 'src/assets/static-content/json/blog_page.json';
 import * as blogPostsData from 'src/assets/static-content/json/blog_posts.json';
+import * as carouselData from 'src/assets/static-content/json/image_carousel.json';
+
 
 
 export declare type RequestPromise = Promise<any>;
@@ -138,6 +140,10 @@ export class CmsClientService {
                 result = Promise.resolve(siteMapData.data);
                 break;
             }
+            case "image_carousel": {
+                result = this.getImageCarousel(primaryKey);
+                break;
+            }
             default: {
                 break;
             }
@@ -196,11 +202,35 @@ export class CmsClientService {
                 result = Promise.resolve(blogPostsData.data);
                 break;
             }
+            case "home_artwork_carousel": {
+                result = Promise.resolve(carouselData.data[0].id);
+                break;
+            }
+            case "home_image_carousel": {
+                result = Promise.resolve(carouselData.data[1].id);
+                break;
+            }
+            case "image_carousel_artwork": {
+                result = this.getImageCarouselArtIds(params);
+                break;
+            }
             default: {
                 break;
             }
         }
         return result;
+    }
+
+    async getImageCarousel(id: number) {
+        const carousel = carouselData.data.find(item => item.id === id);
+        //console.log("CS Get Carousel: ", id, carousel);
+        return carousel;
+    }
+
+    async getImageCarouselArtIds(params) {
+        const carousel = carouselData.data.find(item => item.id === params.filter.image_carousel_id.eq);
+        //console.log("CS Get Carousel art ids: ", params.filter.image_carousel_id.eq, carousel);
+        return carousel.artworks;
     }
 
     async getArtworkIds() {

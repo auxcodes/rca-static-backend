@@ -20,24 +20,23 @@ export class ArtworkCarouselService {
         private artworkService: ArtworkService,
         private artistService: ArtistService) { }
 
-    async carouselId(carouselCollection: string): Promise<number[]> {
-        let result: number[] = [];
+    async carouselId(carouselCollection: string): Promise<number> {
+        let result: number;
         await this.cmsItems.getItems(carouselCollection, { fields: 'image_carousel_id' })
-            .then(ids => {
-                result = ids.data.map(item => {
-                    return item.image_carousel_id;
-                })
-            })
+            .then(ids => result = ids)
+            .catch(error => console.log("Error getting carousel ids", error));
         return result;
     }
 
     async getCarousel(id: number): Promise<BehaviorSubject<ArtworkCarousel>> {
-        const result: BehaviorSubject <ArtworkCarousel> = new BehaviorSubject<ArtworkCarousel>(undefined)
-        this.carouselItem(id).then(item => {
-            if (item) {
-                result.next(item);
-            }
-        });
+        const result: BehaviorSubject<ArtworkCarousel> = new BehaviorSubject<ArtworkCarousel>(undefined)
+        this.carouselItem(id)
+            .then(item => {
+                if (item) {
+                    result.next(item);
+                }
+            })
+            .catch(error => console.log("Error getting carousel", error));
         return result;
     }
 
@@ -45,34 +44,34 @@ export class ArtworkCarouselService {
         let result: ArtworkCarousel;
         await this.cmsItems.getItem('image_carousel', id)
             .then(item => {
-                const carousel: ArtworkCarousel = {
-                    id : item.data.id,
-                    options: {
-                        autoScroll: item.data.auto_scroll,
-                        autoScrollTime: item.data.auto_scroll_time,
-                        imageSpacing: item.data.image_spacing,
-                        scrollSpeed: item.data.scroll_speed + 'ms ease-in-out',
-                        showControls: item.data.show_controls
-                    },
-                    artworks: []
+                if (item) {
+                    const carousel: ArtworkCarousel = {
+                        id: item.id,
+                        options: {
+                            autoScroll: item.auto_scroll,
+                            autoScrollTime: item.auto_scroll_time,
+                            imageSpacing: item.image_spacing,
+                            scrollSpeed: item.scroll_speed + 'ms ease-in-out',
+                            showControls: item.show_controls
+                        },
+                        artworks: []
+                    }
+                    result = carousel;
+                    this.artworkIds('image_carousel_artwork', result.id)
+                        .then(ids => {
+                            this.carouselArt(ids).then(artwork => result.artworks = artwork);
+                        });
                 }
-                result = carousel;
-                this.artworkIds('image_carousel_artwork', result.id)
-                    .then(ids => {
-                        this.carouselArt(ids).then(artwork => result.artworks = artwork);
-                    });
             })
+            .catch(error => console.log("Error getting carousel item: ", error));
         return result;
     }
 
     private async artworkIds(collection: string, carouselId: string): Promise<number[]> {
         let result: number[] = [];
         await this.cmsItems.getItems(collection, { filter: { image_carousel_id: { eq: carouselId } }, fields: 'artwork_id' })
-            .then(ids => {
-                result = ids.data.map(item => {
-                    return item.artwork_id;
-                })
-            })
+            .then(ids => result = ids)
+            .catch(error => console.log("Error getting carousel artwork ids: ", error));
         return result;
     }
 
@@ -93,19 +92,19 @@ export class ArtworkCarouselService {
         let artCard: Artwork = { id: 0 };
         await this.cmsItems.getItem('artwork', artworkId)
             .then(artwork => {
-                if (artwork.data.visible) {
+                if (artwork.visible) {
                     artCard = {
-                        id: artwork.data.id,
-                        title: artwork.data.title,
-                        artistId: artwork.data.artist_profile,
-                        url: '/artwork/' + artwork.data.id
+                        id: artwork.id,
+                        title: artwork.title,
+                        artistId: artwork.artist_profile,
+                        url: '/artwork/' + artwork.id
                     };
                     this.artistService.artistName(artCard.artistId).then(name => artCard.artistName = name);
                     this.cmsImages.getImages(artCard.id)
                         .then(art => {
                             artCard.images = art;
                             if (artCard.images) {
-                                artCard.thumbnail = this.artworkService.resizeImageUrl(artCard.images[0].filename, this.imageSize, this.imageQuality);
+                                artCard.thumbnail = artCard.images[0].thumbnailUrl;
                             }
                             else {
                                 artCard.thumbnail = 'assets/icons/broken_image/image.svg';

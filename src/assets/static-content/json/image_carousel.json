@@ -3,7 +3,7 @@
         {
             "id": 1,
             "auto_scroll": true,
-            "auto_scroll_time": 1000,
+            "auto_scroll_time": 3000,
             "image_spacing": 10,
             "scroll_speed": 1000,
             "show_controls": true,

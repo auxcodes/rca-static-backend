@@ -21,12 +21,8 @@ export class HomePageService {
         seo: undefined
     });
 
-    private imageSize = 500;
-    private imageQuality = 'okay';
-
     constructor(
         private cmsItems: CmsItemsService,
-        private cmsImage: CmsImageService,
         private carouselService: ArtworkCarouselService) {
     }
 
@@ -53,40 +49,33 @@ export class HomePageService {
                 };
                 this.carouselService.carouselId('home_artwork_carousel')
                     .then(id => {
-                        this.carouselService.getCarousel(id[0]).then(carousel => {
-                            carousel.subscribe(data => {
-                                if (data !== undefined) {
-                                    page.carouselOne = data;
-                                    this.content.next(page);
-                                }
-                            });
-                        });
+                        this.carouselService.getCarousel((id * 1))
+                            .then(carousel => {
+                                carousel.subscribe(data => {
+                                    if (data !== undefined) {
+                                        page.carouselOne = data;
+                                        this.content.next(page);
+                                    }
+                                });
+                            })
+                            .catch(error => console.log("Error getting home artwork carousel", error));
                     }).catch(error => console.log("Error getting artwork carousel ids: ", error));
                 this.carouselService.carouselId('home_image_carousel')
                     .then(id => {
-                        this.carouselService.getCarousel(id[0]).then(carousel => {
-                            carousel.subscribe(data => {
-                                if (data !== undefined) {
-                                    page.carouselTwo = data;
-                                    this.content.next(page);
-                                }
-                            });
-                        });
+                        this.carouselService.getCarousel(id)
+                            .then(carousel => {
+                                carousel.subscribe(data => {
+                                    if (data !== undefined) {
+                                        page.carouselTwo = data;
+                                        this.content.next(page);
+                                    }
+                                });
+                            })
+                            .catch(error => console.log("Error getting home image carousel", error));
                     }).catch(error => console.log("Error getting image carousel ids: ", error));
 
                 this.content.next(page);
             })
             .catch(error => console.log('Error getting home contents: ', error));
-    }
-
-    private async homePageImages(imageIndex: number) {
-        let imageData: CMSImage;
-        await this.cmsImage.getImage(imageIndex)
-            .then(image => {
-                imageData = image;
-                imageData.url = this.cmsImage.resizeImageUrl(imageData.filename, this.imageSize, this.imageQuality);
-            })
-            .catch(error => console.log('Error getting home images: ', error));
-        return imageData;
     }
 }
