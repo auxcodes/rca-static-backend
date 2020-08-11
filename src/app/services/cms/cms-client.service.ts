@@ -12,9 +12,11 @@ import * as menuData from 'src/assets/static-content/json/menu.json';
 import * as footerData from 'src/assets/static-content/json/footer.json';
 import * as seoData from 'src/assets/static-content/json/seo_settings.json';
 import * as privacyData from 'src/assets/static-content/json/privacy.json';
+import * as termsData from 'src/assets/static-content/json/terms.json';
 import * as returnsPolicyData from 'src/assets/static-content/json/return_policy.json';
 import * as contactLinksData from 'src/assets/static-content/json/contact_site_map_link.json';
 import * as siteMapLinksData from 'src/assets/static-content/json/site_map_links.json';
+import * as siteMapData from 'src/assets/static-content/json/site_map.json';
 import * as imagesData from 'src/assets/static-content/json/images.json';
 import * as artistPageData from 'src/assets/static-content/json/artists_page.json';
 import * as artistProfileData from 'src/assets/static-content/json/artist_profiles.json';
@@ -22,6 +24,7 @@ import * as galleryPageData from 'src/assets/static-content/json/gallery.json';
 import * as artworkData from 'src/assets/static-content/json/artwork.json';
 import * as blogPageData from 'src/assets/static-content/json/blog_page.json';
 import * as blogPostsData from 'src/assets/static-content/json/blog_posts.json';
+
 
 export declare type RequestPromise = Promise<any>;
 
@@ -95,6 +98,10 @@ export class CmsClientService {
                 result = Promise.resolve(privacyData.data);
                 break;
             }
+            case "terms": {
+                result = Promise.resolve(termsData.data);
+                break;
+            }
             case "return_policy": {
                 result = Promise.resolve(returnsPolicyData.data);
                 break;
@@ -127,6 +134,10 @@ export class CmsClientService {
                 result = this.getBlogPost(primaryKey);
                 break;
             }
+            case "site_map": {
+                result = Promise.resolve(siteMapData.data);
+                break;
+            }
             default: {
                 break;
             }
@@ -151,6 +162,10 @@ export class CmsClientService {
             }
             case "site_map_link": {
                 result = this.getLinks(params);
+                break;
+            }
+            case "site_map_site_map_link": {
+                result = this.getSiteMapIds();
                 break;
             }
             case "artwork_directus_files": {
@@ -193,6 +208,14 @@ export class CmsClientService {
             return item.id
         });
         //console.log("CS Artwork Ids: ", ids);
+        return ids;
+    }
+
+    async getSiteMapIds() {
+        const ids: number[] = siteMapLinksData.data.map(item => {
+            return item.id
+        });
+        //console.log("CS Sitemap Ids: ", ids);
         return ids;
     }
 

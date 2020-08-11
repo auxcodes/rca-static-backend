@@ -49,7 +49,7 @@ export class SiteMapService {
         await this.cmsItems.getItems('artwork', params)
             .then(items => {
                 const links: SiteMapLink[] = [];
-                items.data.forEach(artwork => {
+                items.forEach(artwork => {
                     links.push({ name: artwork.title, url: 'artwork/' + artwork.id, group: 'Artwork' });
                     this.artworkLinks.next(links);
                 });
@@ -68,7 +68,7 @@ export class SiteMapService {
         await this.cmsItems.getItems('artist_profiles', params)
             .then(items => {
                 const links: SiteMapLink[] = [];
-                items.data.forEach(artist => {
+                items.forEach(artist => {
                     links.push({ name: artist.display_name, url: 'artist/' + artist.id, group: 'Artists' });
                     this.artistLinks.next(links);
                 });
@@ -87,7 +87,7 @@ export class SiteMapService {
         await this.cmsItems.getItems('blog_posts', params)
             .then(items => {
                 const links: SiteMapLink[] = [];
-                items.data.forEach(post => {
+                items.forEach(post => {
                     links.push({ name: post.title, url: 'blog/post/' + post.id, group: 'Blog Posts' });
                     this.blogPostLinks.next(links);
                 });
@@ -99,13 +99,13 @@ export class SiteMapService {
         await this.cmsItems.getItem('site_map', 1)
             .then(site => {
                 const page: SiteMap = {
-                    title: site.data.title,
-                    links: site.data.links,
-                    artists: site.data.display_artists,
-                    artwork: site.data.display_artwork,
-                    blogPosts: site.data.display_blog_posts,
+                    title: site.title,
+                    links: site.links,
+                    artists: site.display_artists,
+                    artwork: site.display_artwork,
+                    blogPosts: site.display_blog_posts,
                     groups: [],
-                    seoIndex: site.data.seo_settings,
+                    seoIndex: site.seo_settings,
                     seo: undefined
                 };
                 this.siteLinkService.getLinkIds('site_map_site_map_link', 'site_map_link_id').then(data => {

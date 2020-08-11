@@ -36,9 +36,9 @@ export class TermsConditionsService {
         await this.cmsItems.getItem('terms', 1)
             .then((terms) => {
                 let page: TermsPage = {
-                    title: terms.data.title,
-                    content: terms.data.content,
-                    seoIndex: terms.data.seo_settings,
+                    title: terms.title,
+                    content: terms.content,
+                    seoIndex: terms.seo_settings,
                     seo: undefined
                 };
                 this.termsPage.next(page);

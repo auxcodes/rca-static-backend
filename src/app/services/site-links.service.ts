@@ -11,12 +11,10 @@ export class SiteLinksService {
     constructor(private cmsItems: CmsItemsService) { }
 
     async getLinkIds(collection: string, feild: string) {
-        let ids: string = '';
+        let ids = [];
         await this.cmsItems.getItems(collection, { fields: feild })
             .then(result => {
-                result.data.forEach(id => {
-                    ids = ids.concat(id.site_map_link_id + ', ');
-                });
+                ids = result;
             })
             .catch(error => console.log('Error getting site map link ids: ', error));
         return ids;
@@ -26,8 +24,8 @@ export class SiteLinksService {
         let allLinks: SiteMapLink[] = [];
         await this.cmsItems.getItems('site_map_link', { filter: { id: { in: ids } } })
             .then(results => {
-                let links: SiteMapLink[] = results.data.map(item => {
-                    let link: SiteMapLink = {
+                const links: SiteMapLink[] = results.map(item => {
+                    const link: SiteMapLink = {
                         id: item.id,
                         name: item.link_text,
                         url: item.url,
@@ -43,7 +41,7 @@ export class SiteLinksService {
     }
 
     async linkGroups(links: SiteMapLink[]) {
-        let groups: string[] = [];
+        const groups: string[] = [];
         links.forEach(link => {
             if (!groups.includes(link.group)) {
                 groups.push(link.group);
@@ -56,7 +54,7 @@ export class SiteLinksService {
         let allLinks: ManageLink[] = [];
         await this.cmsItems.getItems('admin_links', { filter: { visible: {neq: true}}, fields: 'name, text, url, relative_path, description' })
             .then(results => {
-                allLinks = results.data.map(item => {
+                allLinks = results.map(item => {
                     const link: ManageLink = {
                         name: item.name,
                         text: item.text,
