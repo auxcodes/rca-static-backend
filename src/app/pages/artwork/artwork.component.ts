@@ -15,7 +15,6 @@ export class ArtworkComponent implements OnInit {
 
     artwork: Artwork = { id: 0 };
     imageIndex = 0;
-    gallerLink = '/gallery/__';
     private maxImageSize = 900;
 
     constructor(
@@ -31,21 +30,34 @@ export class ArtworkComponent implements OnInit {
     ngOnInit() {
         const id: number = +this.route.snapshot.paramMap.get('id');
         if (this.galleryService.artworks.value.length >= this.galleryService.content.value.loadAmount) {
-            this.galleryService.findById(id)
-                .then(result => {
-                    this.artwork = result;
-                    this.setupFacebookShare();
-                })
-                .catch(error => console.log('Error getting artwork from gallery service: ', error ));
+            this.checkGalleryStorage(id);
         }
         else {
-            this.artworkService.getArtworkById(id, this.maxImageSize)
-                .then(result => {
+            this.getArtDirectly(id);
+        }
+    }
+
+    private checkGalleryStorage(id: number) {
+        this.galleryService.findById(id)
+            .then(result => {
+                if (result !== undefined) {
                     this.artwork = result;
                     this.setupFacebookShare();
-                })
-                .catch(error => console.log('Error getting artwork from artwork service: ', error));
-        }
+                }
+                else {
+                    this.getArtDirectly(id);
+                }
+            })
+            .catch(error => console.log('Error getting artwork from gallery service: ', error));
+    }
+
+    private getArtDirectly(id: number) {
+        this.artworkService.getArtworkById(id, this.maxImageSize)
+            .then(result => {
+                this.artwork = result;
+                this.setupFacebookShare();
+            })
+            .catch(error => console.log('Error getting artwork from artwork service: ', error));
     }
 
     private setupFacebookShare() {

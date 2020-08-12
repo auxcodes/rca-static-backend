@@ -32,7 +32,7 @@ export class ArtworkService {
                 .catch(error => console.log("Error getting artwork by Id: ", error));
         }
         else {
-            result = this.artwork.getValue();
+            result = this.artwork.value;
         }
         return result;
     }
@@ -45,46 +45,44 @@ export class ArtworkService {
         let artCard: Artwork = { id: 0 };
         await this.cmsItems.getItem('artwork', artworkId)
             .then(artwork => {
-                if (artwork.visible) {
-                    artCard = {
-                        id: artwork.id,
-                        sold: artwork.sold,
-                        title: artwork.title,
-                        description: artwork.description,
-                        price: artwork.price,
-                        artistId: artwork.artist_profile,
-                        url: '',
-                        type: artwork.type ? artwork.type : '-',
-                        medium: artwork.medium ? artwork.medium : '-',
-                        completionDate: artwork.completion_date ? artwork.completion_date : '-',
-                        completionTime: artwork.completion_time ? artwork.completion_time : '-',
-                        copyright: artwork.copyright ? artwork.copyright : '-',
-                        dimensions: {
-                            width: artwork.width ? artwork.width : 0,
-                            height: artwork.height ? artwork.height : 0,
-                            length: artwork.length ? artwork.length : 0
-                        },
-                        weight: artwork.weight ? artwork.weight : 0,
-                        packaging: artwork.packaging ? artwork.packaging : '-',
-                        parcelWidth: artwork.width ? artwork.width : 0,
-                        parcelHeight: artwork.height ? artwork.height : 0,
-                        parcelLength: artwork.length ? artwork.length : 0
-                    };
-                    this.artistService.artistName(artCard.artistId).then(name => artCard.artistName = name);
-                    this.galleryService.endpoint().then(endpoint => {
-                        artCard.url = endpoint;
+                artCard = {
+                    id: artwork.id,
+                    sold: artwork.sold,
+                    title: artwork.title,
+                    description: artwork.description,
+                    price: artwork.price,
+                    artistId: artwork.artist_profile,
+                    url: '',
+                    type: artwork.type ? artwork.type : '-',
+                    medium: artwork.medium ? artwork.medium : '-',
+                    completionDate: artwork.completion_date ? artwork.completion_date : '-',
+                    completionTime: artwork.completion_time ? artwork.completion_time : '-',
+                    copyright: artwork.copyright ? artwork.copyright : '-',
+                    dimensions: {
+                        width: artwork.width ? artwork.width : 0,
+                        height: artwork.height ? artwork.height : 0,
+                        length: artwork.length ? artwork.length : 0
+                    },
+                    weight: artwork.weight ? artwork.weight : 0,
+                    packaging: artwork.packaging ? artwork.packaging : '-',
+                    parcelWidth: artwork.width ? artwork.width : 0,
+                    parcelHeight: artwork.height ? artwork.height : 0,
+                    parcelLength: artwork.length ? artwork.length : 0
+                };
+                this.artistService.artistName(artCard.artistId).then(name => artCard.artistName = name);
+                this.galleryService.endpoint().then(endpoint => {
+                    artCard.url = endpoint;
+                });
+                this.cmsImages.getImages(artCard.id)
+                    .then(art => {
+                        artCard.images = art;
+                        if (artCard.images) {
+                            artCard.thumbnail = artCard.images[0].thumbnailUrl;
+                        }
+                        else {
+                            artCard.thumbnail = 'assets/icons/broken_image/image.svg';
+                        }
                     });
-                    this.cmsImages.getImages(artCard.id)
-                        .then(art => {
-                            artCard.images = art;
-                            if (artCard.images) {
-                                artCard.thumbnail = artCard.images[0].thumbnailUrl;
-                            }
-                            else {
-                                artCard.thumbnail = 'assets/icons/broken_image/image.svg';
-                            }
-                        });
-                }
             })
             .catch(error => {
                 console.log('Error getting artwork contents: ', error.msg);
