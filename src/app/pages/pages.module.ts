@@ -29,6 +29,8 @@ import { SinglePostComponent } from './blog/single-post/single-post.component';
 import { AllPostsComponent } from './blog/all-posts/all-posts.component';
 import { InnerHtmlComponent } from './components/inner-html/inner-html.component';
 
+
+
 @NgModule({
     declarations: [
         HomePageComponent,
@@ -62,6 +64,9 @@ import { InnerHtmlComponent } from './components/inner-html/inner-html.component
         CardsModule,
         ContentDetailModule,
         SpinnersModule,
+    ],
+    exports: [
+        InnerHtmlComponent
     ]
 })
 export class PagesModule { }

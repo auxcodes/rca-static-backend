@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { GalleryService } from './pages/gallery.service';
+import { DemoSiteModalService } from './utils/demo-site-modal.service';
 
 declare const Snipcart;
 
@@ -14,8 +15,11 @@ export class SnipcartService {
     isLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     isCartOpen: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     userEmail: BehaviorSubject<string> = new BehaviorSubject<string>('');
+    isModalShown: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-    constructor(private galleryService: GalleryService) {
+    constructor(
+        private galleryService: GalleryService,
+        private visitHistory: DemoSiteModalService) {
 
     }
 
@@ -78,6 +82,7 @@ export class SnipcartService {
     }
 
     private itemAdded(item) {
+        this.visitHistory.isModalShown.next(true);
         (window as any).dataLayer.push({
             event: 'snipcartEvent',
             eventCategory: 'Cart Update',

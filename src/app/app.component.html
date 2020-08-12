@@ -5,4 +5,5 @@
         <router-outlet></router-outlet>
     </section>
     <app-footer class="footer"></app-footer>
+    <app-overlay-modal *ngIf="showModal" [content]="siteWarning" (closeModal)="closeModal()"></app-overlay-modal>
 </section>

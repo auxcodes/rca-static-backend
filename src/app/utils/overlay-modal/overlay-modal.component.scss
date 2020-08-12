@@ -1,0 +1,71 @@
+@import 'src/sass/__variables';
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1041;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, 0.5);
+    overflow: auto;
+    transition: 0.5s;
+}
+
+.content {
+    width: 90%;
+    max-width: 500px;
+    min-width: 300px;
+    background-color: white;
+    margin: 7vh auto;
+    padding: 16px;
+    box-shadow: 0 7px 15px #000;
+
+    .close-button {
+        display: block;
+        text-align: right;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:before {
+            content: url('/assets/icons/navigation/close.svg');
+        }
+    }
+
+    .footer {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .ok-button {
+            background: $highlight-btn-color;
+            box-shadow: 0 1px 3px #464646;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 700;
+            justify-content: flex-end;
+            margin: 0 0 0 auto;
+            padding: 10px 10px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: box-shadow .15s;
+
+            .link {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                box-shadow: 0 7px 15px #828282;
+            }
+
+            &:active {
+                box-shadow: 0 1px 3px #464646;
+            }
+        }
+    }
+}
