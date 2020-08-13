@@ -28,6 +28,7 @@ import { FacebookShareComponent } from '../utils/facebook-share/facebook-share.c
 import { SinglePostComponent } from './blog/single-post/single-post.component';
 import { AllPostsComponent } from './blog/all-posts/all-posts.component';
 import { InnerHtmlComponent } from './components/inner-html/inner-html.component';
+import { SortBarComponent } from './components/sort-bar/sort-bar.component';
 
 
 
@@ -53,7 +54,8 @@ import { InnerHtmlComponent } from './components/inner-html/inner-html.component
         FacebookShareComponent,
         SinglePostComponent,
         AllPostsComponent,
-        InnerHtmlComponent
+        InnerHtmlComponent,
+        SortBarComponent
     ],
     imports: [
         AppRoutingModule,

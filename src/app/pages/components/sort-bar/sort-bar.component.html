@@ -1,0 +1,5 @@
+<div class="sort-bar">
+    <select class="select-input" (change)="onSort($event)">
+        <option *ngFor="let sortOption of sortOptions" [value]="sortOption.name">{{sortOption.text}}</option>
+    </select>
+</div>

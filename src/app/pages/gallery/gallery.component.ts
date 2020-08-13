@@ -8,6 +8,7 @@ import { GalleryPage } from '../../models/gallery-page.model';
 import { SeoService } from '../../services/seo.service';
 import { FacebookSdkService } from '../../services/utils/facebook-sdk.service';
 import { Seo } from '../../models/seo.model';
+import { SortOption } from '../../models/sort-option.model';
 
 @Component({
     selector: 'app-gallery',
@@ -30,6 +31,11 @@ export class GalleryComponent implements OnInit, OnDestroy {
     focusArtwork = false;
     artInFocus: Artwork;
     noMore = true;
+
+    sortOptions: SortOption[] = [
+        { name: 'newest', text: 'Newest', value: '-id' },
+        { name: 'oldest', text: 'Oldest', value: 'id' },
+        { name: 'sold', text: 'Sold', value: 'sold' }];
 
     constructor(
         private cmsClient: CmsClientService,
@@ -116,5 +122,9 @@ export class GalleryComponent implements OnInit, OnDestroy {
 
     anchorLink(achorId: string) {
         location.hash = achorId;
+    }
+
+    sortGallery(selected: number) {
+        console.log("GC sortGallery()", selected);
     }
 }

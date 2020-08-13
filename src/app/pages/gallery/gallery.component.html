@@ -7,6 +7,7 @@
             <span class="header-image right-inner"></span>
             <span class="header-image right-outer"></span>
         </div>
+        <app-sort-bar [sortOptions]="sortOptions" (sortSelected)="sortGallery($event)"></app-sort-bar>
         <div class="gallery">
             <div class="gallery-item" id="artwork{{art?.id}}" *ngFor="let art of artworks" (click)="onOpenArtwork(art.id)">
                 <app-artwork-card class="artwork-card" [artworkData]="art" (openArtwork)="onOpenArtwork($event)"></app-artwork-card>

@@ -25,7 +25,6 @@ export class AppComponent {
         this.googleTracking();
         visitHistory.isModalShown.subscribe(value => {
             this.showModal = value;
-            console.log("Show modal value updated: ", value);
         });
         visitHistory.visitHistory.subscribe(history => {
             visitHistory.isModalShown.next(history.seenNotification ? false : true);

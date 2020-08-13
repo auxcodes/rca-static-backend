@@ -1,0 +1,27 @@
+@import 'src/sass/page';
+
+.sort-bar {
+    display: flex;
+    margin: 0;
+
+    .select-input {
+        margin: 0 20px 0 auto;
+        transition: all 0.5s linear;
+        background-color: transparent;
+        border: 1px solid $border-color;
+        box-sizing: border-box;
+        padding: 8px 20px;
+        padding-right: 10px;
+        cursor: pointer;
+        color: #c84c36;
+        font: 700 1.125rem "Lato";
+
+        option {
+            padding: 12px 20px;
+        }
+
+        &:focus {
+            box-shadow: 0 4px 8px $btn-box-shadow-high;
+        }
+    }
+}
