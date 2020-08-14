@@ -234,17 +234,13 @@ export class CmsClientService {
     }
 
     async getArtworkIds() {
-        const ids: number[] = artworkData.data.map(item => {
-            return item.id
-        });
+        const ids: number[] = artworkData.data.map(item => item.id);
         //console.log("CS Artwork Ids: ", ids);
         return ids;
     }
 
     async getSiteMapIds() {
-        const ids: number[] = siteMapLinksData.data.map(item => {
-            return item.id
-        });
+        const ids: number[] = siteMapLinksData.data.map(item => item.id);
         //console.log("CS Sitemap Ids: ", ids);
         return ids;
     }
@@ -270,16 +266,14 @@ export class CmsClientService {
                 artwork.push(item);
             }
         });
-        artwork = sort ? artwork.sort((a, b) => { return a.sold - b.sold }) : artwork;
+        artwork = sort ? artwork.sort((a, b) => a.sold - b.sold) : artwork;
         artwork = artwork.slice(offset, limit);
         //console.log("CS Artwork items: ", artwork);
         return artwork;
     }
 
     async getBlogIds() {
-        const ids: number[] = blogPostsData.data.map(item => {
-            return item.id
-        });
+        const ids: number[] = blogPostsData.data.map(item => item.id);
         //console.log("CS Blog Post Ids: ", ids);
         return ids;
     }
@@ -303,16 +297,14 @@ export class CmsClientService {
                 posts.push(item);
             }
         });
-        posts = sort ? posts.sort((a, b) => { return a.sold - b.sold }) : posts;
+        posts = sort ? posts.sort((a, b) => a.sold - b.sold) : posts;
         posts = posts.slice(offset, limit);
         //console.log("CS Post items: ", posts);
         return posts;
     }
 
     async getArtistIds() {
-        const ids: number[] = artistProfileData.data.map(item => {
-            return item.id
-        });
+        const ids: number[] = artistProfileData.data.map(item => item.id);
         //console.log("Artist Ids: ", ids);
         return ids;
     }

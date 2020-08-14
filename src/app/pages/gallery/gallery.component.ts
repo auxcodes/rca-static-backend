@@ -35,7 +35,12 @@ export class GalleryComponent implements OnInit, OnDestroy {
     sortOptions: SortOption[] = [
         { name: 'newest', text: 'Newest', value: '-id' },
         { name: 'oldest', text: 'Oldest', value: 'id' },
-        { name: 'sold', text: 'Sold', value: 'sold' }];
+        { name: 'price', text: 'Price+', value: 'price' },
+        { name: '-price', text: 'Price-', value: '-price' },
+        { name: 'artist', text: 'Artist+', value: 'artist' },
+        { name: '-artist', text: 'Artist-', value: '-artist' },
+        { name: 'sold', text: 'Sold+', value: 'sold' },
+        { name: '-sold', text: 'Sold-', value: '-sold' }];
 
     constructor(
         private cmsClient: CmsClientService,
@@ -125,6 +130,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
     }
 
     sortGallery(selected: number) {
-        console.log("GC sortGallery()", selected);
+        //console.log("GC sortGallery()", selected);
+        this.galleryService.sortGallery(this.sortOptions[selected].value);
     }
 }

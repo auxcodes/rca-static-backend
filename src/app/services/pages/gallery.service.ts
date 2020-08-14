@@ -22,7 +22,7 @@ export class GalleryService {
         seoIndex: 0,
         seo: undefined
     });
-
+    sortBy: BehaviorSubject<string> = new BehaviorSubject<string>('id');
     noMore: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
     private allArtwork: Artwork[] = [];
@@ -111,6 +111,7 @@ export class GalleryService {
                 }
             }
             else {
+                this.allArtwork = this.sortArtwork(this.sortBy.value, this.allArtwork);
                 this.artworks.next(this.allArtwork);
             }
         }
@@ -124,7 +125,7 @@ export class GalleryService {
             filter: this.galleryFilter
         };
         this.artworkItems(params).then(results => {
-            this.allArtwork = results;
+            this.allArtwork = this.sortArtwork(this.sortBy.value, results);
             this.artworks.next(this.allArtwork);
             this.moreCount++;
             this.noMore.next(this.allArtwork.length < ((this.moreCount) * this.baseMoreCount));
@@ -140,14 +141,65 @@ export class GalleryService {
         };
         const allArtwork: Artwork[] = this.allArtwork;
         await this.artworkItems(params).then(results => {
-            this.allArtwork = results;
+            this.allArtwork = results; 
             if (this.allArtwork.length !== 0) {
-                this.allArtwork = allArtwork.concat(this.allArtwork);
+                this.allArtwork = this.sortArtwork(this.sortBy.value,allArtwork.concat(this.allArtwork));
                 this.artworks.next(this.allArtwork);
                 this.moreCount++
                 this.noMore.next(this.allArtwork.length < ((this.moreCount) * this.baseMoreCount));
             }
         });
+    }
+
+    sortGallery(sortBy: string) {
+        this.sortBy.next(sortBy);
+        this.allArtwork = this.sortArtwork(sortBy, this.allArtwork);
+        this.artworks.next(this.allArtwork);
+    }
+
+    sortArtwork(sortBy: string, artwork: Artwork[]): Artwork[] {
+        let result: Artwork[] = [];
+
+        switch (sortBy) {
+            case "id": {
+                result = artwork.sort((a, b) => a.id - b.id);
+                break;
+            }
+            case "-id": {
+                result = artwork.sort((a, b) => b.id - a.id);
+                break;
+            }
+            case "price": {
+                result = artwork.sort((a, b) => a.price - b.price);
+                break;
+            }
+            case "-price": {
+                result = artwork.sort((a, b) => b.price - a.price);
+                break;
+            }
+            case "sold": {
+                result = artwork.sort((a, b) => +a.sold - +b.sold);
+                break;
+            }
+            case "-sold": {
+                result = artwork.sort((a, b) => +b.sold - +a.sold);
+                break;
+            }
+            case "artist": {
+                result = artwork.sort((a, b) => a.artistName > b.artistName ? 1 : -1);
+                break;
+            }
+            case "-artist": {
+                result = artwork.sort((a, b) => a.artistName < b.artistName ? 1 : -1);
+                break;
+            }
+            default: {
+                result = artwork;
+                break;
+            }
+        }
+
+        return result;
     }
 
     getArtistArtwork(artistId: number) {
@@ -164,6 +216,7 @@ export class GalleryService {
 
         this.artworkItems(filter).then(results => {
             this.allArtwork = results;
+            this.allArtwork = this.sortArtwork(filter.sort, this.allArtwork);
             this.artworks.next(this.allArtwork);
             //console.log("GS Get Artist Artwork: ", results);
         });
@@ -179,7 +232,7 @@ export class GalleryService {
         let artwork: Artwork[] = [];
 
         await this.artworkItems(params).then(results => {
-            artwork = results;
+            artwork = this.sortArtwork(params.sort, results);
             //console.log("GS Artist Artwork: ", artistId, results);
         });
 
