@@ -100,10 +100,10 @@ export class AllPostsComponent implements OnInit, OnDestroy {
         this.fbSdkService.resetShareButton();
     }
 
-    onSortPosts(event) {
-        const sortBy = this.sortOptions.find(option => option.name === event.target.value);
-        if (this.blogService.sortBy.value !== sortBy.value) {
-            this.blogService.sortPosts(sortBy.value);
+    onSortPosts(selected: number) {
+        const sortBy = this.sortOptions[selected].value;
+        if (this.blogService.sortBy.value !== sortBy) {
+            this.blogService.sortPosts(sortBy);
         }
     }
 

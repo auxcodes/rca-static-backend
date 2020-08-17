@@ -8,9 +8,7 @@
             <span class="header-image right-outer"></span>
         </div>
         <div *ngIf="!loading && !noPostsFound" class="sort-bar">
-            <select class="select-input" (change)="onSortPosts($event)">
-                <option *ngFor="let sortOption of sortOptions" [value]="sortOption.name">{{sortOption.text}}</option>
-            </select>
+            <app-sort-bar [sortOptions]="sortOptions" (sortSelected)="onSortPosts($event)"></app-sort-bar>
         </div>
         <div *ngIf="noPostsFound" class="no-posts">
             <span class="pattern left-pattern"></span>
