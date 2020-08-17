@@ -8,6 +8,7 @@ import { ArtistsPage } from '../../models/artists-page.model';
 import { SeoService } from '../../services/seo.service';
 import { FacebookSdkService } from '../../services/utils/facebook-sdk.service';
 import { Seo } from '../../models/seo.model';
+import { SortOption } from '../../models/sort-option.model';
 
 @Component({
     selector: 'app-artists',
@@ -27,6 +28,12 @@ export class ArtistsComponent implements OnInit, OnDestroy {
     focusArtist = false;
     artistInFocus: Artist;
     artistOnly = false;
+
+    sortOptions: SortOption[] = [
+        { name: '-added', text: 'Added-', value: 'id' },
+        { name: 'added', text: 'Added+', value: '-id' },
+        { name: 'name', text: 'Name+', value: 'name' },
+        { name: '-name', text: 'Name-', value: '-name' }];
 
 
     constructor(
@@ -120,5 +127,10 @@ export class ArtistsComponent implements OnInit, OnDestroy {
     onCloseArtist(open: boolean) {
         this.focusArtist = open;
         this.artistInFocus = undefined;
+    }
+
+    sortArtists(selected: number) {
+        //console.log("AC sortArtists()", selected);
+        this.artistService.sortArtists(this.sortOptions[selected].value);
     }
 }

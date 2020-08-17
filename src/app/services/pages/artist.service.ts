@@ -154,4 +154,41 @@ export class ArtistService {
             .catch(error => console.log('Error getting Artist items: ', error));
     }
 
+    sortBy: BehaviorSubject<string> = new BehaviorSubject<string>('id');
+
+    sortArtists(sortBy: string) {
+        this.sortBy.next(sortBy);
+        const result = this.sortArtistsArray(sortBy, this.artists.value);
+        this.artists.next(result);
+    }
+
+    private sortArtistsArray(sortBy: string, artwork: Artist[]): Artist[] {
+        let result: Artist[] = [];
+
+        switch (sortBy) {
+            case "id": {
+                result = artwork.sort((a, b) => a.id - b.id);
+                break;
+            }
+            case "-id": {
+                result = artwork.sort((a, b) => b.id - a.id);
+                break;
+            }
+            case "name": {
+                result = artwork.sort((a, b) => a.name > b.name ? 1 : -1);
+                break;
+            }
+            case "-name": {
+                result = artwork.sort((a, b) => a.name < b.name ? 1 : -1);
+                break;
+            }
+            default: {
+                result = artwork;
+                break;
+            }
+        }
+
+        return result;
+    }
+
 }

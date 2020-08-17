@@ -7,6 +7,7 @@
             <span class="header-image right-inner"></span>
             <span class="header-image right-outer"></span>
         </div>
+        <app-sort-bar [sortOptions]="sortOptions" (sortSelected)="sortArtists($event)"></app-sort-bar>
         <div class="artists">
             <div class="artists-item" *ngFor="let artist of artists">
                 <app-artist-card class="artist-card" id="{{artist.id}}"
@@ -19,6 +20,6 @@
                                (closeArtist)="onCloseArtist($event)"
                                (viewArtwork)="onViewArtwork($event)"></app-artist-detail>
         </div>
-    <app-facebook-share class=""></app-facebook-share>
+        <app-facebook-share class=""></app-facebook-share>
     </section>
 </section>

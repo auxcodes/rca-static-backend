@@ -18,6 +18,6 @@ export class SortBarComponent implements OnInit {
 
     onSort(event) {
         this.sortSelected.emit(event.target.selectedIndex * 1);
-        console.log("Sort Bar - onSort(): ", event.target.selectedIndex * 1);
+        //console.log("Sort Bar - onSort(): ", event.target.selectedIndex * 1);
     }
 }
