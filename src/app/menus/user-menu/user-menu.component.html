@@ -1,19 +1,19 @@
 <ul class="account-link">
     <li>
-        <button [className]="userProfileClass" (click)="onToggleMenu()">
+        <button [className]="userProfileClass" #profileToggle (click)="onToggleMenu()" (keyup.esc)="onEsc()">
             <img src="/assets/icons/account_circle/account_circle.svg" alt="Account profile button image"/>
         </button>
     </li>
     <li [className]="dropMenuClass">
         <ul class="logged-in" *ngIf="isLoggedIn">
             <li class="snipcart-user-profile">
-                <button (click)="onToggleMenu()">Orders</button>
+                <button (click)="onToggleMenu()" (keyup.esc)="onEsc()">Orders</button>
             </li>
             <li class="snipcart-edit-profile">
-                <button (click)="onToggleMenu()">Profile</button>
+                <button (click)="onToggleMenu()" (keyup.esc)="onEsc()">Profile</button>
             </li>
             <li class="snipcart-user-logout">
-                <button (click)="onToggleMenu()">Logout</button>
+                <button (click)="onToggleMenu()" (keyup.esc)="onEsc()">Logout</button>
             </li>
         </ul>
     </li>

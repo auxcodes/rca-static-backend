@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import { CMSImage } from '../../models/cms-image.model';
 import { PagesService } from '../../services/pages.service';
 import { SiteSettingsService } from '../../services/site-settings.service';
@@ -9,6 +9,7 @@ import { SiteSettingsService } from '../../services/site-settings.service';
     styleUrls: ['./burger-menu.component.scss']
 })
 export class BurgerMenuComponent implements OnInit{
+    @ViewChild('burgerToggle') burgerToggleElement: ElementRef;
 
     isOpen = false;
     burgerMenuClass = '';
@@ -38,7 +39,7 @@ export class BurgerMenuComponent implements OnInit{
                 this.firstLetter = content.siteName.charAt(0);
                 this.siteName = content.siteName.substr(1);
             }
-        });    
+        });
     }
 
     onToggleMenu() {
@@ -46,6 +47,13 @@ export class BurgerMenuComponent implements OnInit{
         this.burgerMenuClass = this.isOpen ? 'burger-open' : '';
         this.dropMenuClass = this.isOpen ? 'drop-open' : '';
         this.scrollListener(this.isOpen);
+    }
+
+    onEsc() {
+        if (this.isOpen) {
+            this.onToggleMenu();
+            this.burgerToggleElement.nativeElement.focus();
+        }
     }
 
     scrollListener(addEvent: boolean) {
@@ -60,6 +68,7 @@ export class BurgerMenuComponent implements OnInit{
     scrollEvent = (): void => {
         if (this.isOpen) {
             this.onToggleMenu();
+            this.burgerToggleElement.nativeElement.focus();
         }
     }
 

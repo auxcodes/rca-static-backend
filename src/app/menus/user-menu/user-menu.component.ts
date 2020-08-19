@@ -1,6 +1,5 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SnipcartService } from '../../services/snipcart.service';
-import { fromEvent } from 'rxjs';
 
 @Component({
     selector: 'app-user-menu',
@@ -8,6 +7,8 @@ import { fromEvent } from 'rxjs';
     styleUrls: ['./user-menu.component.scss']
 })
 export class UserMenuComponent implements OnInit {
+    @ViewChild('profileToggle') profileToggleElement: ElementRef;
+
     isOpen = false;
     dropMenuClass = '';
     userProfileClass = '';
@@ -29,6 +30,13 @@ export class UserMenuComponent implements OnInit {
         this.scrollListener(this.isOpen);
     }
 
+    onEsc() {
+        if (this.isOpen) {
+            this.onToggleMenu();
+            this.profileToggleElement.nativeElement.focus();
+        }
+    }
+
     scrollListener(addEvent: boolean) {
         if (addEvent) {
             window.addEventListener('scroll', this.scrollEvent, true);
@@ -41,6 +49,7 @@ export class UserMenuComponent implements OnInit {
     scrollEvent = (): void => {
         if (this.isOpen) {
             this.onToggleMenu();
+            this.profileToggleElement.nativeElement.focus();
         }
     }
 

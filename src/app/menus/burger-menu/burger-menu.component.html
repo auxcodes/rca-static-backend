@@ -1,12 +1,12 @@
 <ul class="burger-site-link">
     <li [className]="burgerMenuClass">
-        <button class="burger-btn" (click)="onToggleMenu()" aria-label="Navigation menu button">
+        <button class="burger-btn" (click)="onToggleMenu()" (keyup.esc)="onEsc()" #burgerToggle aria-label="Navigation menu button">
         </button>
     </li>
     <li [className]="dropMenuClass">
         <ul>
             <li class="site-link" *ngFor="let link of routerLinks">
-                <button routerLink={{link.path}} attr.aria-label="Navigation button, {{link.text}}" (click)="onToggleMenu()">
+                <button routerLink={{link.path}} attr.aria-label="Navigation button, {{link.text}}" (click)="onToggleMenu()" (keyup.esc)="onEsc()">
                     <span class="link-text">{{link.text}}</span>
                 </button>
             </li>
