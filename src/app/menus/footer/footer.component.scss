@@ -75,6 +75,10 @@
         a {
             padding: 0 16px 0 0;
 
+            &:hover, &:focus {
+                text-decoration: underline solid;
+            }
+
             &:link, &:visited {
                 color: $footer-links-color;
             }
@@ -175,6 +179,7 @@
                     box-shadow: 0 4px 8px $btn-box-shadow-high;
                 }
             }
+
             .email {
                 width: 65%;
             }
@@ -200,7 +205,7 @@
                 text-decoration: none;
                 transition: box-shadow .15s;
 
-                &:hover {
+                &:hover, &:focus {
                     box-shadow: 0 7px 15px $btn-box-shadow-high;
                     text-decoration: underline;
                 }

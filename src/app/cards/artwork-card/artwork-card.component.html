@@ -17,7 +17,7 @@
         <a class="more" [href]="'artwork/' + artwork?.id">more...</a>
         <div class="card-footer">
             <span class="card-price">{{artwork?.price | currency}}</span>
-            <span *ngIf="!artwork.sold" class="card-button link snipcart-add-item"
+            <button *ngIf="!artwork.sold" class="card-button link snipcart-add-item"
                   [attr.data-item-url]="artwork.url"
                   [attr.data-item-id]="artwork.id"
                   [attr.data-item-price]="artwork.price"
@@ -29,7 +29,7 @@
                   [attr.data-item-height]="artwork.parcelHeight"
                   [attr.data-item-length]="artwork.parcelLength">
                 Buy
-            </span>
+            </button>
             <div *ngIf="artwork.sold" class="sold-box">
                 <span class="buy-btn">Buy</span>
                 <span class="sold">Sold</span>

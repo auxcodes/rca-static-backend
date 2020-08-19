@@ -9,7 +9,7 @@
 
     .logged-out {
 
-        &:hover {
+        &:hover, &:focus, &:focus-within {
             border-bottom-color: $nav-hover-border-color;
         }
     }
@@ -23,7 +23,7 @@
         padding: 19px 16px 18px 16px;
         transition: all .3s;
 
-        &:hover {
+        &:hover, &:focus, &:focus-within {
             background-color: $nav-hover-bg-color;
             border-bottom-color: $nav-hover-border-color;
         }
@@ -70,7 +70,7 @@
             display: flex;
             padding: 16px;
 
-            &:hover {
+            &:hover, &:focus, &:focus-within {
                 border-bottom-color: $nav-hover-border-color;
                 background-color: $nav-hover-bg-color;
             }

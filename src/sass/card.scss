@@ -4,7 +4,7 @@
     box-shadow: 0 1px 3px #464646;
     transition: box-shadow .3s;
 
-    &:hover, &:focus,, &:focus-within {
+    &:hover, &:focus, &:focus-within {
         box-shadow: 0 7px 15px #828282;
     }
 }
