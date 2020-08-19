@@ -19,13 +19,4 @@ export class ArtworkCardComponent implements OnInit {
     ngOnInit() {
         this.artwork = this.artworkData;
     }
-
-    viewArtworkDetail() {
-        //this.openArtwork.emit(this.artwork.id);
-        this.router.navigate(['/artwork/' + this.artwork.id]);
-    }
-
-    viewArtist() {
-        this.router.navigate(['/artist/' + this.artwork.artistId]);
-    }
 }

@@ -1,20 +1,20 @@
 <div class="card" *ngIf="artwork !== undefined">
-    <span (click)="viewArtworkDetail()" class="card-image" *ngIf="artwork.thumbnail">
+    <a [href]="'artwork/' + artwork?.id" class="card-image" *ngIf="artwork.thumbnail">
         <img src={{artwork?.thumbnail}} alt="Thumbnail image of artwork: {{artwork?.title}}, description: {{artwork?.description}}"/>
-    </span>
+    </a>
     <span class="spinner" *ngIf="!artwork.thumbnail">
         <app-artwork-spinner></app-artwork-spinner>
     </span>
     <div class="card-caption">
         <h6 class="card-title">
-            <span (click)="viewArtworkDetail()">{{artwork?.title}}</span>
+            <a [href]="'artwork/' + artwork?.id">{{artwork?.title}}</a>
         </h6>
         <div class="card-description">
-            <span (click)="viewArtist()" class="artist">{{artwork?.artistName}}</span>
+            <a [href]="'artist/' + artwork?.artistId" class="artist">{{artwork?.artistName}}</a>
             <br />
             {{artwork?.description}}
         </div>
-        <span class="more" (click)="viewArtworkDetail()">more...</span>
+        <a class="more" [href]="'artwork/' + artwork?.id">more...</a>
         <div class="card-footer">
             <span class="card-price">{{artwork?.price | currency}}</span>
             <span *ngIf="!artwork.sold" class="card-button link snipcart-add-item"

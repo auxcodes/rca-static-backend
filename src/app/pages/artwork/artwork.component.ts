@@ -5,6 +5,7 @@ import { Artwork } from 'src/app/models/artwork.model';
 import { ArtworkService } from '../../services/pages/artwork.service';
 import { GalleryService } from '../../services/pages/gallery.service';
 import { FacebookSdkService } from '../../services/utils/facebook-sdk.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-artwork',
@@ -23,6 +24,7 @@ export class ArtworkComponent implements OnInit {
         private route: ActivatedRoute,
         private location: Location,
         private router: Router,
+        private titleService: Title,
         private fbSdkService: FacebookSdkService) {
  
     }
@@ -37,11 +39,16 @@ export class ArtworkComponent implements OnInit {
         }
     }
 
+    private setTitle() {
+        this.titleService.setTitle(this.artwork.title + ": " + this.artwork.artistName );
+    }
+
     private checkGalleryStorage(id: number) {
         this.galleryService.findById(id)
             .then(result => {
                 if (result !== undefined) {
                     this.artwork = result;
+                    this.setTitle();
                     this.setupFacebookShare();
                 }
                 else {
@@ -55,6 +62,7 @@ export class ArtworkComponent implements OnInit {
         this.artworkService.getArtworkById(id, this.maxImageSize)
             .then(result => {
                 this.artwork = result;
+                this.setTitle();
                 this.setupFacebookShare();
             })
             .catch(error => console.log('Error getting artwork from artwork service: ', error));

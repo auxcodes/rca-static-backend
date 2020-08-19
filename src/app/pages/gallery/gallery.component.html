@@ -9,7 +9,7 @@
         </div>
         <app-sort-bar [sortOptions]="sortOptions" (sortSelected)="sortGallery($event)"></app-sort-bar>
         <div class="gallery">
-            <div class="gallery-item" id="artwork{{art?.id}}" *ngFor="let art of artworks" (click)="onOpenArtwork(art.id)">
+            <div class="gallery-item" id="artwork{{art?.id}}" *ngFor="let art of artworks">
                 <app-artwork-card class="artwork-card" [artworkData]="art" (openArtwork)="onOpenArtwork($event)"></app-artwork-card>
             </div>
             <!--<app-artwork-detail *ngIf="focusArtwork" [artworkData]="artInFocus" (closeArtwork)="onCloseArtwork($event)"></app-artwork-detail>-->
