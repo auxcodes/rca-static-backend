@@ -31,11 +31,6 @@ export class ArtistCardComponent implements OnInit {
         this.artist = this.artistData;
     }
 
-    viewArtistDetail() {
-        //this.openArtist.emit(this.artist.id);
-        this.router.navigate(['/artist/' + this.artist.id]);
-    }
-
     viewArtistsArtwork() {
         this.viewArtwork.emit(this.artist.id);
     }

@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Artist } from 'src/app/models/artist.model';
 import { Artwork } from '../../models/artwork.model';
@@ -25,6 +25,7 @@ export class ArtistPageComponent implements OnInit, OnDestroy {
         private location: Location,
         private artistService: ArtistService,
         private galleryService: GalleryService,
+        private titleService: Title,
         private fbSdkService: FacebookSdkService) {
 
     }
@@ -34,6 +35,7 @@ export class ArtistPageComponent implements OnInit, OnDestroy {
         this.artistService.artistById(id)
             .then(artist => {
                 this.artist = artist;
+                this.titleService.setTitle(artist.name);
                 this.setupFacebookShare();
             })
             .catch(error => console.log('Error getting artist from artist service: ', error));

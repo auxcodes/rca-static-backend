@@ -4,7 +4,7 @@
     box-shadow: 0 1px 3px #464646;
     transition: box-shadow .3s;
 
-    &:hover {
+    &:hover, &:focus,, &:focus-within {
         box-shadow: 0 7px 15px #828282;
     }
 }
@@ -59,7 +59,7 @@
     }
 
 
-    &:hover {
+    &:hover, &:focus {
         &:before {
             opacity: 1;
         }
@@ -88,8 +88,8 @@
             font-size: 16px;
             color: $dark-body-color;
 
-            &:hover {
-                border-bottom: dotted 1px #9055a2;
+            &:hover, &:focus {
+                border-bottom: solid 1px #9055a2;
             }
         }
     }
@@ -114,8 +114,8 @@
         font-weight: bold;
         cursor: pointer;
 
-        &:hover {
-            border-bottom: dotted 1px #9055a2;
+        &:hover, &:focus {
+            border-bottom: solid 1px #9055a2;
         }
     }
 
@@ -126,8 +126,8 @@
         font-weight: bold;
         cursor: pointer;
 
-        &:hover {
-            border-bottom: dotted 1px #9055a2;
+        &:hover, &:focus {
+            border-bottom: solid 1px #9055a2;
         }
     }
 }
@@ -138,6 +138,15 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
+    button {
+        font-size: 100%;
+        font-family: inherit;
+        background: none;
+        border: 0;
+        padding: 0;
+        text-decoration: none;
+    }
 
     .card-button {
         justify-content: flex-end;
@@ -159,7 +168,7 @@
             text-decoration: none;
         }
 
-        &:hover {
+        &:hover, &:focus {
             text-decoration: underline;
             box-shadow: 0 7px 15px $btn-box-shadow-high;
         }
