@@ -1,7 +1,7 @@
 <div class="container">
     <div class="content" *ngIf="postData !== undefined">
-        <span (click)="onBack()" class="back-btn"><span class="arrow"></span><span class="text-block">BACK</span></span>
-        <div #postImage class="post-image-collapsed" (click)="onToggleExpand()">
+        <button (click)="onBack()" class="back-btn"><span class="arrow"></span><span class="text-block">BACK</span></button>
+        <div #postImage class="post-image-collapsed" (click)="onToggleExpand()" (keyup)="onKeyPress($event)">
             <img src={{postData.thumbnail}} alt="Thumbnail image for blog post: {{postData.title}}" />
         </div>
         <div class="post-header">

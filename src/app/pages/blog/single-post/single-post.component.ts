@@ -96,4 +96,9 @@ export class SinglePostComponent implements OnInit, OnDestroy {
         }
     }
 
+    onKeyPress(event) {
+        if (event.key === "Enter" || event.keyCode === 13) {
+            this.onToggleExpand();
+        }
+    }
 }

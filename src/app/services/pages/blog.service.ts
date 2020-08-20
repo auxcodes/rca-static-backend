@@ -136,6 +136,7 @@ export class BlogService {
                     this.cmsImages.getImage(post.thumbnailId)
                         .then(image => {
                             post.thumbnail = this.cmsImages.resizeImageUrl(image.filename, this.imageSize, this.imageQuality);
+
                         })
 
                     return post;
