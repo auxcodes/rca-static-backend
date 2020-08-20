@@ -6,7 +6,9 @@
         </span>
         <app-artwork-spinner class="images" *ngIf="!artwork.images"></app-artwork-spinner>
         <div class="thumbnails" *ngIf="artwork.images">
-            <img (click)="onZoomImage(image.id)" id="image.id" *ngFor="let image of artwork.images" src={{image.thumbnailUrl}}>
+            <button (click)="onZoomImage(image.id)" id="image.id" *ngFor="let image of artwork.images">
+                <img src={{image.thumbnailUrl}} [alt]="'Small image for selecting a larger view of image ' + artwork?.description">
+            </button>
         </div>
         <div class="caption">
             <h6 class="title">
