@@ -1,6 +1,6 @@
 <div class="container">
     <div class="content" *ngIf="artist !== undefined">
-        <span (click)="onBack()" class="back-btn"><span class="arrow"></span><span class="text-block">BACK</span></span>
+        <button (click)="onBack()" class="back-btn"><span class="arrow"></span><span class="text-block">BACK</span></button>
         <div *ngIf="artist.photo" class="photo-panel">
             <span class="pattern left-pattern"></span>
             <div class="photo-box" [style.background-image]="backgroundImage()">

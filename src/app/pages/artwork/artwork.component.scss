@@ -131,7 +131,7 @@
                 text-decoration: none;
             }
 
-            &:hover {
+            &:hover, &:focus {
                 text-decoration: underline;
                 box-shadow: 0 7px 15px $btn-box-shadow-high;
             }
