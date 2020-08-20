@@ -76,7 +76,7 @@ export class SiteSettingsService {
         await this.cmsImage.getImage(imageIndex)
             .then(image => {
                 imageData = image;
-                imageData.thumbnailUrl = this.cmsImage.resizeImageUrl(imageData.filename, this.maxLogoSize, this.logoQuality);
+                imageData.thumbnailUrl = this.cmsImage.resizeImageUrl("low-res/" + imageData.filename, this.maxLogoSize, this.logoQuality);
             })
             .catch(error => console.log('Error getting site info images: ', error));
         return imageData;

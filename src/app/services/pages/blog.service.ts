@@ -135,7 +135,7 @@ export class BlogService {
                     post.updatedOn = item.updated_on ? item.updated_on : post.publishDate;
                     this.cmsImages.getImage(post.thumbnailId)
                         .then(image => {
-                            post.thumbnail = this.cmsImages.resizeImageUrl(image.filename, this.imageSize, this.imageQuality);
+                            post.thumbnail = this.cmsImages.resizeImageUrl("low-res/" + image.filename, this.imageSize, this.imageQuality);
 
                         })
 
@@ -184,7 +184,7 @@ export class BlogService {
                 blogPost.updatedOn = result.updated_on ? result.updated_on : blogPost.publishDate;
                 this.cmsImages.getImage(blogPost.thumbnailId)
                     .then(image => {
-                        blogPost.thumbnail = this.cmsImages.resizeImageUrl(image.filename, this.imageSize, this.imageQuality);
+                        blogPost.thumbnail = image.relativeUrl;
                     })
                     .catch(error => console.log('Error getting blog post thumbnail: ', error));
             })
