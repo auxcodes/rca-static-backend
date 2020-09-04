@@ -13,7 +13,6 @@ export class OverlayModalComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
-        console.log(this.content)
     }
 
     onClose() {
