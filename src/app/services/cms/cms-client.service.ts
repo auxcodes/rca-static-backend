@@ -175,7 +175,7 @@ export class CmsClientService {
                 break;
             }
             case "artwork_directus_files": {
-                result = this.getImages(params);
+                result = this.getArtworkImages(params);
                 break;
             }
             case "artists_page_artist_profiles": {
@@ -350,11 +350,16 @@ export class CmsClientService {
         return links;
     }
 
-    async getImages(params) {
-        //console.log("Image filter: ", params.filter);
+    async getArtworkImages(params) {
+        let result = null;
         const id = params.filter.artwork_id.eq;
-        const images = id ? imagesData.data.filter(item => item.id === id) : imagesData.data;
-        //console.log("CS Get Images: ", images);
+        const artwork = artworkData.data.find(artwork => artwork.id === id);
+        await this.getImages(artwork.images).then(images => result = images);
+        return result;
+    }
+
+    async getImages(ids: number[]) {
+        const images = ids ? ids.map(id => imagesData.data.find(image => image.id === id)) : imagesData.data;
         return images;
     }
 
