@@ -1,5 +1,5 @@
 <div class="card" *ngIf="artwork !== undefined">
-    <a [href]="'artwork/' + artwork?.id" class="card-image" *ngIf="artwork.thumbnail">
+    <a [routerLink]="'/artwork/' + artwork?.id" class="card-image" *ngIf="artwork.thumbnail">
         <img src={{artwork?.thumbnail}} alt="Thumbnail image of artwork: {{artwork?.title}}, description: {{artwork?.description}}"/>
     </a>
     <span class="spinner" *ngIf="!artwork.thumbnail">
@@ -7,14 +7,14 @@
     </span>
     <div class="card-caption">
         <h6 class="card-title">
-            <a [href]="'artwork/' + artwork?.id">{{artwork?.title}}</a>
+            <a [routerLink]="'/artwork/' + artwork?.id">{{artwork?.title}}</a>
         </h6>
         <div class="card-description">
-            <a [href]="'artist/' + artwork?.artistId" class="artist">{{artwork?.artistName}}</a>
+            <a [routerLink]="'/artist/' + artwork?.artistId" class="artist">{{artwork?.artistName}}</a>
             <br />
             {{artwork?.description}}
         </div>
-        <a class="more" [href]="'artwork/' + artwork?.id">more...</a>
+        <a class="more" [routerLink]="'/artwork/' + artwork?.id">more...</a>
         <div class="card-footer">
             <span class="card-price">{{artwork?.price | currency}}</span>
             <button *ngIf="!artwork.sold" class="card-button link snipcart-add-item"

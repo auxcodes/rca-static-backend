@@ -15,7 +15,7 @@
                 <span>{{artwork?.title}}</span>
             </h6>
             <div class="description">
-                <a [href]="'artist/' + artwork?.artistId" class="artist">{{artwork?.artistName}}</a>
+                <a [routerLink]="'/artist/' + artwork?.artistId" class="artist">{{artwork?.artistName}}</a>
                 <br />
                 {{artwork?.description}}
             </div>

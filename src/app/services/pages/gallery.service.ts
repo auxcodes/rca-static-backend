@@ -81,7 +81,7 @@ export class GalleryService {
                     };
                     if (ids !== null) {
                         this.content.next(page);
-                        this.getAllArtworkItems();
+                        this.getMoreArtwork();
                     }
                 });
                 this.baseMoreCount = gallery.load_amount;
@@ -107,7 +107,7 @@ export class GalleryService {
                     this.galleryPageItems();
                 }
                 else {
-                    this.getAllArtworkItems();
+                    this.getMoreArtwork();//this.getAllArtworkItems();
                 }
             }
             else {
@@ -116,20 +116,6 @@ export class GalleryService {
             }
         }
         catch (error) { console.log("Error getting gallery artworks: ", error) };
-    }
-
-    private getAllArtworkItems() {
-        const params = {
-            offset: 0, limit: this.baseMoreCount,
-            sort: 'sold',
-            filter: this.galleryFilter
-        };
-        this.artworkItems(params).then(results => {
-            this.allArtwork = this.sortArtwork(this.sortBy.value, results);
-            this.artworks.next(this.allArtwork);
-            this.moreCount++;
-            this.noMore.next(this.allArtwork.length < ((this.moreCount) * this.baseMoreCount));
-        });
     }
 
     async getMoreArtwork() {

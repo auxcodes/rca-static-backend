@@ -2,7 +2,7 @@
 <section class="carousel-wrapper" #carouselOuter>
     <ul class="carousel-inner" #carousel [ngStyle]="carouselSliderStyle">
         <li *ngFor="let item of items;" class="carousel-item" [ngStyle]="carouselItemStyle">
-            <a [href]="item?.url" class="item" [ngStyle]="itemStyle" [style.background-image]="backgroundImage(item?.thumbnail)">
+            <a [routerLink]="item?.url" class="item" [ngStyle]="itemStyle" [style.background-image]="backgroundImage(item?.thumbnail)">
                 <span class="item-img"></span>
                 <span class="item-text">
                     <span class="item-title">{{item?.title}}</span>

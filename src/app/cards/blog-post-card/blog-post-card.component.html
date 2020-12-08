@@ -1,5 +1,5 @@
 <div class="card">
-    <a [href]="'/blog/post/' + postData.id" class="post-image" *ngIf="postData.thumbnail">
+    <a [routerLink]="'/blog/post/' + postData.id" class="post-image" *ngIf="postData.thumbnail">
         <img src={{postData.thumbnail}} alt="Thumbnail image for blog post: {{postData.title}}" />
     </a>
     <span class="spinner" *ngIf="!postData.thumbnail">
@@ -7,13 +7,13 @@
     </span>
     <div class="card-caption" (click)="openBlogPost()">
         <div class="card-title">
-            <a class="blog-title" [href]="'/blog/post/' + postData.id">{{postData.title}}</a>
+            <a class="blog-title" [routerLink]="'/blog/post/' + postData.id">{{postData.title}}</a>
             <span class="publish-date">{{postData.publishDate | date:'mediumDate'}}</span>
         </div>
         <div class="card-description" [innerHtml]="postData.description">
         </div>
         <div class="card-footer">
-            <a [href]="'/blog/post/' + postData.id" class="read-more"> Read More...</a>
+            <a [routerLink]="'/blog/post/' + postData.id" class="read-more"> Read More...</a>
         </div>
     </div>
 </div>
