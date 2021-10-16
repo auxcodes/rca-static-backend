@@ -1,24 +1,29 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c07d61d3-11a9-497c-a068-73d3fd04f253/deploy-status)](https://app.netlify.com/sites/blissful-goodall-4a9520/deploys)
 
-# Rise Community Art Website in Angular (With static backend)
+# Rise Community Art Website - Static Backend
 <https://rca.aux.codes>
+
 ![Site Preview](https://github.com/auxcodes/rca-static-backend/blob/master/img/galleryPageTwo.png)
 
-This is an archive repository for the original [Rise Community Art](https:risecommunityart.com.au) website.
+This is an archive repository for the original [Rise Community Art](https:risecommunityart.com.au) website before it moved to Shopify.
 
 ## Frontend 
 - Single Page Application implemented in Angular
-- Responsive design
+- Responsive menus and pages
 - All custom built components (Excluding shopping cart)
 - Shopping cart API [Snipcart](https://snipcart.com) used to handle e-commerce
 
 
 ## Backend
+- Original version used the headless CMS [Directus](https://directus.io) hosted on Azure
 - Current version uses a static backend of JSON files
-- Original used the headless CMS [Directus](https://directus.io) hosted on Azure
+- JSON files for images could not be exported from Directus so were generated using an online tool I developed [images-to-json](https://github.com/auxcodes/images-to-json)
 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+---
+## Setup
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
 ## Prerequisites
 
