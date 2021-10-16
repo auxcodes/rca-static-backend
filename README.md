@@ -3,16 +3,15 @@
 # Rise Community Art Website - Static Backend
 <https://rca.aux.codes>
 
-![Site Preview](https://github.com/auxcodes/rca-static-backend/blob/master/img/galleryPageTwo.png)
+This is an archive repository for the original [Rise Community Art](https:risecommunityart.com.au) website before it was moved to Shopify.
 
-This is an archive repository for the original [Rise Community Art](https:risecommunityart.com.au) website before it moved to Shopify.
+![Site Preview](https://github.com/auxcodes/rca-static-backend/blob/master/img/galleryPageTwo.png)
 
 ## Frontend 
 - Single Page Application implemented in Angular
 - Responsive menus and pages
 - All custom built components (Excluding shopping cart)
 - Shopping cart API [Snipcart](https://snipcart.com) used to handle e-commerce
-
 
 ## Backend
 - Original version used the headless CMS [Directus](https://directus.io) hosted on Azure
