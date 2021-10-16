@@ -2,7 +2,7 @@
 
 # Rise Community Art Website in Angular (With static backend)
 <https://rca.aux.codes>
-![Site Preview](https://github.com/auxcodes/images-to-json/blob/master/img/galleryPageTwo.png)
+![Site Preview](https://github.com/auxcodes/rca-static-backend/blob/master/img/galleryPageTwo.png)
 
 This is an archive repository for the original [Rise Community Art](https:risecommunityart.com.au) website.
 
