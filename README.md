@@ -1,5 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c07d61d3-11a9-497c-a068-73d3fd04f253/deploy-status)](https://app.netlify.com/sites/blissful-goodall-4a9520/deploys)
 
+[![Support me on ko-fi](https://pabanks.io/assets/kofi-md.svg)](https://ko-fi.com/H2H1ZZY1Q) &nbsp; [![Support me on Coindrop](https://pabanks.io/assets/coindrop-md.svg)](https://coindrop.to/auxcodes)
 # Rise Community Art Website - Static Backend
 <https://rca.aux.codes>
 
